@@ -1,0 +1,69 @@
+﻿<ManagementPackFragment SchemaVersion="2.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <LanguagePacks>
+    <LanguagePack ID="ENU" IsDefault="true">
+      <DisplayStrings>
+        <DisplayString ElementID="P2P.OMSAdministration.RuleTemplates">
+          <Name>CHRW Custom OMS Administration Rule Templates</Name>
+        </DisplayString>
+        <DisplayString ElementID="P2P.OMSAdministration.RuleTemplates.Folder.Collection">
+          <Name>OMS Collection Rules - Direct to Cloud!</Name>
+          <Description>This folder contains rule types that collect event and performance data from various data providers</Description>
+        </DisplayString>
+        <DisplayString ElementID="P2P.OMSAdministration.RuleTemplates.Folder.Collection.Event">
+          <Name>Event Based to OMS Event Type</Name>
+          <Description>This folder contains rule types that collect event data from various data providers</Description>
+        </DisplayString>
+        <DisplayString ElementID="P2P.OMSAdministration.RuleTemplates.Folder.Collection.Performance">
+          <Name>Performance Based to OMS Performance</Name>
+          <Description>This folder contains rule types that collect performance data from various data providers</Description>
+        </DisplayString>
+        <DisplayString ElementID="P2P.OMSAdministration.RuleTemplates.Folder.Collection.Probe">
+          <Name>Probe Based OMS Collection Rules</Name>
+          <Description>This folder contains rule types that collect data from various data sources based on a probe</Description>
+        </DisplayString>
+        <DisplayString ElementID="P2P.OMSAdministration.RuleTemplates.GenericCSVLogCollection">
+          <Name>Generic CSV Text Log to OMS Events</Name>
+          <Description>Collect log file entries from a generic text log file that uses a delimiter character to separate different fields.  After collection this will then send this DIRECTLY to OMS in the Cloud.  This data DOES NOT get stored in the Operation or Data Warehouse in MSSQL, go WILD!</Description>
+        </DisplayString>
+        <DisplayString ElementID="P2P.OMSAdministration.RuleTemplates.GenericLogCollection">
+          <Name>Generic Text Log to OMS Events</Name>
+          <Description>Collect log file entries that match a specificed expression from a generic text log file.  You should use this rule type when log file entries have no delimiter to separate different fields.  Once collected this data will then send this DIRECTLY to OMS in the Cloud.  This data DOES NOT get stored in the Operation or Data Warehouse in MSSQL, go WILD!</Description>
+        </DisplayString>
+        <DisplayString ElementID="P2P.OMSAdministration.RuleTemplates.ScriptEventCollection">
+          <Name>Script (Event Generating) to OMS Events</Name>
+          <Description>Collect script data as events then send this DIRECTLY to OMS in the Cloud.  This data DOES NOT get stored in the Operation or Data Warehouse in MSSQL, go WILD!</Description>
+        </DisplayString>
+        <DisplayString ElementID="P2P.OMSAdministration.RuleTemplates.ScriptEventCollection.PageSet.PageReference4" SubElementID="P2P.OMSAdministration.RuleTemplates.ScriptEventCollection.PageSet.PageReference4.TabName">
+          <Name>Event Mapper</Name>
+        </DisplayString>
+        <DisplayString ElementID="P2P.OMSAdministration.RuleTemplates.ScriptEventCollection.PageSet.PageReference4" SubElementID="P2P.OMSAdministration.RuleTemplates.ScriptEventCollection.PageSet.PageReference4.Title">
+          <Name>Event Mapper</Name>
+        </DisplayString>
+        <DisplayString ElementID="P2P.OMSAdministration.RuleTemplates.ScriptPerfCollection">
+          <Name>Script (Performance Generating) to OMS Perf</Name>
+          <Description>Collect script data as performance data then send this DIRECTLY to OMS in the Cloud.  This data DOES NOT get stored in the Operation or Data Warehouse in MSSQL, go WILD!</Description>
+        </DisplayString>
+        <DisplayString ElementID="P2P.OMSAdministration.RuleTemplates.SyslogCollection">
+          <Name>Syslog Events to OMS Events</Name>
+          <Description>Collect syslog entries forwarded to the Windows computer that match a specified expression, send this DIRECTLY to OMS in the Cloud.  This data DOES NOT get stored in the Operation or Data Warehouse in MSSQL, go WILD!</Description>
+        </DisplayString>
+        <DisplayString ElementID="P2P.OMSAdministration.RuleTemplates.WindowsEventCollection">
+          <Name>NT Event Log Direct to OMS</Name>
+          <Description>Collect Windows events and these send this DIRECTLY to OMS in the Cloud.  This data DOES NOT get stored in the Operation or Data Warehouse in MSSQL, go WILD!</Description>
+        </DisplayString>
+        <DisplayString ElementID="P2P.OMSAdministration.RuleTemplates.WindowsPerformanceCollection">
+          <Name>Windows Performance Direct to OMS</Name>
+          <Description>Collect Windows performance data then send this DIRECTLY to OMS in the Cloud.  This data DOES NOT get stored in the Operation or Data Warehouse in MSSQL, go WILD!</Description>
+        </DisplayString>
+        <DisplayString ElementID="P2P.OMSAdministration.RuleTemplates.WMIEventCollection">
+          <Name>WMI Event to OMS Events</Name>
+          <Description>Collect WMI events that match a a WQL query then send this DIRECTLY to OMS in the Cloud.  This data DOES NOT get stored in the Operation or Data Warehouse in MSSQL, go WILD!</Description>
+        </DisplayString>
+        <DisplayString ElementID="P2P.OMSAdministration.RuleTemplates.WMIPerfCollection">
+          <Name>WMI Performance Direct to OMS Performance</Name>
+          <Description>Collect WMI Performance Data then send this DIRECTLY to OMS in the Cloud.  This data DOES NOT get stored in the Operation or Data Warehouse in MSSQL, go WILD!</Description>
+        </DisplayString>
+      </DisplayStrings>
+    </LanguagePack>
+  </LanguagePacks>
+</ManagementPackFragment>

@@ -1,0 +1,96 @@
+<TemplateGroup>
+  <Instances>
+    <Instance ID="Instancefb16f11e26d54272b47f74226a6108eb" Type="Microsoft.SystemCenter.Authoring.CodeGeneration.Monitoring.CustomRule" Version="1.0.0.0">
+      <CustomRuleConfig xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <Id>GenerateShellMP.WithParametersEventTriggered</Id>
+        <DisplayName>Event Triggered Generate Override</DisplayName>
+        <Description>Event Triggered Generate Override MPs, Nothing Else Should reference the Sealed packs from MS</Description>
+        <Category>Operations</Category>
+        <ConfirmDelivery>false</ConfirmDelivery>
+        <Target>P2PAdmin!P2P.OMSAdministration.Classes.OMSSolution</Target>
+        <Enabled>false</Enabled>
+        <Remotable>true</Remotable>
+        <Priority>Normal</Priority>
+        <DiscardLevel>100</DiscardLevel>
+        <DataSources>
+          <RuleDataSourceItem>
+            <DataSourceId>TriggerEvent</DataSourceId>
+            <DataSourceConfig>&lt;ComputerName&gt;.&lt;/ComputerName&gt;&lt;LogName&gt;OMS Admin Extensions&lt;/LogName&gt;&lt;AllowProxying&gt;true&lt;/AllowProxying&gt;&lt;Expression&gt;&lt;And&gt;&lt;Expression&gt;&lt;SimpleExpression&gt;&lt;ValueExpression&gt;&lt;XPathQuery Type="UnsignedInteger"&gt;EventDisplayNumber&lt;/XPathQuery&gt;&lt;/ValueExpression&gt;&lt;Operator&gt;Equal&lt;/Operator&gt;&lt;ValueExpression&gt;&lt;Value Type="UnsignedInteger"&gt;5105&lt;/Value&gt;&lt;/ValueExpression&gt;&lt;/SimpleExpression&gt;&lt;/Expression&gt;&lt;Expression&gt;&lt;SimpleExpression&gt;&lt;ValueExpression&gt;&lt;XPathQuery Type="String"&gt;PublisherName&lt;/XPathQuery&gt;&lt;/ValueExpression&gt;&lt;Operator&gt;Equal&lt;/Operator&gt;&lt;ValueExpression&gt;&lt;Value Type="String"&gt;OMSAdminSetup&lt;/Value&gt;&lt;/ValueExpression&gt;&lt;/SimpleExpression&gt;&lt;/Expression&gt;&lt;Expression&gt;&lt;SimpleExpression&gt;&lt;ValueExpression&gt;&lt;XPathQuery&gt;Params/Param[1]&lt;/XPathQuery&gt;&lt;/ValueExpression&gt;&lt;Operator&gt;Equal&lt;/Operator&gt;&lt;ValueExpression&gt;&lt;Value&gt;Generate Admin Pack For $Target/Property[Type="System!System.Entity"]/DisplayName$&lt;/Value&gt;&lt;/ValueExpression&gt;&lt;/SimpleExpression&gt;&lt;/Expression&gt;&lt;/And&gt;&lt;/Expression&gt;</DataSourceConfig>
+            <DataSourceType>Windows!Microsoft.Windows.EventProvider</DataSourceType>
+          </RuleDataSourceItem>
+        </DataSources>
+        <ConditionDetectionId>CD</ConditionDetectionId>
+        <WriteActions>
+          <RuleWriteActionItem>
+            <WriteActionId>WA</WriteActionId>
+            <WriteActionConfig>&lt;SolutionName&gt;$Target/Property[Type="System!System.Entity"]/DisplayName$&lt;/SolutionName&gt;&lt;ShouldCreateGroups&gt;false&lt;/ShouldCreateGroups&gt;&lt;ShouldOverrideAtClass&gt;false&lt;/ShouldOverrideAtClass&gt;&lt;SolutionID&gt;$Target/Id$&lt;/SolutionID&gt;</WriteActionConfig>
+            <WriteActionRunAs>P2PAdmin!P2P.OMSAdministration.SDKRunAs</WriteActionRunAs>
+            <WriteActionType>P2P.OMSAdministration.Discoveries.GenerateMP</WriteActionType>
+            <WriteActionTarget />
+          </RuleWriteActionItem>
+        </WriteActions>
+      </CustomRuleConfig>
+    </Instance>
+    <Instance ID="Instance7353644ddda34391aa400cd27cbfbf06" Type="Microsoft.SystemCenter.Authoring.CodeGeneration.Monitoring.CustomRule" Version="1.0.0.0">
+      <CustomRuleConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+        <Id>GenerateAdminLog</Id>
+        <DisplayName>Generate Admin Log</DisplayName>
+        <Description>Generates the OMS Admin Extensions Log</Description>
+        <Category>Operations</Category>
+        <ConfirmDelivery>false</ConfirmDelivery>
+        <Target>P2PAdmin!P2P.OMSAdministration.Classes.OMSInstallation</Target>
+        <Enabled>true</Enabled>
+        <Remotable>true</Remotable>
+        <Priority>Normal</Priority>
+        <DiscardLevel>100</DiscardLevel>
+        <DataSources>
+          <RuleDataSourceItem>
+            <DataSourceId>Sched</DataSourceId>
+            <DataSourceConfig>&lt;IntervalSeconds&gt;86400&lt;/IntervalSeconds&gt;&lt;SyncTime&gt;&lt;/SyncTime&gt;</DataSourceConfig>
+            <DataSourceType>System!System.SimpleScheduler</DataSourceType>
+          </RuleDataSourceItem>
+        </DataSources>
+        <ConditionDetectionId>CD</ConditionDetectionId>
+        <WriteActions>
+          <RuleWriteActionItem>
+            <WriteActionId>WA</WriteActionId>
+            <WriteActionConfig>&lt;ScriptName&gt;Generate OMS Admin Logs.PS1&lt;/ScriptName&gt;&lt;ScriptBody&gt;$IncludeFileContent/Scripts/GenerateAdminLog.ps1$&lt;/ScriptBody&gt;&lt;TimeoutSeconds&gt;300&lt;/TimeoutSeconds&gt;</WriteActionConfig>
+            <WriteActionType>Windows!Microsoft.Windows.PowerShellWriteAction</WriteActionType>
+            <WriteActionTarget />
+          </RuleWriteActionItem>
+        </WriteActions>
+      </CustomRuleConfig>
+    </Instance>
+    <Instance ID="Instance5cf98fa3cd4d40f5a17991b3be50b6fa" Type="Microsoft.SystemCenter.Authoring.CodeGeneration.Monitoring.CustomRule" Version="1.0.0.0">
+      <CustomRuleConfig xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <Id>GenerateShellMP.WithParameters</Id>
+        <DisplayName>Generate Override MPs With Parameters</DisplayName>
+        <Description>Generate Override MPs, Nothing Else Should reference the Sealed packs from MS</Description>
+        <Category>Operations</Category>
+        <ConfirmDelivery>false</ConfirmDelivery>
+        <Target>P2PAdmin!P2P.OMSAdministration.Classes.OMSSolution</Target>
+        <Enabled>false</Enabled>
+        <Remotable>true</Remotable>
+        <Priority>Normal</Priority>
+        <DiscardLevel>100</DiscardLevel>
+        <DataSources>
+          <RuleDataSourceItem>
+            <DataSourceId>Sched</DataSourceId>
+            <DataSourceConfig>&lt;IntervalSeconds&gt;86400&lt;/IntervalSeconds&gt;&lt;SyncTime&gt;&lt;/SyncTime&gt;</DataSourceConfig>
+            <DataSourceType>System!System.SimpleScheduler</DataSourceType>
+          </RuleDataSourceItem>
+        </DataSources>
+        <ConditionDetectionId>CD</ConditionDetectionId>
+        <WriteActions>
+          <RuleWriteActionItem>
+            <WriteActionId>WA</WriteActionId>
+            <WriteActionConfig>&lt;SolutionName&gt;$Target/Property[Type="System!System.Entity"]/DisplayName$&lt;/SolutionName&gt;&lt;ShouldCreateGroups&gt;false&lt;/ShouldCreateGroups&gt;&lt;ShouldOverrideAtClass&gt;false&lt;/ShouldOverrideAtClass&gt;&lt;SolutionID&gt;$Target/Id$&lt;/SolutionID&gt;</WriteActionConfig>
+            <WriteActionRunAs>P2PAdmin!P2P.OMSAdministration.SDKRunAs</WriteActionRunAs>
+            <WriteActionType>P2P.OMSAdministration.Discoveries.GenerateMP</WriteActionType>
+            <WriteActionTarget />
+          </RuleWriteActionItem>
+        </WriteActions>
+      </CustomRuleConfig>
+    </Instance>
+  </Instances>
+</TemplateGroup>

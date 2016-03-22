@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <ProjectGuid>{76790664-9940-4566-a5ff-459ed9508c7c}</ProjectGuid>
+    <RootNamespace>P2P.OMSAdministration.AutomatedPack.DoNotModify</RootNamespace>
+    <Name>P2P.OMSAdministration.AutomatedPack.DoNotModify</Name>
+    <ManagementPackName>P2P.OMSAdministration.AutomatedPack.DoNotModify</ManagementPackName>
+    <Version>1.5.0.0</Version>
+    <MpFrameworkVersion>v7.0.2</MpFrameworkVersion>
+    <MpFrameworkProfile>OM</MpFrameworkProfile>
+    <ProductVersion>1.1.0.0</ProductVersion>
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\builds\debug\</OutputPath>
+    <GenerateSealed>False</GenerateSealed>
+    <Company>Practice 2 Perfect</Company>
+    <Copyright>Practice2Perfect 2016</Copyright>
+    <DelaySigning>False</DelaySigning>
+    <AssemblyOriginatorKeyFile>C:\Users\fore0\Google Drive\TripleEIT Code\Practice 2 Perfect Blog\P2PKey.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>false</DebugSymbols>
+    <OutputPath>..\builds\Release\</OutputPath>
+    <DelaySigning>False</DelaySigning>
+    <Company>Practice 2 Perfect</Company>
+    <Copyright>Practice 2 Perfect 2016</Copyright>
+    <DelaySign>false</DelaySign>
+    <AssemblyOriginatorKeyFile>C:\Users\fore0\Google Drive\TripleEIT Code\Practice 2 Perfect Blog\P2PKey.snk</AssemblyOriginatorKeyFile>
+    <GenerateSealed>False</GenerateSealed>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Override Pack Behavior.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ManagementPackReference Include="Microsoft.IntelligencePacks.InstanceSubscription">
+      <HintPath>C:\Users\fore0\Source\Repos\OMS Administration Packs\Pack Dependances\Microsoft.IntelligencePack.Core_635930487030113045.mpb</HintPath>
+      <Alias>MII</Alias>
+      <MinVersion>7.0.10476.0</MinVersion>
+      <PackageToBundle>False</PackageToBundle>
+    </ManagementPackReference>
+    <ManagementPackReference Include="Microsoft.IntelligencePacks.Monitoring">
+      <HintPath>C:\Users\fore0\Source\Repos\OMS Administration Packs\Pack Dependances\Microsoft.IntelligencePack.Core_635930487030113045.mpb</HintPath>
+      <Alias>MIM</Alias>
+      <MinVersion>7.0.10476.0</MinVersion>
+      <PackageToBundle>False</PackageToBundle>
+    </ManagementPackReference>
+    <ManagementPackReference Include="Microsoft.IntelligencePacks.Types">
+      <HintPath>C:\Users\fore0\Source\Repos\OMS Administration Packs\Pack Dependances\Microsoft.IntelligencePack.Core_635930487030113045.mpb</HintPath>
+      <Alias>IPTypes</Alias>
+      <MinVersion>7.0.10476.0</MinVersion>
+      <PackageToBundle>False</PackageToBundle>
+    </ManagementPackReference>
+    <ManagementPackReference Include="Microsoft.SystemCenter.Advisor">
+      <HintPath>C:\Users\fore0\Source\Repos\OMS Administration Packs\Pack Dependances\Microsoft.SystemCenter.Advisor.mpb</HintPath>
+      <Alias>MSA</Alias>
+      <MinVersion>7.1.10226.0</MinVersion>
+    </ManagementPackReference>
+    <ManagementPackReference Include="Microsoft.SystemCenter.Advisor.Core">
+      <HintPath>C:\Users\fore0\Source\Repos\OMS Administration Packs\Pack Dependances\Microsoft.SystemCenter.Advisor.Core.mpb</HintPath>
+      <Alias>MSAC</Alias>
+      <MinVersion>1.2.1269.0</MinVersion>
+    </ManagementPackReference>
+    <ManagementPackReference Include="Microsoft.SystemCenter.Library">
+      <HintPath>C:\Program Files (x86)\System Center Visual Studio Authoring Extensions\References\OM2012R2\Microsoft.SystemCenter.Library.mp</HintPath>
+      <Alias>SystemCenter</Alias>
+      <MinVersion>7.0.8433.0</MinVersion>
+      <PackageToBundle>False</PackageToBundle>
+    </ManagementPackReference>
+    <ManagementPackReference Include="System.Library">
+      <HintPath>C:\Program Files (x86)\System Center Visual Studio Authoring Extensions\References\OM2012R2\System.Library.mp</HintPath>
+      <Alias>System</Alias>
+      <MinVersion>7.5.8501.0</MinVersion>
+    </ManagementPackReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\P2P.OMS.Administration.Monitoring\P2P.OMS.Administration.Monitoring.mpproj">
+      <Name>P2P.OMS.Administration.Monitoring</Name>
+      <Project>{833a16d8-fadc-41b3-8dbb-0b5e890ee210}</Project>
+      <Private>True</Private>
+      <Alias>P2PAdminMonitoring</Alias>
+    </ProjectReference>
+    <ProjectReference Include="..\P2P.OMSAdministration.Discoveries\P2P.OMSAdministration.Discoveries.mpproj">
+      <Name>P2P.OMSAdministration.Discoveries</Name>
+      <Project>{1dcc55be-2ddd-4092-98e9-0d4eec626d14}</Project>
+      <Private>True</Private>
+      <Alias>P2PAdminDiscovery</Alias>
+    </ProjectReference>
+    <ProjectReference Include="..\P2P.OMSAdministration\P2P.OMSAdministration.mpproj">
+      <Name>P2P.OMSAdministration</Name>
+      <Project>{99ac06be-614a-4537-ac9c-2361c75e9951}</Project>
+      <Private>True</Private>
+      <Alias>P2PAdmin</Alias>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VSAC\Microsoft.SystemCenter.OperationsManager.targets" />
+</Project>

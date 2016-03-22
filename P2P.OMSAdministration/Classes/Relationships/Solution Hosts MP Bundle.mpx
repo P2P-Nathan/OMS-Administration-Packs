@@ -1,0 +1,22 @@
+﻿<ManagementPackFragment SchemaVersion="2.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <TypeDefinitions>
+    <EntityTypes>
+      <RelationshipTypes>
+        <RelationshipType ID="P2P.OMSAdministration.Relationships.SolutionHostsManagementPackBundle" Base="System!System.Hosting" Abstract="false" Accessibility="Public">
+          <Source ID="Source" Type="P2P.OMSAdministration.Classes.OMSSolution"/>
+          <Target ID="Target" Type="P2P.OMSAdministration.Classes.OMSManagementPackBundle"/>
+        </RelationshipType>
+      </RelationshipTypes>
+    </EntityTypes>
+  </TypeDefinitions>
+  <LanguagePacks>
+    <LanguagePack ID="ENU" IsDefault="true">
+      <DisplayStrings>
+        <DisplayString ElementID="P2P.OMSAdministration.Relationships.SolutionHostsManagementPackBundle">
+          <Name>Solution Hosts Management Pack Bundle Relationship</Name>
+          <Description></Description>
+        </DisplayString>
+      </DisplayStrings>
+    </LanguagePack>
+  </LanguagePacks>
+</ManagementPackFragment>

@@ -1,0 +1,101 @@
+<TemplateGroup>
+  <Instances>
+    <Instance ID="Instance6c1c5a56733548f9bec84f5281939c53" Type="Microsoft.SystemCenter.Authoring.CodeGeneration.Monitoring.AggregateMonitor" Version="1.0.0.0">
+      <AggregateMonitorConfig xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <Algorithm>WorstOf</Algorithm>
+        <ParentMonitor>Health!System.Health.ConfigurationState</ParentMonitor>
+        <Accessibility>Internal</Accessibility>
+        <Id>SolutionsHealthyRollUp</Id>
+        <DisplayName>OMS Solution Health</DisplayName>
+        <Description>Represents the Health of All OMS Solutions</Description>
+        <Target>P2PAdmin!P2P.OMSAdministration.Classes.OMSInstallation</Target>
+        <Enabled>true</Enabled>
+        <Category>AvailabilityHealth</Category>
+        <Remotable>true</Remotable>
+        <Priority>Normal</Priority>
+        <AlertAutoResolve>true</AlertAutoResolve>
+        <AlertOnState>None</AlertOnState>
+        <AlertPriority>Normal</AlertPriority>
+        <AlertSeverity>MatchMonitorHealth</AlertSeverity>
+      </AggregateMonitorConfig>
+    </Instance>
+    <Instance ID="Instanceb703b1daeeb5494fa62991f9510696fc" Type="Microsoft.SystemCenter.Authoring.CodeGeneration.Monitoring.DependencyMonitor" Version="1.0.0.0">
+      <DependencyMonitorConfig xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <Algorithm>
+          <Algorithm>WorstOf</Algorithm>
+          <AlgorithmParameter>0</AlgorithmParameter>
+        </Algorithm>
+        <MemberMonitor>Health!System.Health.ConfigurationState</MemberMonitor>
+        <MemberInMaintenance>Ignore</MemberInMaintenance>
+        <MemberUnavailable>Ignore</MemberUnavailable>
+        <RelationshipType>P2PAdmin!P2P.OMSAdministration.Relationships.BundleHostsManagementPacks</RelationshipType>
+        <ParentMonitor>Health!System.Health.ConfigurationState</ParentMonitor>
+        <Accessibility>Internal</Accessibility>
+        <Id>MPHealth</Id>
+        <DisplayName>MP Health</DisplayName>
+        <Description>Solutions Depend on Bundles</Description>
+        <Target>P2PAdmin!P2P.OMSAdministration.Classes.OMSManagementPackBundle</Target>
+        <Enabled>true</Enabled>
+        <Category>ConfigurationHealth</Category>
+        <Remotable>true</Remotable>
+        <Priority>Normal</Priority>
+        <AlertAutoResolve>true</AlertAutoResolve>
+        <AlertOnState>None</AlertOnState>
+        <AlertPriority>Normal</AlertPriority>
+        <AlertSeverity>MatchMonitorHealth</AlertSeverity>
+      </DependencyMonitorConfig>
+    </Instance>
+    <Instance ID="Instance4cb63ac9433546d78aed04b3da78288c" Type="Microsoft.SystemCenter.Authoring.CodeGeneration.Monitoring.DependencyMonitor" Version="1.0.0.0">
+      <DependencyMonitorConfig xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <Algorithm>
+          <Algorithm>WorstOf</Algorithm>
+          <AlgorithmParameter>0</AlgorithmParameter>
+        </Algorithm>
+        <MemberMonitor>Health!System.Health.ConfigurationState</MemberMonitor>
+        <MemberInMaintenance>Ignore</MemberInMaintenance>
+        <MemberUnavailable>Ignore</MemberUnavailable>
+        <RelationshipType>P2PAdmin!P2P.OMSAdministration.Relationships.OMSInstallationHostsSolution</RelationshipType>
+        <ParentMonitor>Health!System.Health.AvailabilityState</ParentMonitor>
+        <Accessibility>Internal</Accessibility>
+        <Id>InstallSolutionHealth</Id>
+        <DisplayName>Solution Health</DisplayName>
+        <Description>OMS Depends on Each Individual Solution</Description>
+        <Target>P2PAdmin!P2P.OMSAdministration.Classes.OMSInstallation</Target>
+        <Enabled>true</Enabled>
+        <Category>ConfigurationHealth</Category>
+        <Remotable>true</Remotable>
+        <Priority>Normal</Priority>
+        <AlertAutoResolve>true</AlertAutoResolve>
+        <AlertOnState>None</AlertOnState>
+        <AlertPriority>Normal</AlertPriority>
+        <AlertSeverity>MatchMonitorHealth</AlertSeverity>
+      </DependencyMonitorConfig>
+    </Instance>
+    <Instance ID="Instance590a45d96faa469bbd7176dd42517d08" Type="Microsoft.SystemCenter.Authoring.CodeGeneration.Monitoring.DependencyMonitor" Version="1.0.0.0">
+      <DependencyMonitorConfig xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <Algorithm>
+          <Algorithm>WorstOf</Algorithm>
+          <AlgorithmParameter>0</AlgorithmParameter>
+        </Algorithm>
+        <MemberMonitor>Health!System.Health.ConfigurationState</MemberMonitor>
+        <MemberInMaintenance>Ignore</MemberInMaintenance>
+        <MemberUnavailable>Ignore</MemberUnavailable>
+        <RelationshipType>P2PAdmin!P2P.OMSAdministration.Relationships.SolutionHostsManagementPackBundle</RelationshipType>
+        <ParentMonitor>Health!System.Health.ConfigurationState</ParentMonitor>
+        <Accessibility>Internal</Accessibility>
+        <Id>MPBundleHealth</Id>
+        <DisplayName>MP Bundle Health</DisplayName>
+        <Description>Solutions Depend on Bundles</Description>
+        <Target>P2PAdmin!P2P.OMSAdministration.Classes.OMSSolution</Target>
+        <Enabled>true</Enabled>
+        <Category>ConfigurationHealth</Category>
+        <Remotable>true</Remotable>
+        <Priority>Normal</Priority>
+        <AlertAutoResolve>true</AlertAutoResolve>
+        <AlertOnState>None</AlertOnState>
+        <AlertPriority>Normal</AlertPriority>
+        <AlertSeverity>MatchMonitorHealth</AlertSeverity>
+      </DependencyMonitorConfig>
+    </Instance>
+  </Instances>
+</TemplateGroup>

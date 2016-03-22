@@ -1,0 +1,122 @@
+﻿<!-- This file has been automatically generated.
+     Any changes made to this file may be lost the next time it is regenerated. -->
+<ManagementPackFragment SchemaVersion="2.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Monitoring>
+    <Tasks>
+      <Task ID="P2P.OMSAdministration.Tasks.DownloadMPB" Accessibility="Internal" Target="P2PAdmin!P2P.OMSAdministration.Classes.OMSManagementPack" Enabled="true" Timeout="300" Remotable="true">
+        <Category>Maintenance</Category>
+        <WriteAction ID="WA" TypeID="Windows!Microsoft.Windows.PowerShellWriteAction">
+          <ScriptName>DownloadMPBTask.ps1</ScriptName>
+          <ScriptBody>$IncludeFileContent/Scripts/Write Task Trigger Event.ps1$</ScriptBody>
+          <SnapIns />
+          <Parameters>
+            <Parameter>
+              <Name>WhatAction</Name>
+              <Value>Download</Value>
+            </Parameter>
+            <Parameter>
+              <Name>PackName</Name>
+              <Value>$Target/Property[Type="P2PAdmin!P2P.OMSAdministration.Classes.OMSManagementPack"]/MPName$</Value>
+            </Parameter>
+          </Parameters>
+          <TimeoutSeconds>300</TimeoutSeconds>
+        </WriteAction>
+      </Task>
+      <Task ID="P2P.OMSAdministration.Tasks.DeleteMP" Accessibility="Internal" Target="P2PAdmin!P2P.OMSAdministration.Classes.OMSManagementPack" Enabled="true" Timeout="300" Remotable="true">
+        <Category>Maintenance</Category>
+        <WriteAction ID="WA" TypeID="Windows!Microsoft.Windows.PowerShellWriteAction" RunAs="P2PAdmin!P2P.OMSAdministration.SDKRunAs">
+          <ScriptName>Remove MP.ps1</ScriptName>
+          <ScriptBody>$IncludeFileContent/Scripts/Remove MP.ps1$</ScriptBody>
+          <SnapIns />
+          <Parameters>
+            <Parameter>
+              <Name>ManagementPackName</Name>
+              <Value>$Target/Property[Type="P2PAdmin!P2P.OMSAdministration.Classes.OMSManagementPack"]/MPName$</Value>
+            </Parameter>
+            <Parameter>
+              <Name>SolutionName</Name>
+              <Value>$Target/Host/Host/Property[Type="System!System.Entity"]/DisplayName$</Value>
+            </Parameter>
+          </Parameters>
+          <TimeoutSeconds>300</TimeoutSeconds>
+          <StrictErrorHandling>true</StrictErrorHandling>
+        </WriteAction>
+      </Task>
+      <Task ID="P2P.OMSAdministration.Tasks.StartMPGeneration" Accessibility="Internal" Target="P2PAdmin!P2P.OMSAdministration.Classes.OMSSolution" Enabled="true" Timeout="300" Remotable="true">
+        <Category>Maintenance</Category>
+        <WriteAction ID="WA" TypeID="Windows!Microsoft.Windows.PowerShellWriteAction" RunAs="P2PAdmin!P2P.OMSAdministration.SDKRunAs">
+          <ScriptName>Remove MP.ps1</ScriptName>
+          <ScriptBody>$IncludeFileContent/Scripts/TriggerMPGeneration.ps1$</ScriptBody>
+          <SnapIns />
+          <Parameters>
+            <Parameter>
+              <Name>SolutionName</Name>
+              <Value>$Target/Property[Type="System!System.Entity"]/DisplayName$</Value>
+            </Parameter>
+          </Parameters>
+          <TimeoutSeconds>300</TimeoutSeconds>
+          <StrictErrorHandling>true</StrictErrorHandling>
+        </WriteAction>
+      </Task>
+      <Task ID="P2P.OMSAdministration.Tasks.AddOMSCertRef" Accessibility="Internal" Target="SC!Microsoft.SystemCenter.RootManagementServer" Enabled="true" Timeout="300" Remotable="true">
+        <Category>Maintenance</Category>
+        <WriteAction ID="WA" TypeID="Windows!Microsoft.Windows.PowerShellWriteAction" RunAs="P2PAdmin!P2P.OMSAdministration.SDKRunAs">
+          <ScriptName>Add Secure Reference.ps1</ScriptName>
+          <ScriptBody>$IncludeFileContent/Scripts/Add Secure Reference.ps1$</ScriptBody>
+          <SnapIns />
+          <Parameters />
+          <TimeoutSeconds>300</TimeoutSeconds>
+          <StrictErrorHandling>true</StrictErrorHandling>
+        </WriteAction>
+      </Task>
+      <Task ID="P2P.OMSAdministration.Tasks.ScheduleInstall" Accessibility="Internal" Target="P2PAdmin!P2P.OMSAdministration.Classes.OMSManagementPack" Enabled="true" Timeout="300" Remotable="true">
+        <Category>Maintenance</Category>
+        <WriteAction ID="WA" TypeID="P2P.OMSAdministration.Tasks.ScheduledInstallAction">
+          <MPName>$Target/Property[Type="P2PAdmin!P2P.OMSAdministration.Classes.OMSManagementPack"]/MPName$</MPName>
+          <InstallDateTime>01/02/2016 18:50</InstallDateTime>
+        </WriteAction>
+      </Task>
+      <Task ID="P2P.OMSAdministration.Tasks.InstallMPB" Accessibility="Internal" Target="P2PAdmin!P2P.OMSAdministration.Classes.OMSManagementPack" Enabled="true" Timeout="300" Remotable="true">
+        <Category>Maintenance</Category>
+        <WriteAction ID="WA" TypeID="Windows!Microsoft.Windows.PowerShellWriteAction">
+          <ScriptName>InstallMPBTask.ps1</ScriptName>
+          <ScriptBody>$IncludeFileContent/Scripts/Write Task Trigger Event.ps1$</ScriptBody>
+          <SnapIns />
+          <Parameters>
+            <Parameter>
+              <Name>WhatAction</Name>
+              <Value>Install</Value>
+            </Parameter>
+            <Parameter>
+              <Name>PackName</Name>
+              <Value>$Target/Property[Type="P2PAdmin!P2P.OMSAdministration.Classes.OMSManagementPack"]/MPName$</Value>
+            </Parameter>
+          </Parameters>
+          <TimeoutSeconds>300</TimeoutSeconds>
+        </WriteAction>
+      </Task>
+    </Tasks>
+  </Monitoring>
+  <LanguagePacks>
+    <LanguagePack ID="ENU" IsDefault="true">
+      <DisplayStrings>
+        <DisplayString ElementID="P2P.OMSAdministration.Tasks.DownloadMPB">
+          <Name>Download MPB from OMS</Name>
+          <Description>Download an MPB From OMS Online to Your ManagementGroup</Description>
+        </DisplayString>
+        <DisplayString ElementID="P2P.OMSAdministration.Tasks.DeleteMP">
+          <Name>Remove OMS MP</Name>
+          <Description>Removes the Targeted MP From Your ManagementGroup</Description>
+        </DisplayString>
+        <DisplayString ElementID="P2P.OMSAdministration.Tasks.AddOMSCertRef">
+          <Name>Add OMS Admin Secure References</Name>
+          <Description>Adds the OMS Access Certificate to the Run-As Profile for the OMS Administration MP</Description>
+        </DisplayString>
+        <DisplayString ElementID="P2P.OMSAdministration.Tasks.InstallMPB">
+          <Name>Install MPB from OMS</Name>
+          <Description>Install an MPB From OMS Online to Your ManagementGroup</Description>
+        </DisplayString>
+      </DisplayStrings>
+    </LanguagePack>
+  </LanguagePacks>
+</ManagementPackFragment>

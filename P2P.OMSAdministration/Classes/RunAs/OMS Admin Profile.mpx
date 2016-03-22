@@ -1,0 +1,27 @@
+﻿<ManagementPackFragment SchemaVersion="2.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <TypeDefinitions>
+    <SecureReferences>
+      <SecureReference ID="P2P.OMSAdministration.CertificateRunAs" Accessibility="Public" Context="System!System.Entity"/>
+      <SecureReference ID="P2P.OMSAdministration.ProxyAcctRunAs" Accessibility="Public" Context="System!System.Entity"/>
+      <SecureReference ID="P2P.OMSAdministration.SDKRunAs" Accessibility="Public" Context="System!System.Entity"/>
+    </SecureReferences>
+  </TypeDefinitions>
+  <LanguagePacks>
+    <LanguagePack ID="ENU" IsDefault="true">
+      <DisplayStrings>
+        <DisplayString ElementID="P2P.OMSAdministration.CertificateRunAs">
+          <Name>OMS Administration Certificate Profile</Name>
+          <Description>Credentials for Querying OMS for New Management Packs.</Description>
+        </DisplayString>
+        <DisplayString ElementID="P2P.OMSAdministration.ProxyAcctRunAs">
+          <Name>OMS Administration Proxy Profile</Name>
+          <Description>Credentials for Communicating through a Proxy and Querying OMS for New Management Packs.</Description>
+        </DisplayString>
+        <DisplayString ElementID="P2P.OMSAdministration.SDKRunAs">
+          <Name>OMS Administration SDK Account</Name>
+          <Description>Credentials used for Adding,Removing, and Querying Management Packs</Description>
+        </DisplayString>
+      </DisplayStrings>
+    </LanguagePack>
+  </LanguagePacks>
+</ManagementPackFragment>

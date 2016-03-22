@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ManagementPackFragment SchemaVersion="2.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><LanguagePacks>
+    <LanguagePack ID="ENU" IsDefault="true">
+      <DisplayStrings>
+        <DisplayString ElementID="P2P.OMSAdministration.Discoveries.GenerateMP">
+          <Name>Generate Override Management Pack</Name>
+          <Description>Generate Override Management Pack</Description>
+        </DisplayString>
+        <DisplayString ElementID="P2P.OMSAdministration.Discoveries.GenerateMP" SubElementID="GroupCreationOverride">
+          <Name>Create Groups?</Name>
+        </DisplayString>
+        <DisplayString ElementID="P2P.OMSAdministration.Discoveries.GenerateMP" SubElementID="ClassOverrideOverride">
+          <Name>Override at Class?</Name>
+        </DisplayString>
+        <DisplayString ElementID="P2P.OMSAdministration.Discoveries.DiscoverBundles">
+          <Name>MPB Discovery</Name>
+          <Description>Discovers MPBs from OMS</Description>
+        </DisplayString>
+        <DisplayString ElementID="P2P.OMSAdministration.Discoveries.DiscoverMPs">
+          <Name>Discover OMS MPs</Name>
+          <Description>Discover OMS MPs</Description>
+        </DisplayString>
+        <DisplayString ElementID="P2P.OMSAdministration.Discoveries.DiscoverSolutions">
+          <Name>OMS Solution Discovery</Name>
+          <Description>Discover OMS Solutions</Description>
+        </DisplayString>
+      </DisplayStrings>
+    </LanguagePack>
+  </LanguagePacks></ManagementPackFragment>

@@ -1,0 +1,24 @@
+﻿<ManagementPackFragment SchemaVersion="2.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <TypeDefinitions>
+    <EntityTypes>
+      <ClassTypes>
+        <ClassType ID="P2P.OMSAdministration.Classes.OMSSolution" Base="System!System.Entity" Accessibility="Public" Abstract="false" Hosted="true" Singleton="false">
+          <Property ID="URLPath" Key="true" Type="string" />
+        </ClassType>
+      </ClassTypes>
+    </EntityTypes>
+  </TypeDefinitions>
+  <LanguagePacks>
+    <LanguagePack ID="ENU" IsDefault="true">
+      <DisplayStrings>
+        <DisplayString ElementID="P2P.OMSAdministration.Classes.OMSSolution">
+          <Name>OMS Solution</Name>
+          <Description>Management Pack from the OMS Instance in Azure</Description>
+        </DisplayString>
+        <DisplayString ElementID="P2P.OMSAdministration.Classes.OMSSolution" SubElementID="URLPath">
+          <Name>URL Path</Name>
+        </DisplayString>
+      </DisplayStrings>
+    </LanguagePack>
+  </LanguagePacks>
+</ManagementPackFragment>

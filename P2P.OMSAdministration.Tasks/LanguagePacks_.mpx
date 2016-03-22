@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ManagementPackFragment SchemaVersion="2.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><LanguagePacks>
+    <LanguagePack ID="ENU" IsDefault="true">
+      <DisplayStrings>
+        <DisplayString ElementID="P2P.OMSAdministration.Tasks.ScheduledInstallAction">
+          <Name>Schedule MP Install</Name>
+          <Description>Schedule a Install of the Targeted MP for a later time</Description>
+        </DisplayString>
+        <DisplayString ElementID="P2P.OMSAdministration.Tasks.ScheduledInstallAction" SubElementID="InstallationDateTime">
+          <Name>Installation Time</Name>
+          <Description>Use a Standard time that System.DateTime can Parse</Description>
+        </DisplayString>
+        <DisplayString ElementID="P2P.OMSAdministration.Tasks.DownloadRule">
+          <Name>Event Triggered MP Download Rule</Name>
+          <Description>Event Triggered Rule performs the Download of OMS MP</Description>
+        </DisplayString>
+        <DisplayString ElementID="P2P.OMSAdministration.Tasks.InstallRule">
+          <Name>Event Triggered MPB Install</Name>
+          <Description>Event Triggered Rule installs the OMS MPB</Description>
+        </DisplayString>
+        <DisplayString ElementID="P2P.OMSAdministration.Tasks.StartMPGeneration">
+          <Name>Force Override Pack Generation/Update</Name>
+          <Description>Forces the generation or update of the matching override pack.</Description>
+        </DisplayString>
+        <DisplayString ElementID="P2P.OMSAdministration.Tasks.ScheduleInstall">
+          <Name>Schedule MP Install</Name>
+          <Description>Schedule a MP Install</Description>
+        </DisplayString>
+      </DisplayStrings>
+    </LanguagePack>
+  </LanguagePacks></ManagementPackFragment>

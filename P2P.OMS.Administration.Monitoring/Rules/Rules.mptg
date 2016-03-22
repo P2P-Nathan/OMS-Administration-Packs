@@ -1,0 +1,61 @@
+<TemplateGroup>
+  <Instances>
+    <Instance ID="Instancead122e8e2c2b461a804a5ac5069aa36f" Type="Microsoft.SystemCenter.Authoring.CodeGeneration.Monitoring.CustomRule" Version="1.0.0.0">
+      <CustomRuleConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+        <Id>ScanOMSManagementPacks</Id>
+        <DisplayName>Scan OMS Management Packs</DisplayName>
+        <Description>Compares the On-Site environment to OMS and Logs findings into the OperationsManager Log</Description>
+        <Category>Operations</Category>
+        <ConfirmDelivery>false</ConfirmDelivery>
+        <Target>P2PAdmin!P2P.OMSAdministration.Classes.OMSInstallation</Target>
+        <Enabled>true</Enabled>
+        <Remotable>true</Remotable>
+        <Priority>Normal</Priority>
+        <DiscardLevel>100</DiscardLevel>
+        <DataSources>
+          <RuleDataSourceItem>
+            <DataSourceId>Sched</DataSourceId>
+            <DataSourceConfig>&lt;IntervalSeconds&gt;300&lt;/IntervalSeconds&gt;&lt;SyncTime&gt;&lt;/SyncTime&gt;</DataSourceConfig>
+            <DataSourceType>System!System.SimpleScheduler</DataSourceType>
+          </RuleDataSourceItem>
+        </DataSources>
+        <ConditionDetectionId>CD</ConditionDetectionId>
+        <WriteActions>
+          <RuleWriteActionItem>
+            <WriteActionId>WA</WriteActionId>
+            <WriteActionConfig>&lt;ScriptName&gt;ScanOMSPacks.PS1&lt;/ScriptName&gt;&lt;ScriptBody&gt;$IncludeFileContent/Scripts/CheckOMSMPStates.ps1$&lt;/ScriptBody&gt;&lt;Parameters&gt;&lt;Parameter&gt;&lt;Name&gt;certificateString&lt;/Name&gt;&lt;Value&gt;$RunAs[Name="P2PAdmin!P2P.OMSAdministration.CertificateRunAs"]/Data$&lt;/Value&gt;&lt;/Parameter&gt;&lt;Parameter&gt;&lt;Name&gt;proxyUserName&lt;/Name&gt;&lt;Value&gt;$RunAs[Name="P2PAdmin!P2P.OMSAdministration.ProxyAcctRunAs"]/UserName$&lt;/Value&gt;&lt;/Parameter&gt;&lt;Parameter&gt;&lt;Name&gt;ProxyUserPassword&lt;/Name&gt;&lt;Value&gt;$RunAs[Name="P2PAdmin!P2P.OMSAdministration.ProxyAcctRunAs"]/Password$&lt;/Value&gt;&lt;/Parameter&gt;&lt;Parameter&gt;&lt;Name&gt;ProxyUserDomain&lt;/Name&gt;&lt;Value&gt;$RunAs[Name="P2PAdmin!P2P.OMSAdministration.ProxyAcctRunAs"]/Domain$&lt;/Value&gt;&lt;/Parameter&gt;&lt;Parameter&gt;&lt;Name&gt;FilePaths&lt;/Name&gt;&lt;Value&gt;$FileResource[Name="P2PAdmin!P2P.OMSAdministration.AdvisorCommon"]/Path$,$FileResource[Name="P2PAdmin!P2P.OMSAdministration.AdvisorCore"]/Path$&lt;/Value&gt;&lt;/Parameter&gt;&lt;/Parameters&gt;&lt;TimeoutSeconds&gt;300&lt;/TimeoutSeconds&gt;</WriteActionConfig>
+            <WriteActionType>Windows!Microsoft.Windows.PowerShellWriteAction</WriteActionType>
+            <WriteActionTarget />
+          </RuleWriteActionItem>
+        </WriteActions>
+      </CustomRuleConfig>
+    </Instance>
+    <Instance ID="Instance59a9da8149d84fea97cf77ba3c847ebf" Type="Microsoft.SystemCenter.Authoring.CodeGeneration.Monitoring.AlertRule" Version="1.0.0.0">
+      <AlertRuleConfig xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <Id>Rules.AlertOnMeChanging</Id>
+        <DisplayName>Alert on OMS MP Changes</DisplayName>
+        <Description>Raises an alert when an event come through matching this MP</Description>
+        <Category>Alert</Category>
+        <ConfirmDelivery>false</ConfirmDelivery>
+        <Target>P2PAdmin!P2P.OMSAdministration.Classes.OMSManagementPack</Target>
+        <Enabled>false</Enabled>
+        <Remotable>true</Remotable>
+        <Priority>Normal</Priority>
+        <DiscardLevel>100</DiscardLevel>
+        <DataSources>
+          <RuleDataSourceItem>
+            <DataSourceId>DS</DataSourceId>
+            <DataSourceConfig>&lt;LogName&gt;Operations Manager&lt;/LogName&gt;&lt;AllowProxying&gt;true&lt;/AllowProxying&gt;&lt;Expression&gt;&lt;And&gt;&lt;Expression&gt;&lt;SimpleExpression&gt;&lt;ValueExpression&gt;&lt;XPathQuery Type="UnsignedInteger"&gt;EventDisplayNumber&lt;/XPathQuery&gt;&lt;/ValueExpression&gt;&lt;Operator&gt;Equal&lt;/Operator&gt;&lt;ValueExpression&gt;&lt;Value Type="UnsignedInteger"&gt;1201&lt;/Value&gt;&lt;/ValueExpression&gt;&lt;/SimpleExpression&gt;&lt;/Expression&gt;&lt;Expression&gt;&lt;SimpleExpression&gt;&lt;ValueExpression&gt;&lt;XPathQuery Type="String"&gt;PublisherName&lt;/XPathQuery&gt;&lt;/ValueExpression&gt;&lt;Operator&gt;Equal&lt;/Operator&gt;&lt;ValueExpression&gt;&lt;Value Type="String"&gt;HealthService&lt;/Value&gt;&lt;/ValueExpression&gt;&lt;/SimpleExpression&gt;&lt;/Expression&gt;&lt;Expression&gt;&lt;SimpleExpression&gt;&lt;ValueExpression&gt;&lt;XPathQuery&gt;Params/Param[1]&lt;/XPathQuery&gt;&lt;/ValueExpression&gt;&lt;Operator&gt;Equal&lt;/Operator&gt;&lt;ValueExpression&gt;&lt;Value&gt;$Target/Property[Type="P2PAdmin!P2P.OMSAdministration.Classes.OMSManagementPack"]/MPName$&lt;/Value&gt;&lt;/ValueExpression&gt;&lt;/SimpleExpression&gt;&lt;/Expression&gt;&lt;/And&gt;&lt;/Expression&gt;</DataSourceConfig>
+            <DataSourceType>Windows!Microsoft.Windows.EventProvider</DataSourceType>
+          </RuleDataSourceItem>
+        </DataSources>
+        <ConditionDetectionId>CD</ConditionDetectionId>
+        <AlertPriority>Normal</AlertPriority>
+        <AlertSeverity>Warning</AlertSeverity>
+        <AlertName>An Intelligence Pack has been added or updated.</AlertName>
+        <AlertDescription>The following management pack was downloaded on the RMS Emulator:
+$Data/EventDescription$</AlertDescription>
+      </AlertRuleConfig>
+    </Instance>
+  </Instances>
+</TemplateGroup>

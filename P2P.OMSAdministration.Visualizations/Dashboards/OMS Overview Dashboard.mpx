@@ -1,0 +1,502 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ManagementPackFragment SchemaVersion="2.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+  <Presentation>
+    <Folders>
+      <Folder ID="Folder_1e6cf07a93bd4ebd8b4227446129e5cb" Accessibility="Public" ParentFolder="SystemCenter!Microsoft.SystemCenter.Monitoring.ViewFolder.Root" />
+    </Folders>
+    <ComponentTypes>
+      <ComponentType ID="UIGenerated_d2b7caf72e774ea48d4c92eb3108bc52_OMSOverview" Accessibility="Public" Base="VizLibrary!Microsoft.SystemCenter.Visualization.GridLayout" Lifetime="ReferenceCount" />
+      <ComponentType ID="UIGenerated_d90a4360e8694d19aaffefb95eef5161_OMSSolutions" Accessibility="Public" Base="VizLibrary!Microsoft.SystemCenter.Visualization.StateWidget" Lifetime="ReferenceCount" />
+      <ComponentType ID="UIGenerated_317561ae36d64c4e96fd88438f02c14e_MPAlerts" Accessibility="Public" Base="SystemCenter2!Microsoft.SystemCenter.Visualization.Component.Library.ContextualAlertWidget" Lifetime="ReferenceCount" />
+      <ComponentType ID="UIGenerated_fc51e922a195475b845d1cf127d978a4_SolutionManagementPacks" Accessibility="Public" Base="SystemCenter2!Microsoft.SystemCenter.Visualization.Component.Library.PowershellGridWidget" Lifetime="ReferenceCount" />
+      <ComponentType ID="UIGenerated_3035a8cd4e9846538299144fb4790177_OMSLiveView" Accessibility="Public" Base="SystemCenter2!Microsoft.SystemCenter.Visualization.Component.Library.WebBrowserWidget" Lifetime="ReferenceCount" />
+      <ComponentType ID="UIGenerated_bc58582dba6243f68841a426257edb39_OMSLiveView" Accessibility="Public" Base="SystemCenter2!Microsoft.SystemCenter.Visualization.Component.Library.PowershellWebBrowserWidget" Lifetime="ReferenceCount" />
+      <ComponentType ID="UIGenerated_f40fe41c2b524c13aebbb6561f26869f_OMSLiveView" Accessibility="Public" Base="SystemCenter2!Microsoft.SystemCenter.Visualization.Component.Library.WebBrowserWidget" Lifetime="ReferenceCount" />
+    </ComponentTypes>
+    <ComponentReferences>
+      <ComponentReference ID="UIGenerated_d2b7caf72e774ea48d4c92eb3108bc52_OMSOverviewReference_93cb6fe9038f48569941b3f297112547" Accessibility="Public" TypeID="UIGenerated_d2b7caf72e774ea48d4c92eb3108bc52_OMSOverview" Parent="Folder_1e6cf07a93bd4ebd8b4227446129e5cb" />
+      <ComponentReference ID="UIGenerated_d90a4360e8694d19aaffefb95eef5161_OMSSolutionsReference_f38a4a238f7248429de21ebd8bbe4b25" Accessibility="Public" TypeID="UIGenerated_d90a4360e8694d19aaffefb95eef5161_OMSSolutions" Parent="UIGenerated_d2b7caf72e774ea48d4c92eb3108bc52_OMSOverview" />
+      <ComponentReference ID="UIGenerated_317561ae36d64c4e96fd88438f02c14e_MPAlertsReference_d152d91a880142f6828d6068071c5866" Accessibility="Public" TypeID="UIGenerated_317561ae36d64c4e96fd88438f02c14e_MPAlerts" Parent="UIGenerated_d2b7caf72e774ea48d4c92eb3108bc52_OMSOverview" />
+      <ComponentReference ID="UIGenerated_fc51e922a195475b845d1cf127d978a4_SolutionManagementPacksReference_b7831569c8ab475b810a17117e25dbc4" Accessibility="Public" TypeID="UIGenerated_fc51e922a195475b845d1cf127d978a4_SolutionManagementPacks" Parent="UIGenerated_d2b7caf72e774ea48d4c92eb3108bc52_OMSOverview" />
+      <ComponentReference ID="UIGenerated_3035a8cd4e9846538299144fb4790177_OMSLiveViewReference_30ca2cf2cde14a249f4f4498fa3e262b" Accessibility="Public" TypeID="UIGenerated_3035a8cd4e9846538299144fb4790177_OMSLiveView" Parent="UIGenerated_d2b7caf72e774ea48d4c92eb3108bc52_OMSOverview" />
+      <ComponentReference ID="UIGenerated_bc58582dba6243f68841a426257edb39_OMSLiveViewReference_67c3b129b88d4bee9edeaf88fac5c164" Accessibility="Public" TypeID="UIGenerated_bc58582dba6243f68841a426257edb39_OMSLiveView" Parent="UIGenerated_d2b7caf72e774ea48d4c92eb3108bc52_OMSOverview" />
+      <ComponentReference ID="UIGenerated_f40fe41c2b524c13aebbb6561f26869f_OMSLiveViewReference_da928e93e9324deca783851c4abffa74" Accessibility="Public" TypeID="UIGenerated_f40fe41c2b524c13aebbb6561f26869f_OMSLiveView" Parent="UIGenerated_d2b7caf72e774ea48d4c92eb3108bc52_OMSOverview" />
+    </ComponentReferences>
+    <ComponentOverrides>
+      <ComponentOverride ID="UIGenerated_d2b7caf72e774ea48d4c92eb3108bc52_OMSOverviewOverride" TypeID="UIGenerated_d2b7caf72e774ea48d4c92eb3108bc52_OMSOverview">
+        <Bindings>
+          <Binding PropertyId="ConfigType">
+            <SimpleValue Type="xsd://string" Value="Microsoft.SystemCenter.Visualization.Library!GridLayout04CellBigBottomConfig" />
+          </Binding>
+          <Binding PropertyId="CellRegionMappings">
+            <ComplexValueCollection Type="xsd://Microsoft.SystemCenter.Visualization.Library!Microsoft.SystemCenter.Visualization.LayoutConfig/CellRegionMapping[]">
+              <ComplexValue Type="xsd://Microsoft.SystemCenter.Visualization.Library!Microsoft.SystemCenter.Visualization.LayoutConfig/CellRegionMapping">
+                <Binding PropertyId="RegionContent">
+                  <SimpleValue Type="xsd://string" Value="P2P.OMSAdministration.Visualizations!UIGenerated_d90a4360e8694d19aaffefb95eef5161_OMSSolutionsReference_f38a4a238f7248429de21ebd8bbe4b25" />
+                </Binding>
+                <Binding PropertyId="RegionId">
+                  <SimpleValue Type="xsd://string" Value="UIGeneratedRegion_04b1d41ee3784b28911918a1ad13f2a0" />
+                </Binding>
+                <Binding PropertyId="RegionParameters" />
+                <Binding PropertyId="CellIndex">
+                  <SimpleValue Type="xsd://int" Value="0" />
+                </Binding>
+              </ComplexValue>
+              <ComplexValue Type="xsd://Microsoft.SystemCenter.Visualization.Library!Microsoft.SystemCenter.Visualization.LayoutConfig/CellRegionMapping">
+                <Binding PropertyId="RegionContent">
+                  <SimpleValue Type="xsd://string" Value="P2P.OMSAdministration.Visualizations!UIGenerated_317561ae36d64c4e96fd88438f02c14e_MPAlertsReference_d152d91a880142f6828d6068071c5866" />
+                </Binding>
+                <Binding PropertyId="RegionId">
+                  <SimpleValue Type="xsd://string" Value="UIGeneratedRegion_2a5ef13db8634f769c02862d6a2804cd" />
+                </Binding>
+                <Binding PropertyId="RegionParameters" />
+                <Binding PropertyId="CellIndex">
+                  <SimpleValue Type="xsd://int" Value="1" />
+                </Binding>
+              </ComplexValue>
+              <ComplexValue Type="xsd://Microsoft.SystemCenter.Visualization.Library!Microsoft.SystemCenter.Visualization.LayoutConfig/CellRegionMapping">
+                <Binding PropertyId="RegionContent">
+                  <SimpleValue Type="xsd://string" Value="P2P.OMSAdministration.Visualizations!UIGenerated_fc51e922a195475b845d1cf127d978a4_SolutionManagementPacksReference_b7831569c8ab475b810a17117e25dbc4" />
+                </Binding>
+                <Binding PropertyId="RegionId">
+                  <SimpleValue Type="xsd://string" Value="UIGeneratedRegion_c6ab744f26b74c398456d53c18ed7fb4" />
+                </Binding>
+                <Binding PropertyId="RegionParameters" />
+                <Binding PropertyId="CellIndex">
+                  <SimpleValue Type="xsd://int" Value="2" />
+                </Binding>
+              </ComplexValue>
+              <ComplexValue Type="xsd://Microsoft.SystemCenter.Visualization.Library!Microsoft.SystemCenter.Visualization.LayoutConfig/CellRegionMapping">
+                <Binding PropertyId="RegionContent">
+                  <SimpleValue Type="xsd://string" Value="P2P.OMSAdministration.Visualizations!UIGenerated_f40fe41c2b524c13aebbb6561f26869f_OMSLiveViewReference_da928e93e9324deca783851c4abffa74" />
+                </Binding>
+                <Binding PropertyId="RegionId">
+                  <SimpleValue Type="xsd://string" Value="UIGeneratedRegion_9de8c1e3d7d54a73837b3d6aa30c61ba" />
+                </Binding>
+                <Binding PropertyId="RegionParameters" />
+                <Binding PropertyId="CellIndex">
+                  <SimpleValue Type="xsd://int" Value="3" />
+                </Binding>
+              </ComplexValue>
+            </ComplexValueCollection>
+          </Binding>
+        </Bindings>
+      </ComponentOverride>
+      <ComponentOverride ID="UIGenerated_d90a4360e8694d19aaffefb95eef5161_OMSSolutionsOverride" TypeID="UIGenerated_d90a4360e8694d19aaffefb95eef5161_OMSSolutions" Context="/P2P.OMSAdministration.Visualizations!UIGenerated_d2b7caf72e774ea48d4c92eb3108bc52_OMSOverview/Microsoft.SystemCenter.Visualization.Library!Microsoft.SystemCenter.Visualization.GridLayout/Microsoft.SystemCenter.Visualization.Library!Microsoft.SystemCenter.Visualization.GridLayout/UIGeneratedRegion_04b1d41ee3784b28911918a1ad13f2a0/Microsoft.SystemCenter.Visualization.Library!ComposedRegion/P2P.OMSAdministration.Visualizations!UIGenerated_d90a4360e8694d19aaffefb95eef5161_OMSSolutions/">
+        <Bindings>
+          <Binding PropertyId="BaseManagementPackTypes">
+            <ComplexValueCollection Type="xsd://Microsoft.SystemCenter.Visualization.Library!Microsoft.SystemCenter.Visualization.OperationalDataTypes/BaseManagementPackType[]">
+              <ComplexValue Type="xsd://Microsoft.SystemCenter.Visualization.Library!Microsoft.SystemCenter.Visualization.OperationalDataTypes/BaseManagementPackType">
+                <Binding PropertyId="FullyQualifiedName">
+                  <SimpleValue Type="xsd://string" Value="P2P.OMSAdministration!P2P.OMSAdministration.Classes.OMSSolution" />
+                </Binding>
+              </ComplexValue>
+            </ComplexValueCollection>
+          </Binding>
+          <Binding PropertyId="ShowSearchBar">
+            <SimpleValue Type="xsd://boolean" Value="True" />
+          </Binding>
+          <Binding PropertyId="Columns">
+            <ComplexValueCollection Type="xsd://Microsoft.SystemCenter.Visualization.Library!Microsoft.SystemCenter.Visualization.ColumnType/DataGridColumn[]">
+              <ComplexValue Type="xsd://Microsoft.SystemCenter.Visualization.Library!Microsoft.SystemCenter.Visualization.ColumnType/DataGridColumn">
+                <Binding PropertyId="HeaderDisplayObject">
+                  <SimpleValue Type="xsd://string" Value="$MPReference/Microsoft.SystemCenter.Visualization.Library!Microsoft.SystemCenter.Visualization.Library.Entity.HealthState/DisplayName$" />
+                </Binding>
+                <Binding PropertyId="SortableGroupable">
+                  <SimpleValue Type="xsd://boolean" Value="True" />
+                </Binding>
+                <Binding PropertyId="CanResize">
+                  <SimpleValue Type="xsd://boolean" Value="True" />
+                </Binding>
+                <Binding PropertyId="Width">
+                  <SimpleValue Type="xsd://string" Value="Auto" />
+                </Binding>
+                <Binding PropertyId="PropertyName">
+                  <SimpleValue Type="xsd://string" Value="HealthState" />
+                </Binding>
+                <Binding PropertyId="XPath">
+                  <SimpleValue Type="xsd://string" Value="$Object/Property[Name='HealthState']$" />
+                </Binding>
+                <Binding PropertyId="SourceType">
+                  <SimpleValue Type="xsd://string" Value="ManagedEntity" />
+                </Binding>
+              </ComplexValue>
+              <ComplexValue Type="xsd://Microsoft.SystemCenter.Visualization.Library!Microsoft.SystemCenter.Visualization.ColumnType/DataGridColumn">
+                <Binding PropertyId="PropertyName">
+                  <SimpleValue Type="xsd://string" Value="DisplayName" />
+                </Binding>
+                <Binding PropertyId="HeaderDisplayObject">
+                  <SimpleValue Type="xsd://string" Value="Display Name" />
+                </Binding>
+                <Binding PropertyId="CellComponentType">
+                  <SimpleValue Type="xsd://string" Value="" />
+                </Binding>
+                <Binding PropertyId="XPath">
+                  <SimpleValue Type="xsd://string" Value="$Object/PropertyCollection[Name='DisplayName']$" />
+                </Binding>
+                <Binding PropertyId="SourceType">
+                  <SimpleValue Type="xsd://string" Value="ManagedEntity" />
+                </Binding>
+                <Binding PropertyId="HeaderComponentType">
+                  <SimpleValue Type="xsd://string" Value="" />
+                </Binding>
+                <Binding PropertyId="SortableGroupable">
+                  <SimpleValue Type="xsd://boolean" Value="True" />
+                </Binding>
+                <Binding PropertyId="CanResize">
+                  <SimpleValue Type="xsd://boolean" Value="True" />
+                </Binding>
+                <Binding PropertyId="Width">
+                  <SimpleValue Type="xsd://string" Value="Auto" />
+                </Binding>
+              </ComplexValue>
+            </ComplexValueCollection>
+          </Binding>
+          <Binding PropertyId="SortedColumns">
+            <ComplexValueCollection Type="xsd://Microsoft.SystemCenter.Visualization.Library!Microsoft.SystemCenter.Visualization.ColumnType/DataCollectionViewColumn[]">
+              <ComplexValue Type="xsd://Microsoft.SystemCenter.Visualization.Library!Microsoft.SystemCenter.Visualization.ColumnType/DataCollectionViewColumn">
+                <Binding PropertyId="PropertyName">
+                  <SimpleValue Type="xsd://string" Value="DisplayName" />
+                </Binding>
+                <Binding PropertyId="HeaderDisplayObject">
+                  <SimpleValue Type="xsd://string" Value="Display Name" />
+                </Binding>
+                <Binding PropertyId="SortDirection">
+                  <SimpleValue Type="xsd://string" Value="Ascending" />
+                </Binding>
+                <Binding PropertyId="XPath">
+                  <SimpleValue Type="xsd://string" Value="$Object/PropertyCollection[Name='DisplayName']$" />
+                </Binding>
+                <Binding PropertyId="SourceType">
+                  <SimpleValue Type="xsd://string" Value="ManagedEntity" />
+                </Binding>
+              </ComplexValue>
+            </ComplexValueCollection>
+          </Binding>
+        </Bindings>
+      </ComponentOverride>
+      <ComponentOverride ID="UIGenerated_317561ae36d64c4e96fd88438f02c14e_MPAlertsOverride" TypeID="UIGenerated_317561ae36d64c4e96fd88438f02c14e_MPAlerts" Context="/P2P.OMSAdministration.Visualizations!UIGenerated_d2b7caf72e774ea48d4c92eb3108bc52_OMSOverview/Microsoft.SystemCenter.Visualization.Library!Microsoft.SystemCenter.Visualization.GridLayout/Microsoft.SystemCenter.Visualization.Library!Microsoft.SystemCenter.Visualization.GridLayout/UIGeneratedRegion_2a5ef13db8634f769c02862d6a2804cd/Microsoft.SystemCenter.Visualization.Library!ComposedRegion/P2P.OMSAdministration.Visualizations!UIGenerated_317561ae36d64c4e96fd88438f02c14e_MPAlerts/">
+        <Bindings>
+          <Binding PropertyId="Criteria">
+            <SimpleValue Type="xsd://string" Value="&#xA;  &lt;ResolutionState&gt;&#xA;    &lt;State&gt;0&lt;/State&gt;&#xA;    &lt;State&gt;5&lt;/State&gt;&#xA;    &lt;State&gt;10&lt;/State&gt;&#xA;    &lt;State&gt;15&lt;/State&gt;&#xA;    &lt;State&gt;50&lt;/State&gt;&#xA;    &lt;State&gt;60&lt;/State&gt;&#xA;    &lt;State&gt;70&lt;/State&gt;&#xA;    &lt;State&gt;90&lt;/State&gt;&#xA;    &lt;State&gt;120&lt;/State&gt;&#xA;    &lt;State&gt;150&lt;/State&gt;&#xA;    &lt;State&gt;180&lt;/State&gt;&#xA;    &lt;State&gt;210&lt;/State&gt;&#xA;    &lt;State&gt;247&lt;/State&gt;&#xA;    &lt;State&gt;248&lt;/State&gt;&#xA;    &lt;State&gt;249&lt;/State&gt;&#xA;    &lt;State&gt;250&lt;/State&gt;&#xA;    &lt;State&gt;254&lt;/State&gt;&#xA;  &lt;/ResolutionState&gt;&#xA;" />
+          </Binding>
+          <Binding PropertyId="Columns">
+            <ComplexValueCollection Type="xsd://Microsoft.SystemCenter.Visualization.Library!Microsoft.SystemCenter.Visualization.ColumnType/DataGridColumn[]">
+              <ComplexValue Type="xsd://Microsoft.SystemCenter.Visualization.Library!Microsoft.SystemCenter.Visualization.ColumnType/DataGridColumn">
+                <Binding PropertyId="HeaderDisplayObject">
+                  <SimpleValue Type="xsd://string" Value="$MPReference/Microsoft.SystemCenter.Visualization.Library!OperationalDataTypes.AlertType.Severity/DisplayName$" />
+                </Binding>
+                <Binding PropertyId="SortableGroupable">
+                  <SimpleValue Type="xsd://boolean" Value="True" />
+                </Binding>
+                <Binding PropertyId="CanResize">
+                  <SimpleValue Type="xsd://boolean" Value="False" />
+                </Binding>
+                <Binding PropertyId="Width">
+                  <SimpleValue Type="xsd://string" Value="Auto" />
+                </Binding>
+                <Binding PropertyId="PropertyName">
+                  <SimpleValue Type="xsd://string" Value="Severity" />
+                </Binding>
+                <Binding PropertyId="XPath">
+                  <SimpleValue Type="xsd://string" Value="$Object/Property[Name='Severity']$" />
+                </Binding>
+                <Binding PropertyId="SourceType">
+                  <SimpleValue Type="xsd://string" Value="Alert" />
+                </Binding>
+              </ComplexValue>
+              <ComplexValue Type="xsd://Microsoft.SystemCenter.Visualization.Library!Microsoft.SystemCenter.Visualization.ColumnType/DataGridColumn">
+                <Binding PropertyId="HeaderDisplayObject">
+                  <SimpleValue Type="xsd://string" Value="$MPReference/Microsoft.SystemCenter.Visualization.Library!OperationalDataTypes.AlertType.MonitoringObjectDisplayName/DisplayName$" />
+                </Binding>
+                <Binding PropertyId="SortableGroupable">
+                  <SimpleValue Type="xsd://boolean" Value="True" />
+                </Binding>
+                <Binding PropertyId="CanResize">
+                  <SimpleValue Type="xsd://boolean" Value="True" />
+                </Binding>
+                <Binding PropertyId="Width">
+                  <SimpleValue Type="xsd://string" Value="Auto" />
+                </Binding>
+                <Binding PropertyId="PropertyName">
+                  <SimpleValue Type="xsd://string" Value="MonitoringObjectDisplayName" />
+                </Binding>
+                <Binding PropertyId="XPath">
+                  <SimpleValue Type="xsd://string" Value="$Object/Property[Name='MonitoringObjectDisplayName']$" />
+                </Binding>
+                <Binding PropertyId="SourceType">
+                  <SimpleValue Type="xsd://string" Value="Alert" />
+                </Binding>
+              </ComplexValue>
+              <ComplexValue Type="xsd://Microsoft.SystemCenter.Visualization.Library!Microsoft.SystemCenter.Visualization.ColumnType/DataGridColumn">
+                <Binding PropertyId="HeaderDisplayObject">
+                  <SimpleValue Type="xsd://string" Value="$MPReference/Microsoft.SystemCenter.Visualization.Library!OperationalDataTypes.AlertType.Name/DisplayName$" />
+                </Binding>
+                <Binding PropertyId="SortableGroupable">
+                  <SimpleValue Type="xsd://boolean" Value="True" />
+                </Binding>
+                <Binding PropertyId="CanResize">
+                  <SimpleValue Type="xsd://boolean" Value="True" />
+                </Binding>
+                <Binding PropertyId="Width">
+                  <SimpleValue Type="xsd://string" Value="Auto" />
+                </Binding>
+                <Binding PropertyId="PropertyName">
+                  <SimpleValue Type="xsd://string" Value="Name" />
+                </Binding>
+                <Binding PropertyId="XPath">
+                  <SimpleValue Type="xsd://string" Value="$Object/Property[Name='Name']$" />
+                </Binding>
+                <Binding PropertyId="SourceType">
+                  <SimpleValue Type="xsd://string" Value="Alert" />
+                </Binding>
+              </ComplexValue>
+              <ComplexValue Type="xsd://Microsoft.SystemCenter.Visualization.Library!Microsoft.SystemCenter.Visualization.ColumnType/DataGridColumn">
+                <Binding PropertyId="HeaderDisplayObject">
+                  <SimpleValue Type="xsd://string" Value="$MPReference/Microsoft.SystemCenter.Visualization.Library!OperationalDataTypes.AlertType.Age/DisplayName$" />
+                </Binding>
+                <Binding PropertyId="SortableGroupable">
+                  <SimpleValue Type="xsd://boolean" Value="False" />
+                </Binding>
+                <Binding PropertyId="CanResize">
+                  <SimpleValue Type="xsd://boolean" Value="True" />
+                </Binding>
+                <Binding PropertyId="Width">
+                  <SimpleValue Type="xsd://string" Value="Auto" />
+                </Binding>
+                <Binding PropertyId="PropertyName">
+                  <SimpleValue Type="xsd://string" Value="Age" />
+                </Binding>
+                <Binding PropertyId="XPath">
+                  <SimpleValue Type="xsd://string" Value="$Object/Property[Name='Age']$" />
+                </Binding>
+                <Binding PropertyId="SourceType">
+                  <SimpleValue Type="xsd://string" Value="Alert" />
+                </Binding>
+              </ComplexValue>
+              <ComplexValue Type="xsd://Microsoft.SystemCenter.Visualization.Library!Microsoft.SystemCenter.Visualization.ColumnType/DataGridColumn">
+                <Binding PropertyId="HeaderDisplayObject">
+                  <SimpleValue Type="xsd://string" Value="$MPReference/Microsoft.SystemCenter.Visualization.Library!OperationalDataTypes.AlertType.LastModified/DisplayName$" />
+                </Binding>
+                <Binding PropertyId="CellComponentType">
+                  <SimpleValue Type="xsd://string" Value="Microsoft.SystemCenter.Visualization.Library!Microsoft.SystemCenter.Visualization.LocalDateTimeLabel" />
+                </Binding>
+                <Binding PropertyId="GroupHeaderComponentType">
+                  <SimpleValue Type="xsd://string" Value="Microsoft.SystemCenter.Visualization.Library!Microsoft.SystemCenter.Visualization.LocalDateTimeLabel" />
+                </Binding>
+                <Binding PropertyId="SortableGroupable">
+                  <SimpleValue Type="xsd://boolean" Value="True" />
+                </Binding>
+                <Binding PropertyId="CanResize">
+                  <SimpleValue Type="xsd://boolean" Value="False" />
+                </Binding>
+                <Binding PropertyId="Width">
+                  <SimpleValue Type="xsd://string" Value="Auto" />
+                </Binding>
+                <Binding PropertyId="PropertyName">
+                  <SimpleValue Type="xsd://string" Value="LastModified" />
+                </Binding>
+                <Binding PropertyId="XPath">
+                  <SimpleValue Type="xsd://string" Value="$Object/Property[Name='LastModified']$" />
+                </Binding>
+                <Binding PropertyId="SourceType">
+                  <SimpleValue Type="xsd://string" Value="Alert" />
+                </Binding>
+              </ComplexValue>
+              <ComplexValue Type="xsd://Microsoft.SystemCenter.Visualization.Library!Microsoft.SystemCenter.Visualization.ColumnType/DataGridColumn">
+                <Binding PropertyId="HeaderDisplayObject">
+                  <SimpleValue Type="xsd://string" Value="$MPReference/Microsoft.SystemCenter.Visualization.Library!OperationalDataTypes.AlertType.ResolutionState/DisplayName$" />
+                </Binding>
+                <Binding PropertyId="SortableGroupable">
+                  <SimpleValue Type="xsd://boolean" Value="True" />
+                </Binding>
+                <Binding PropertyId="CanResize">
+                  <SimpleValue Type="xsd://boolean" Value="True" />
+                </Binding>
+                <Binding PropertyId="Width">
+                  <SimpleValue Type="xsd://string" Value="Auto" />
+                </Binding>
+                <Binding PropertyId="PropertyName">
+                  <SimpleValue Type="xsd://string" Value="ResolutionStateDisplayName" />
+                </Binding>
+                <Binding PropertyId="XPath">
+                  <SimpleValue Type="xsd://string" Value="$Object/Property[Name='ResolutionStateDisplayName']$" />
+                </Binding>
+                <Binding PropertyId="SourceType">
+                  <SimpleValue Type="xsd://string" Value="Alert" />
+                </Binding>
+              </ComplexValue>
+            </ComplexValueCollection>
+          </Binding>
+          <Binding PropertyId="SortedColumns">
+            <ComplexValueCollection Type="xsd://Microsoft.SystemCenter.Visualization.Library!Microsoft.SystemCenter.Visualization.ColumnType/DataCollectionViewColumn[]">
+              <ComplexValue Type="xsd://Microsoft.SystemCenter.Visualization.Library!Microsoft.SystemCenter.Visualization.ColumnType/DataCollectionViewColumn">
+                <Binding PropertyId="PropertyName">
+                  <SimpleValue Type="xsd://string" Value="Severity" />
+                </Binding>
+                <Binding PropertyId="HeaderDisplayObject">
+                  <SimpleValue Type="xsd://string" Value="$MPReference/Microsoft.SystemCenter.Visualization.Library!OperationalDataTypes.AlertType.Severity/DisplayName$" />
+                </Binding>
+                <Binding PropertyId="SortDirection">
+                  <SimpleValue Type="xsd://string" Value="Ascending" />
+                </Binding>
+                <Binding PropertyId="XPath">
+                  <SimpleValue Type="xsd://string" Value="$Object/Property[Name='Severity']$" />
+                </Binding>
+                <Binding PropertyId="SourceType">
+                  <SimpleValue Type="xsd://string" Value="Alert" />
+                </Binding>
+              </ComplexValue>
+              <ComplexValue Type="xsd://Microsoft.SystemCenter.Visualization.Library!Microsoft.SystemCenter.Visualization.ColumnType/DataCollectionViewColumn">
+                <Binding PropertyId="HeaderDisplayObject">
+                  <SimpleValue Type="xsd://string" Value="$MPReference/Microsoft.SystemCenter.Visualization.Library!OperationalDataTypes.AlertType.LastModified/DisplayName$" />
+                </Binding>
+                <Binding PropertyId="CellComponentType">
+                  <SimpleValue Type="xsd://string" Value="Microsoft.SystemCenter.Visualization.Library!Microsoft.SystemCenter.Visualization.LocalDateTimeLabel" />
+                </Binding>
+                <Binding PropertyId="GroupHeaderComponentType">
+                  <SimpleValue Type="xsd://string" Value="Microsoft.SystemCenter.Visualization.Library!Microsoft.SystemCenter.Visualization.LocalDateTimeLabel" />
+                </Binding>
+                <Binding PropertyId="SortDirection">
+                  <SimpleValue Type="xsd://string" Value="Descending" />
+                </Binding>
+                <Binding PropertyId="PropertyName">
+                  <SimpleValue Type="xsd://string" Value="LastModified" />
+                </Binding>
+                <Binding PropertyId="XPath">
+                  <SimpleValue Type="xsd://string" Value="$Object/Property[Name='LastModified']$" />
+                </Binding>
+                <Binding PropertyId="SourceType">
+                  <SimpleValue Type="xsd://string" Value="Alert" />
+                </Binding>
+              </ComplexValue>
+            </ComplexValueCollection>
+          </Binding>
+          <Binding PropertyId="EnableInlineDetails">
+            <SimpleValue Type="xsd://boolean" Value="False" />
+          </Binding>
+        </Bindings>
+      </ComponentOverride>
+      <ComponentOverride ID="UIGenerated_fc51e922a195475b845d1cf127d978a4_SolutionManagementPacksOverride" TypeID="UIGenerated_fc51e922a195475b845d1cf127d978a4_SolutionManagementPacks" Context="/P2P.OMSAdministration.Visualizations!UIGenerated_d2b7caf72e774ea48d4c92eb3108bc52_OMSOverview/Microsoft.SystemCenter.Visualization.Library!Microsoft.SystemCenter.Visualization.GridLayout/Microsoft.SystemCenter.Visualization.Library!Microsoft.SystemCenter.Visualization.GridLayout/UIGeneratedRegion_c6ab744f26b74c398456d53c18ed7fb4/Microsoft.SystemCenter.Visualization.Library!ComposedRegion/P2P.OMSAdministration.Visualizations!UIGenerated_fc51e922a195475b845d1cf127d978a4_SolutionManagementPacks/">
+        <Bindings>
+          <Binding PropertyId="Script">
+            <SimpleValue Type="xsd://string" Value="Param($globalSelectedItems)&#xD;&#xA;ForEach ($globalSelectedItem in $globalSelectedItems) {&#xD;&#xA;&#xD;&#xA;$SolName = $globalSelectedItem.ToString()&#xD;&#xA;$SolutionClass = Get-SCOMClass -Name 'P2P.OMSAdministration.Classes.OMSSolution'&#xD;&#xA;$SolutionInstance = Get-SCOMClassInstance -Class $SolutionClass | ? {$_.DisplayName -match $SolName}&#xD;&#xA;&#xD;&#xA;[GUID]$MPHostedByMPBID = 'd2510f2d-fb66-1255-3bb0-f97fb91f1acb'&#xD;&#xA;&#xD;&#xA;$RelatedItems = $SolutionInstance.GetMonitoringRelationshipObjects()| % {($_.TargetObject).GetMonitoringRelationshipObjects()}&#xD;&#xA;$MonitoringTargets = $RelatedItems  | ? {$_.MonitoringRelationshipClassId -eq $MPHostedByMPBID} | Select TargetObject&#xD;&#xA;ForEach ($Targ in $MonitoringTargets)&#xD;&#xA;    {&#xD;&#xA;        $dataObject = $ScriptContext.CreateInstance(&quot;xsd://ok-sandbox.com/MySchema&quot;);&#xD;&#xA;        $dataObject[&quot;Id&quot;] = $Targ.TargetObject.Id.ToString()&#xD;&#xA;        $dataObject[&quot;Management Pack&quot;] = ($Targ.TargetObject.Values | ? {$_.Type.ToString() -match 'MPName'}).ToString()&#xD;&#xA;        $dataObject[&quot;Installed Version&quot;] = ($Targ.TargetObject.Values | ? {$_.Type.ToString() -match 'InstalledVersion'}).ToString()&#xD;&#xA;        $dataObject[&quot;Relased Version&quot;] = ($Targ.TargetObject.Values | ? {$_.Type.ToString() -match 'ReleasedVersion'}).ToString()&#xD;&#xA;        $ScriptContext.ReturnCollection.Add($dataObject)&#xD;&#xA;        &#xD;&#xA;    }}" />
+          </Binding>
+        </Bindings>
+      </ComponentOverride>
+      <ComponentOverride ID="UIGenerated_3035a8cd4e9846538299144fb4790177_OMSLiveViewOverride" TypeID="UIGenerated_3035a8cd4e9846538299144fb4790177_OMSLiveView" Context="/P2P.OMSAdministration.Visualizations!UIGenerated_d2b7caf72e774ea48d4c92eb3108bc52_OMSOverview/Microsoft.SystemCenter.Visualization.Library!Microsoft.SystemCenter.Visualization.GridLayout/Microsoft.SystemCenter.Visualization.Library!Microsoft.SystemCenter.Visualization.GridLayout/UIGeneratedRegion_9de8c1e3d7d54a73837b3d6aa30c61ba/Microsoft.SystemCenter.Visualization.Library!ComposedRegion/P2P.OMSAdministration.Visualizations!UIGenerated_3035a8cd4e9846538299144fb4790177_OMSLiveView/">
+        <Bindings>
+          <Binding PropertyId="Url">
+            <SimpleValue Type="xsd://string" Value="http://mms.microsoft.com" />
+          </Binding>
+        </Bindings>
+      </ComponentOverride>
+      <ComponentOverride ID="UIGenerated_bc58582dba6243f68841a426257edb39_OMSLiveViewOverride" TypeID="UIGenerated_bc58582dba6243f68841a426257edb39_OMSLiveView" Context="/P2P.OMSAdministration.Visualizations!UIGenerated_d2b7caf72e774ea48d4c92eb3108bc52_OMSOverview/Microsoft.SystemCenter.Visualization.Library!Microsoft.SystemCenter.Visualization.GridLayout/Microsoft.SystemCenter.Visualization.Library!Microsoft.SystemCenter.Visualization.GridLayout/UIGeneratedRegion_9de8c1e3d7d54a73837b3d6aa30c61ba/Microsoft.SystemCenter.Visualization.Library!ComposedRegion/P2P.OMSAdministration.Visualizations!UIGenerated_bc58582dba6243f68841a426257edb39_OMSLiveView/">
+        <Bindings>
+          <Binding PropertyId="Script">
+            <SimpleValue Type="xsd://string" Value="Param($globalSelectedItems)&#xD;&#xA;$URL = 'https://mms.microsoft.com'&#xD;&#xA;$dataObject = $ScriptContext.CreateInstance(&quot;xsd://Microsoft.SystemCenter.Visualization.Component.Library!Microsoft.SystemCenter.Visualization.Component.Library.WebBrowser.Schema/Request&quot;) &#xD;&#xA;$dataObject[&quot;BaseUrl&quot;]= $URL&#xD;&#xA;$ScriptContext.ReturnCollection.Add($dataObject)&#xD;&#xA;  " />
+          </Binding>
+        </Bindings>
+      </ComponentOverride>
+      <ComponentOverride ID="UIGenerated_f40fe41c2b524c13aebbb6561f26869f_OMSLiveViewOverride" TypeID="UIGenerated_f40fe41c2b524c13aebbb6561f26869f_OMSLiveView" Context="/P2P.OMSAdministration.Visualizations!UIGenerated_d2b7caf72e774ea48d4c92eb3108bc52_OMSOverview/Microsoft.SystemCenter.Visualization.Library!Microsoft.SystemCenter.Visualization.GridLayout/Microsoft.SystemCenter.Visualization.Library!Microsoft.SystemCenter.Visualization.GridLayout/UIGeneratedRegion_9de8c1e3d7d54a73837b3d6aa30c61ba/Microsoft.SystemCenter.Visualization.Library!ComposedRegion/P2P.OMSAdministration.Visualizations!UIGenerated_f40fe41c2b524c13aebbb6561f26869f_OMSLiveView/">
+        <Bindings>
+          <Binding PropertyId="Url">
+            <SimpleValue Type="xsd://string" Value="https://mms.microsoft.com" />
+          </Binding>
+        </Bindings>
+      </ComponentOverride>
+    </ComponentOverrides>
+    <ComponentImplementations>
+      <ComponentImplementation ID="UIGenerated_d2b7caf72e774ea48d4c92eb3108bc52_OMSOverviewImplementation" Accessibility="Public" TypeId="UIGenerated_d2b7caf72e774ea48d4c92eb3108bc52_OMSOverview" Platform="Wpf, Silverlight">
+        <Composite>
+          <Base />
+        </Composite>
+      </ComponentImplementation>
+      <ComponentImplementation ID="UIGenerated_d90a4360e8694d19aaffefb95eef5161_OMSSolutionsImplementation" Accessibility="Public" TypeId="UIGenerated_d90a4360e8694d19aaffefb95eef5161_OMSSolutions" Platform="Wpf, Silverlight">
+        <Composite>
+          <Base />
+        </Composite>
+      </ComponentImplementation>
+      <ComponentImplementation ID="UIGenerated_317561ae36d64c4e96fd88438f02c14e_MPAlertsImplementation" Accessibility="Public" TypeId="UIGenerated_317561ae36d64c4e96fd88438f02c14e_MPAlerts" Platform="Wpf, Silverlight">
+        <Composite>
+          <Base />
+        </Composite>
+      </ComponentImplementation>
+      <ComponentImplementation ID="UIGenerated_fc51e922a195475b845d1cf127d978a4_SolutionManagementPacksImplementation" Accessibility="Public" TypeId="UIGenerated_fc51e922a195475b845d1cf127d978a4_SolutionManagementPacks" Platform="Wpf, Silverlight">
+        <Composite>
+          <Base />
+        </Composite>
+      </ComponentImplementation>
+      <ComponentImplementation ID="UIGenerated_3035a8cd4e9846538299144fb4790177_OMSLiveViewImplementation" Accessibility="Public" TypeId="UIGenerated_3035a8cd4e9846538299144fb4790177_OMSLiveView" Platform="Wpf, Silverlight">
+        <Composite>
+          <Base />
+        </Composite>
+      </ComponentImplementation>
+      <ComponentImplementation ID="UIGenerated_bc58582dba6243f68841a426257edb39_OMSLiveViewImplementation" Accessibility="Public" TypeId="UIGenerated_bc58582dba6243f68841a426257edb39_OMSLiveView" Platform="Wpf, Silverlight">
+        <Composite>
+          <Base />
+        </Composite>
+      </ComponentImplementation>
+      <ComponentImplementation ID="UIGenerated_f40fe41c2b524c13aebbb6561f26869f_OMSLiveViewImplementation" Accessibility="Public" TypeId="UIGenerated_f40fe41c2b524c13aebbb6561f26869f_OMSLiveView" Platform="Wpf, Silverlight">
+        <Composite>
+          <Base />
+        </Composite>
+      </ComponentImplementation>
+    </ComponentImplementations>
+  </Presentation>
+  <LanguagePacks>
+    <LanguagePack ID="ENU" IsDefault="true">
+      <DisplayStrings>
+        <DisplayString ElementID="P2P.OMSAdministration.Visualizations">
+          <Name>CHRW Custom OMS Administration Visualizations</Name>
+        </DisplayString>
+        <DisplayString ElementID="Folder_1e6cf07a93bd4ebd8b4227446129e5cb">
+          <Name>CHRW OMS Administration</Name>
+        </DisplayString>
+        <DisplayString ElementID="UIGenerated_d2b7caf72e774ea48d4c92eb3108bc52_OMSOverview">
+          <Name>OMS Overview</Name>
+        </DisplayString>
+        <DisplayString ElementID="UIGenerated_d2b7caf72e774ea48d4c92eb3108bc52_OMSOverviewOverride">
+          <Name>OMS Overview</Name>
+          <Description>Overview of OMS Status</Description>
+        </DisplayString>
+        <DisplayString ElementID="UIGenerated_d90a4360e8694d19aaffefb95eef5161_OMSSolutions">
+          <Name>OMS Solutions</Name>
+        </DisplayString>
+        <DisplayString ElementID="UIGenerated_d90a4360e8694d19aaffefb95eef5161_OMSSolutionsOverride">
+          <Name>OMS Solutions</Name>
+        </DisplayString>
+        <DisplayString ElementID="UIGenerated_317561ae36d64c4e96fd88438f02c14e_MPAlerts">
+          <Name>MP Alerts</Name>
+        </DisplayString>
+        <DisplayString ElementID="UIGenerated_317561ae36d64c4e96fd88438f02c14e_MPAlertsOverride">
+          <Name>MP Alerts</Name>
+        </DisplayString>
+        <DisplayString ElementID="UIGenerated_fc51e922a195475b845d1cf127d978a4_SolutionManagementPacks">
+          <Name>Solution Management Packs</Name>
+        </DisplayString>
+        <DisplayString ElementID="UIGenerated_fc51e922a195475b845d1cf127d978a4_SolutionManagementPacksOverride">
+          <Name>Solution Management Packs</Name>
+        </DisplayString>
+        <DisplayString ElementID="UIGenerated_3035a8cd4e9846538299144fb4790177_OMSLiveView">
+          <Name>OMS Live View</Name>
+        </DisplayString>
+        <DisplayString ElementID="UIGenerated_3035a8cd4e9846538299144fb4790177_OMSLiveViewOverride">
+          <Name>OMS Live View</Name>
+        </DisplayString>
+        <DisplayString ElementID="UIGenerated_bc58582dba6243f68841a426257edb39_OMSLiveView">
+          <Name>OMS Live View</Name>
+        </DisplayString>
+        <DisplayString ElementID="UIGenerated_bc58582dba6243f68841a426257edb39_OMSLiveViewOverride">
+          <Name>OMS Live View</Name>
+        </DisplayString>
+        <DisplayString ElementID="UIGenerated_f40fe41c2b524c13aebbb6561f26869f_OMSLiveView">
+          <Name>OMS Live View</Name>
+        </DisplayString>
+        <DisplayString ElementID="UIGenerated_f40fe41c2b524c13aebbb6561f26869f_OMSLiveViewOverride">
+          <Name>OMS Live View</Name>
+        </DisplayString>
+      </DisplayStrings>
+    </LanguagePack>
+  </LanguagePacks>
+</ManagementPackFragment>

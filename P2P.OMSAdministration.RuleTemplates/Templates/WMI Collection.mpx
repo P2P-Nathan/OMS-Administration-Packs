@@ -1,0 +1,116 @@
+﻿<ManagementPackFragment SchemaVersion="2.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Templates>
+
+    <Template ID="P2P.OMSAdministration.RuleTemplates.WMIEventCollection" Purpose="RuleCreation">
+      <Configuration>
+        <xsd:element name="ID" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />
+        <xsd:element name="Name" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />
+        <xsd:element name="Enabled" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />
+        <xsd:element name="Description" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />
+        <xsd:element name="Target" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />
+        <xsd:element name="Category" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />
+        <xsd:element name="LocaleId" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />
+        <xsd:element name="NameSpace" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />
+        <xsd:element name="Query" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />
+        <xsd:element name="PollInterval" type="xsd:integer" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />
+      </Configuration>
+      <References>
+        <Reference ID="Windows" />
+        <Reference ID="SC" />
+        <Reference ID="SCDW" />
+
+        <Reference ID="IPTypes" />
+      </References>
+      <Implementation>
+        <Monitoring>
+          <Rules>
+            <Rule ID="$TemplateConfig/ID$" Target="$TemplateConfig/Target$" Enabled="$TemplateConfig/Enabled$">
+              <Category>$TemplateConfig/Category$</Category>
+              <DataSources>
+                <DataSource ID="WMIDS" TypeID="$Reference/Windows$Microsoft.Windows.WmiEventProvider.EventProvider">
+                  <NameSpace>$TemplateConfig/NameSpace$</NameSpace>
+                  <Query>$TemplateConfig/Query$</Query>
+                  <PollInterval>$TemplateConfig/PollInterval$</PollInterval>
+                </DataSource>
+              </DataSources>
+              <WriteActions>
+                <WriteAction ID="HttpWA" TypeID="$Reference/IPTypes$Microsoft.SystemCenter.CollectCloudGenericEvent" />
+
+              </WriteActions>
+            </Rule>
+          </Rules>
+        </Monitoring>
+        <LanguagePacks>
+          <LanguagePack ID="$TemplateConfig/LocaleId$" IsDefault="true">
+            <DisplayStrings>
+              <DisplayString ElementID="$TemplateConfig/ID$">
+                <Name>$TemplateConfig/Name$</Name>
+                <Description>$TemplateConfig/Description$</Description>
+              </DisplayString>
+            </DisplayStrings>
+          </LanguagePack>
+        </LanguagePacks>
+      </Implementation>
+    </Template>
+    <Template ID="P2P.OMSAdministration.RuleTemplates.WMIPerfCollection" Purpose="RuleCreation">
+      <Configuration>
+        <xsd:element name="ID" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />
+        <xsd:element name="Name" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />
+        <xsd:element name="Enabled" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />
+        <xsd:element name="Description" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />
+        <xsd:element name="Target" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />
+        <xsd:element name="Category" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />
+        <xsd:element name="LocaleId" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />
+        <xsd:element name="NameSpace" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />
+        <xsd:element name="Query" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />
+        <xsd:element name="Frequency" type="xsd:unsignedInt" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />
+        <xsd:element name="ObjectName" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />
+        <xsd:element name="CounterName" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />
+        <xsd:element name="InstanceName" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />
+        <xsd:element name="Value" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />
+      </Configuration>
+      <References>
+        <Reference ID="System" />
+        <Reference ID="Windows" />
+        <Reference ID="SC" />
+        <Reference ID="SCDW" />
+
+        <Reference ID="IPTypes" />
+      </References>
+      <Implementation>
+        <Monitoring>
+          <Rules>
+            <Rule ID="$TemplateConfig/ID$" Target="$TemplateConfig/Target$" Enabled="$TemplateConfig/Enabled$">
+              <Category>$TemplateConfig/Category$</Category>
+              <DataSources>
+                <DataSource ID="DS" TypeID="$Reference/Windows$Microsoft.Windows.WmiPerfCounterProvider">
+                  <NameSpace>$TemplateConfig/NameSpace$</NameSpace>
+                  <Query>$TemplateConfig/Query$</Query>
+                  <Frequency>$TemplateConfig/Frequency$</Frequency>
+                  <ObjectName>$TemplateConfig/ObjectName$</ObjectName>
+                  <CounterName>$TemplateConfig/CounterName$</CounterName>
+                  <InstanceName>$TemplateConfig/InstanceName$</InstanceName>
+                  <Value>$TemplateConfig/Value$</Value>
+                </DataSource>
+              </DataSources>
+              <WriteActions>
+                <WriteAction ID="WriteToDB" TypeID="$Reference/SC$Microsoft.SystemCenter.CollectPerformanceData" />
+                <WriteAction ID="WriteToDW" TypeID="$Reference/SCDW$Microsoft.SystemCenter.DataWarehouse.PublishPerformanceData" />
+              </WriteActions>
+            </Rule>
+          </Rules>
+        </Monitoring>
+        <LanguagePacks>
+          <LanguagePack ID="$TemplateConfig/LocaleId$" IsDefault="true">
+            <DisplayStrings>
+              <DisplayString ElementID="$TemplateConfig/ID$">
+                <Name>$TemplateConfig/Name$</Name>
+                <Description>$TemplateConfig/Description$</Description>
+              </DisplayString>
+            </DisplayStrings>
+          </LanguagePack>
+        </LanguagePacks>
+      </Implementation>
+    </Template>
+  </Templates>
+</ManagementPackFragment>

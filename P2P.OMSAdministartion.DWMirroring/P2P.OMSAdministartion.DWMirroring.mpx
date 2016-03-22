@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ManagementPackFragment SchemaVersion="2.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+  <Monitoring>
+    <Rules>
+      <Rule ID="P2P.OMSAdministartion.DWMirroring.PerformanceCollect" Enabled="false" Target="SystemCenter!Microsoft.SystemCenter.HealthService" ConfirmDelivery="true" Remotable="true" Priority="Normal" DiscardLevel="90">
+        <Category>System</Category>
+        <DataSources>
+          <DataSource ID="PerformanceDS" TypeID="DWLib!Microsoft.SystemCenter.DataWarehouse.PublishedPerformanceDataProviderCustomChannel">
+            <ChannelId>63AFB62D-3376-4102-B6EE-9E88EA49AC46</ChannelId>
+          </DataSource>
+        </DataSources>
+        <WriteActions>
+          <WriteAction ID="WA_OMS" TypeID="P2P.OMSAdministration.Modules.WritePerfToOMS">
+            <ComputerName>$Target/Property[Type="System!System.Entity"]/DisplayName$</ComputerName>
+          </WriteAction>
+          <WriteAction ID="WA_OMS_Agg" TypeID="P2P.OMSAdministration.Modules.WritePerfAggToOMS">
+            <ComputerName>$Target/Property[Type="System!System.Entity"]/DisplayName$</ComputerName>
+          </WriteAction>
+          <WriteAction ID="WA_DW" TypeID="DWLib!Microsoft.SystemCenter.DataWarehouse.PerformanceDataWriter" Target="DWLib!Microsoft.SystemCenter.DataWarehouseConnectorServer">
+            <DataRoutingKey />
+            <BulkInsertBatchSize>5000</BulkInsertBatchSize>
+            <MaxBatchesToProcessBeforeMaintenanceCount>200</MaxBatchesToProcessBeforeMaintenanceCount>
+            <MaxExecutionAttemptCount>0</MaxExecutionAttemptCount>
+            <ExecutionAttemptTimeoutIntervalSeconds>0</ExecutionAttemptTimeoutIntervalSeconds>
+          </WriteAction>
+        </WriteActions>
+      </Rule>
+      <Rule ID="P2P.OMSAdministartion.DWMirroring.EventCollect" Enabled="false" Target="SystemCenter!Microsoft.SystemCenter.HealthService" ConfirmDelivery="true" Remotable="true" Priority="Normal" DiscardLevel="60">
+        <Category>System</Category>
+        <DataSources>
+          <DataSource ID="DS" TypeID="DWLib!Microsoft.SystemCenter.DataWarehouse.PublishedEventDataProviderCustomChannel">
+            <ChannelId>0F4C0747-D344-4880-9EE3-A726BFC1D79A</ChannelId>
+          </DataSource>
+        </DataSources>
+        <WriteActions>
+          <WriteAction ID="WA_OMS" TypeID="System!System.PublishData" RunAs="System!System.PrivilegedMonitoringAccount" Target="SystemCenter!Microsoft.SystemCenter.CollectionManagementServer">
+            <ManagementGroupId>$Target/ManagementGroup/Id$</ManagementGroupId>
+            <ChannelId>58274C2B-A019-4FFA-BDDF-859F004D7BE2</ChannelId>
+          </WriteAction>
+          <WriteAction ID="WA_DW" TypeID="DWLib!Microsoft.SystemCenter.DataWarehouse.EventDataWriter"  Target="DWLib!Microsoft.SystemCenter.DataWarehouseConnectorServer">
+            <DataRoutingKey />
+            <BulkInsertBatchSize>1000</BulkInsertBatchSize>
+            <MaxBatchesToProcessBeforeMaintenanceCount>50</MaxBatchesToProcessBeforeMaintenanceCount>
+            <MaxExecutionAttemptCount>0</MaxExecutionAttemptCount>
+            <ExecutionAttemptTimeoutIntervalSeconds>0</ExecutionAttemptTimeoutIntervalSeconds>
+          </WriteAction>
+        </WriteActions>
+      </Rule>
+    </Rules>
+  </Monitoring>
+</ManagementPackFragment>

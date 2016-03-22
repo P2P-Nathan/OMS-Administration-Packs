@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <ProjectGuid>{99ac06be-614a-4537-ac9c-2361c75e9951}</ProjectGuid>
+    <RootNamespace>P2P.OMSAdministration</RootNamespace>
+    <Name>P2P.OMSAdministration</Name>
+    <ManagementPackName>P2P.OMSAdministration</ManagementPackName>
+    <Version>1.3.2.0</Version>
+    <MpFrameworkVersion>v7.0.2</MpFrameworkVersion>
+    <MpFrameworkProfile>OM</MpFrameworkProfile>
+    <ProductVersion>1.1.0.0</ProductVersion>
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\builds\debug\</OutputPath>
+    <GenerateSealed>True</GenerateSealed>
+    <Company>Practice 2 Perfect</Company>
+    <Copyright>Practice2Perfect 2016</Copyright>
+    <DelaySigning>False</DelaySigning>
+    <AssemblyOriginatorKeyFile>..\P2P_Collaborators.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>false</DebugSymbols>
+    <OutputPath>..\builds\Release\</OutputPath>
+    <DelaySigning>False</DelaySigning>
+    <Company>Practice 2 Perfect</Company>
+    <Copyright>Practice 2 Perfect 2016</Copyright>
+    <DelaySign>false</DelaySign>
+    <AssemblyOriginatorKeyFile>..\P2P_Collaborators.snk</AssemblyOriginatorKeyFile>
+    <GenerateSealed>True</GenerateSealed>
+  </PropertyGroup>
+  <ItemGroup>
+    <ManagementPackReference Include="Microsoft.SystemCenter.Advisor">
+      <HintPath>C:\Users\fore0\Source\Repos\OMS Administration Packs\Pack Dependances\Microsoft.SystemCenter.Advisor.mpb</HintPath>
+      <Alias>MSA</Alias>
+      <MinVersion>7.1.10226.0</MinVersion>
+      <PackageToBundle>False</PackageToBundle>
+    </ManagementPackReference>
+    <ManagementPackReference Include="Microsoft.SystemCenter.Advisor.Core">
+      <HintPath>C:\Users\fore0\Source\Repos\OMS Administration Packs\Pack Dependances\Microsoft.SystemCenter.Advisor.Core.mpb</HintPath>
+      <Alias>MSAC</Alias>
+      <MinVersion>1.2.1269.0</MinVersion>
+      <PackageToBundle>False</PackageToBundle>
+    </ManagementPackReference>
+    <ManagementPackReference Include="Microsoft.SystemCenter.InstanceGroup.Library">
+      <HintPath>C:\Users\fore0\Source\Repos\OMS Administration Packs\Pack Dependances\Microsoft.SystemCenter.InstanceGroup.Library.mp</HintPath>
+      <Alias>MSIL</Alias>
+      <MinVersion>7.5.8501.0</MinVersion>
+      <PackageToBundle>False</PackageToBundle>
+    </ManagementPackReference>
+    <ManagementPackReference Include="Microsoft.SystemCenter.Library">
+      <Alias>SC</Alias>
+      <PackageToBundle>False</PackageToBundle>
+    </ManagementPackReference>
+    <ManagementPackReference Include="Microsoft.SystemCenter.Visualization.Component.Library">
+      <HintPath>C:\Users\fore0\Source\Repos\OMS Administration Packs\Pack Dependances\Microsoft.SystemCenter.Visualization.Component.Library.mpb</HintPath>
+      <Alias>MSVCL</Alias>
+      <MinVersion>7.1.10226.1177</MinVersion>
+      <PackageToBundle>False</PackageToBundle>
+    </ManagementPackReference>
+    <ManagementPackReference Include="Microsoft.Windows.Library">
+      <Alias>Windows</Alias>
+      <PackageToBundle>False</PackageToBundle>
+    </ManagementPackReference>
+    <ManagementPackReference Include="System.Health.Library">
+      <Alias>Health</Alias>
+      <PackageToBundle>False</PackageToBundle>
+    </ManagementPackReference>
+    <ManagementPackReference Include="System.Library">
+      <Alias>System</Alias>
+      <PackageToBundle>False</PackageToBundle>
+    </ManagementPackReference>
+    <ManagementPackReference Include="Microsoft.SystemCenter.Visualization.Library">
+      <Alias>Visualization</Alias>
+      <PackageToBundle>False</PackageToBundle>
+    </ManagementPackReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Classes\OMS Management Pack Bundle Class.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Classes\OMS Installation Class.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Classes\OMS Management Pack Class.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Classes\OMS Solution Class.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Classes\Relationships\Bundle Hosts Management Packs.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Classes\Relationships\OMS Installation hosts Solutions.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Classes\Relationships\RMS Hosts OMS.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Classes\Relationships\Solution Hosts MP Bundle.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Classes\RunAs\OMS Admin Profile.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Groups\Disabled MPBs.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Groups\Enabled MPBs.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PackCore.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Resources\Resources.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Classes" />
+    <Folder Include="Classes\Relationships" />
+    <Folder Include="Classes\RunAs\" />
+    <Folder Include="Groups" />
+    <Folder Include="Resources" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Microsoft.SystemCenter.Advisor.Common.dll">
+      <SubType>Content</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Microsoft.SystemCenter.Advisor.Core.Module.dll">
+      <SubType>Content</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VSAC\Microsoft.SystemCenter.OperationsManager.targets" />
+</Project>

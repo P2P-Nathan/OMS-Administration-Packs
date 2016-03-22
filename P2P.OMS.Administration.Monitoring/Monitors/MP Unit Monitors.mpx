@@ -1,0 +1,357 @@
+﻿<!-- This file has been automatically generated.
+     Any changes made to this file may be lost the next time it is regenerated. -->
+<ManagementPackFragment SchemaVersion="2.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Monitoring>
+    <Monitors>
+      <UnitMonitor ID="P2P.OMS.Administration.Monitoring.ManagementPackNotFound" Accessibility="Public" Enabled="true" Target="P2PAdmin!P2P.OMSAdministration.Classes.OMSManagementPack" ParentMonitorID="Health!System.Health.ConfigurationState" Remotable="true" Priority="Normal" TypeID="Windows!Microsoft.Windows.2SingleEventLog2StateMonitorType" ConfirmDelivery="false">
+        <Category>ConfigurationHealth</Category>
+        <AlertSettings AlertMessage="P2P.OMS.Administration.Monitoring.ManagementPackNotFound.AlertMessage">
+          <AlertOnState>Error</AlertOnState>
+          <AutoResolve>true</AutoResolve>
+          <AlertPriority>Normal</AlertPriority>
+          <AlertSeverity>MatchMonitorHealth</AlertSeverity>
+          <AlertParameters>
+            <AlertParameter1>$Target/Property[Type="P2PAdmin!P2P.OMSAdministration.Classes.OMSManagementPack"]/MPName$</AlertParameter1>
+          </AlertParameters>
+        </AlertSettings>
+        <OperationalStates>
+          <OperationalState ID="FirstEventRaised" MonitorTypeStateID="FirstEventRaised" HealthState="Success" />
+          <OperationalState ID="SecondEventRaised" MonitorTypeStateID="SecondEventRaised" HealthState="Error" />
+        </OperationalStates>
+        <Configuration>
+          <FirstComputerName>.</FirstComputerName>
+          <FirstLogName>OMS Admin Extensions</FirstLogName>
+          <FirstExpression>
+            <And>
+              <Expression>
+                <SimpleExpression>
+                  <ValueExpression>
+                    <XPathQuery Type="UnsignedInteger">EventDisplayNumber</XPathQuery>
+                  </ValueExpression>
+                  <Operator>Equal</Operator>
+                  <ValueExpression>
+                    <Value Type="UnsignedInteger">3712</Value>
+                  </ValueExpression>
+                </SimpleExpression>
+              </Expression>
+              <Expression>
+                <SimpleExpression>
+                  <ValueExpression>
+                    <XPathQuery Type="String">PublisherName</XPathQuery>
+                  </ValueExpression>
+                  <Operator>Equal</Operator>
+                  <ValueExpression>
+                    <Value Type="String">OMSAdminScript</Value>
+                  </ValueExpression>
+                </SimpleExpression>
+              </Expression>
+              <Expression>
+                <SimpleExpression>
+                  <ValueExpression>
+                    <XPathQuery>Params/Param[1]</XPathQuery>
+                  </ValueExpression>
+                  <Operator>Equal</Operator>
+                  <ValueExpression>
+                    <Value>Following MP Is Installed: $Target/Property[Type="P2PAdmin!P2P.OMSAdministration.Classes.OMSManagementPack"]/MPName$</Value>
+                  </ValueExpression>
+                </SimpleExpression>
+              </Expression>
+            </And>
+          </FirstExpression>
+          <SecondComputerName>.</SecondComputerName>
+          <SecondLogName>OMS Admin Extensions</SecondLogName>
+          <SecondExpression>
+            <And>
+              <Expression>
+                <SimpleExpression>
+                  <ValueExpression>
+                    <XPathQuery Type="UnsignedInteger">EventDisplayNumber</XPathQuery>
+                  </ValueExpression>
+                  <Operator>Equal</Operator>
+                  <ValueExpression>
+                    <Value Type="UnsignedInteger">3702</Value>
+                  </ValueExpression>
+                </SimpleExpression>
+              </Expression>
+              <Expression>
+                <SimpleExpression>
+                  <ValueExpression>
+                    <XPathQuery Type="String">PublisherName</XPathQuery>
+                  </ValueExpression>
+                  <Operator>Equal</Operator>
+                  <ValueExpression>
+                    <Value Type="String">OMSAdminScript</Value>
+                  </ValueExpression>
+                </SimpleExpression>
+              </Expression>
+              <Expression>
+                <SimpleExpression>
+                  <ValueExpression>
+                    <XPathQuery>Params/Param[1]</XPathQuery>
+                  </ValueExpression>
+                  <Operator>Equal</Operator>
+                  <ValueExpression>
+                    <Value>Following MP Needs Installation: $Target/Property[Type="P2PAdmin!P2P.OMSAdministration.Classes.OMSManagementPack"]/MPName$</Value>
+                  </ValueExpression>
+                </SimpleExpression>
+              </Expression>
+            </And>
+          </SecondExpression>
+        </Configuration>
+      </UnitMonitor>
+      <UnitMonitor ID="P2P.OMS.Administration.Monitoring.ManagementPackNeedsDeleted" Accessibility="Public" Enabled="true" Target="P2PAdmin!P2P.OMSAdministration.Classes.OMSManagementPack" ParentMonitorID="Health!System.Health.ConfigurationState" Remotable="true" Priority="Normal" TypeID="Windows!Microsoft.Windows.2SingleEventLog2StateMonitorType" ConfirmDelivery="false">
+        <Category>ConfigurationHealth</Category>
+        <AlertSettings AlertMessage="P2P.OMS.Administration.Monitoring.ManagementPackNeedsDeleted.AlertMessage">
+          <AlertOnState>Error</AlertOnState>
+          <AutoResolve>true</AutoResolve>
+          <AlertPriority>Normal</AlertPriority>
+          <AlertSeverity>MatchMonitorHealth</AlertSeverity>
+          <AlertParameters>
+            <AlertParameter1>$Target/Property[Type="P2PAdmin!P2P.OMSAdministration.Classes.OMSManagementPack"]/MPName$</AlertParameter1>
+          </AlertParameters>
+        </AlertSettings>
+        <OperationalStates>
+          <OperationalState ID="FirstEventRaised" MonitorTypeStateID="FirstEventRaised" HealthState="Success" />
+          <OperationalState ID="SecondEventRaised" MonitorTypeStateID="SecondEventRaised" HealthState="Error" />
+        </OperationalStates>
+        <Configuration>
+          <FirstComputerName>.</FirstComputerName>
+          <FirstLogName>OMS Admin Extensions</FirstLogName>
+          <FirstExpression>
+            <And>
+              <Expression>
+                <SimpleExpression>
+                  <ValueExpression>
+                    <XPathQuery Type="UnsignedInteger">EventDisplayNumber</XPathQuery>
+                  </ValueExpression>
+                  <Operator>Equal</Operator>
+                  <ValueExpression>
+                    <Value Type="UnsignedInteger">3711</Value>
+                  </ValueExpression>
+                </SimpleExpression>
+              </Expression>
+              <Expression>
+                <SimpleExpression>
+                  <ValueExpression>
+                    <XPathQuery Type="String">PublisherName</XPathQuery>
+                  </ValueExpression>
+                  <Operator>Equal</Operator>
+                  <ValueExpression>
+                    <Value Type="String">OMSAdminScript</Value>
+                  </ValueExpression>
+                </SimpleExpression>
+              </Expression>
+              <Expression>
+                <SimpleExpression>
+                  <ValueExpression>
+                    <XPathQuery>Params/Param[1]</XPathQuery>
+                  </ValueExpression>
+                  <Operator>Equal</Operator>
+                  <ValueExpression>
+                    <Value>Following MP DOES NOT Need Deletion: $Target/Property[Type="P2PAdmin!P2P.OMSAdministration.Classes.OMSManagementPack"]/MPName$</Value>
+                  </ValueExpression>
+                </SimpleExpression>
+              </Expression>
+            </And>
+          </FirstExpression>
+          <SecondComputerName>.</SecondComputerName>
+          <SecondLogName>OMS Admin Extensions</SecondLogName>
+          <SecondExpression>
+            <And>
+              <Expression>
+                <SimpleExpression>
+                  <ValueExpression>
+                    <XPathQuery Type="UnsignedInteger">EventDisplayNumber</XPathQuery>
+                  </ValueExpression>
+                  <Operator>Equal</Operator>
+                  <ValueExpression>
+                    <Value Type="UnsignedInteger">3701</Value>
+                  </ValueExpression>
+                </SimpleExpression>
+              </Expression>
+              <Expression>
+                <SimpleExpression>
+                  <ValueExpression>
+                    <XPathQuery Type="String">PublisherName</XPathQuery>
+                  </ValueExpression>
+                  <Operator>Equal</Operator>
+                  <ValueExpression>
+                    <Value Type="String">OMSAdminScript</Value>
+                  </ValueExpression>
+                </SimpleExpression>
+              </Expression>
+              <Expression>
+                <SimpleExpression>
+                  <ValueExpression>
+                    <XPathQuery>Params/Param[1]</XPathQuery>
+                  </ValueExpression>
+                  <Operator>Equal</Operator>
+                  <ValueExpression>
+                    <Value>Following MP May Need Deletion: $Target/Property[Type="P2PAdmin!P2P.OMSAdministration.Classes.OMSManagementPack"]/MPName$</Value>
+                  </ValueExpression>
+                </SimpleExpression>
+              </Expression>
+            </And>
+          </SecondExpression>
+        </Configuration>
+      </UnitMonitor>
+      <UnitMonitor ID="P2P.OMS.Administration.Monitoring.ManagementPackVersionCheck" Accessibility="Public" Enabled="true" Target="P2PAdmin!P2P.OMSAdministration.Classes.OMSManagementPack" ParentMonitorID="Health!System.Health.ConfigurationState" Remotable="true" Priority="Normal" TypeID="Windows!Microsoft.Windows.2SingleEventLog2StateMonitorType" ConfirmDelivery="false">
+        <Category>ConfigurationHealth</Category>
+        <AlertSettings AlertMessage="P2P.OMS.Administration.Monitoring.ManagementPackVersionCheck.AlertMessage">
+          <AlertOnState>Warning</AlertOnState>
+          <AutoResolve>true</AutoResolve>
+          <AlertPriority>Normal</AlertPriority>
+          <AlertSeverity>MatchMonitorHealth</AlertSeverity>
+          <AlertParameters>
+            <AlertParameter1>$Target/Property[Type="P2PAdmin!P2P.OMSAdministration.Classes.OMSManagementPack"]/MPName$</AlertParameter1>
+          </AlertParameters>
+        </AlertSettings>
+        <OperationalStates>
+          <OperationalState ID="FirstEventRaised" MonitorTypeStateID="FirstEventRaised" HealthState="Success" />
+          <OperationalState ID="SecondEventRaised" MonitorTypeStateID="SecondEventRaised" HealthState="Warning" />
+        </OperationalStates>
+        <Configuration>
+          <FirstComputerName>.</FirstComputerName>
+          <FirstLogName>OMS Admin Extensions</FirstLogName>
+          <FirstExpression>
+            <And>
+              <Expression>
+                <SimpleExpression>
+                  <ValueExpression>
+                    <XPathQuery Type="UnsignedInteger">EventDisplayNumber</XPathQuery>
+                  </ValueExpression>
+                  <Operator>Equal</Operator>
+                  <ValueExpression>
+                    <Value Type="UnsignedInteger">3713</Value>
+                  </ValueExpression>
+                </SimpleExpression>
+              </Expression>
+              <Expression>
+                <SimpleExpression>
+                  <ValueExpression>
+                    <XPathQuery Type="String">PublisherName</XPathQuery>
+                  </ValueExpression>
+                  <Operator>Equal</Operator>
+                  <ValueExpression>
+                    <Value Type="String">OMSAdminScript</Value>
+                  </ValueExpression>
+                </SimpleExpression>
+              </Expression>
+              <Expression>
+                <SimpleExpression>
+                  <ValueExpression>
+                    <XPathQuery>Params/Param[1]</XPathQuery>
+                  </ValueExpression>
+                  <Operator>Equal</Operator>
+                  <ValueExpression>
+                    <Value>Following MP Version is Good: $Target/Property[Type="P2PAdmin!P2P.OMSAdministration.Classes.OMSManagementPack"]/MPName$</Value>
+                  </ValueExpression>
+                </SimpleExpression>
+              </Expression>
+            </And>
+          </FirstExpression>
+          <SecondComputerName>.</SecondComputerName>
+          <SecondLogName>OMS Admin Extensions</SecondLogName>
+          <SecondExpression>
+            <And>
+              <Expression>
+                <SimpleExpression>
+                  <ValueExpression>
+                    <XPathQuery Type="UnsignedInteger">EventDisplayNumber</XPathQuery>
+                  </ValueExpression>
+                  <Operator>Equal</Operator>
+                  <ValueExpression>
+                    <Value Type="UnsignedInteger">3703</Value>
+                  </ValueExpression>
+                </SimpleExpression>
+              </Expression>
+              <Expression>
+                <SimpleExpression>
+                  <ValueExpression>
+                    <XPathQuery Type="String">PublisherName</XPathQuery>
+                  </ValueExpression>
+                  <Operator>Equal</Operator>
+                  <ValueExpression>
+                    <Value Type="String">OMSAdminScript</Value>
+                  </ValueExpression>
+                </SimpleExpression>
+              </Expression>
+              <Expression>
+                <SimpleExpression>
+                  <ValueExpression>
+                    <XPathQuery>Params/Param[1]</XPathQuery>
+                  </ValueExpression>
+                  <Operator>Equal</Operator>
+                  <ValueExpression>
+                    <Value>Following MP Version is BAD: $Target/Property[Type="P2PAdmin!P2P.OMSAdministration.Classes.OMSManagementPack"]/MPName$</Value>
+                  </ValueExpression>
+                </SimpleExpression>
+              </Expression>
+            </And>
+          </SecondExpression>
+        </Configuration>
+      </UnitMonitor>
+    </Monitors>
+  </Monitoring>
+  <Presentation>
+    <StringResources>
+      <StringResource ID="P2P.OMS.Administration.Monitoring.ManagementPackNotFound.AlertMessage" />
+      <StringResource ID="P2P.OMS.Administration.Monitoring.ManagementPackNeedsDeleted.AlertMessage" />
+      <StringResource ID="P2P.OMS.Administration.Monitoring.ManagementPackVersionCheck.AlertMessage" />
+    </StringResources>
+  </Presentation>
+  <LanguagePacks>
+    <LanguagePack ID="ENU" IsDefault="true">
+      <DisplayStrings>
+        <DisplayString ElementID="P2P.OMS.Administration.Monitoring.ManagementPackNotFound">
+          <Name>Not Found</Name>
+          <Description>Checks to see if we have all of the management packs OMS says we should</Description>
+        </DisplayString>
+        <DisplayString ElementID="P2P.OMS.Administration.Monitoring.ManagementPackNotFound.AlertMessage">
+          <Name>Missing Management Pack</Name>
+          <Description>OMS Has Requested {0} be Installed.</Description>
+        </DisplayString>
+        <DisplayString ElementID="P2P.OMS.Administration.Monitoring.ManagementPackNotFound" SubElementID="FirstEventRaised">
+          <Name>MP Found</Name>
+          <Description>MP Found</Description>
+        </DisplayString>
+        <DisplayString ElementID="P2P.OMS.Administration.Monitoring.ManagementPackNotFound" SubElementID="SecondEventRaised">
+          <Name>MP Missing</Name>
+          <Description>MP Missing</Description>
+        </DisplayString>
+        <DisplayString ElementID="P2P.OMS.Administration.Monitoring.ManagementPackNeedsDeleted">
+          <Name>Needs Deletion</Name>
+          <Description>Alerts when OMS indicates we should delete this management pack.</Description>
+        </DisplayString>
+        <DisplayString ElementID="P2P.OMS.Administration.Monitoring.ManagementPackNeedsDeleted.AlertMessage">
+          <Name>OMS MP Needs Deletion</Name>
+          <Description>OMS Has Requested {0} be deleted.</Description>
+        </DisplayString>
+        <DisplayString ElementID="P2P.OMS.Administration.Monitoring.ManagementPackNeedsDeleted" SubElementID="FirstEventRaised">
+          <Name>MP OK</Name>
+          <Description>MP OK</Description>
+        </DisplayString>
+        <DisplayString ElementID="P2P.OMS.Administration.Monitoring.ManagementPackNeedsDeleted" SubElementID="SecondEventRaised">
+          <Name>MP Needs Deletion</Name>
+          <Description>MP Needs Deletion</Description>
+        </DisplayString>
+        <DisplayString ElementID="P2P.OMS.Administration.Monitoring.ManagementPackVersionCheck">
+          <Name>Up-To-Date</Name>
+          <Description>Checks to see if the Version of the management pack deployed matches that of the one in OMS</Description>
+        </DisplayString>
+        <DisplayString ElementID="P2P.OMS.Administration.Monitoring.ManagementPackVersionCheck.AlertMessage">
+          <Name>OM MP Version Mis-Match</Name>
+          <Description>OMS Has a different version of {0}</Description>
+        </DisplayString>
+        <DisplayString ElementID="P2P.OMS.Administration.Monitoring.ManagementPackVersionCheck" SubElementID="FirstEventRaised">
+          <Name>Version Match</Name>
+          <Description>Version Match</Description>
+        </DisplayString>
+        <DisplayString ElementID="P2P.OMS.Administration.Monitoring.ManagementPackVersionCheck" SubElementID="SecondEventRaised">
+          <Name>Version Mis-Match</Name>
+          <Description>Version Mis-Match</Description>
+        </DisplayString>
+      </DisplayStrings>
+    </LanguagePack>
+  </LanguagePacks>
+</ManagementPackFragment>

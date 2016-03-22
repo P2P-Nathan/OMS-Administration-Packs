@@ -1,0 +1,48 @@
+﻿<ManagementPackFragment SchemaVersion="2.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <TypeDefinitions>
+    <SchemaTypes>
+      <SchemaType ID="P2P.OMSAdministration.RuleTemplates.ManagementPackCategoryType" Accessibility="Internal">
+        <xsd:simpleType name="ManagementPackCategoryType" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="256" />
+            <xsd:minLength value="1" />
+            <xsd:enumeration value="PerformanceCollection" />
+            <xsd:enumeration value="Operations" />
+            <xsd:enumeration value="EventCollection" />
+            <xsd:enumeration value="StateCollection" />
+            <xsd:enumeration value="SoftwareAndUpdates" />
+            <xsd:enumeration value="Alert" />
+            <xsd:enumeration value="System" />
+            <xsd:enumeration value="Custom" />
+            <xsd:enumeration value="AvailabilityHealth" />
+            <xsd:enumeration value="PerformanceHealth" />
+            <xsd:enumeration value="ConfigurationHealth" />
+            <xsd:enumeration value="SecurityHealth" />
+            <xsd:enumeration value="Discovery" />
+            <xsd:enumeration value="Notification" />
+            <xsd:enumeration value="DSIntegration" />
+            <xsd:enumeration value="ConnectorFramework" />
+            <xsd:enumeration value="ExceptionMonitoring" />
+            <xsd:enumeration value="Maintenance" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </SchemaType>
+      <SchemaType ID="P2P.OMSAdministration.RuleTemplates.ManagementPackIdentifiers" Accessibility="Internal">
+        <xsd:simpleType name="ManagementPackUniqueIdentifier" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+          <xsd:restriction base="xsd:ID">
+            <xsd:minLength value="1" />
+            <xsd:maxLength value="256" />
+            <xsd:pattern value="[A-Za-z0-9_\.]+" />
+          </xsd:restriction>
+        </xsd:simpleType>
+        <xsd:simpleType name="ManagementPackLanguageIdentifier" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+          <xsd:restriction base="xsd:string">
+            <xsd:minLength value="1" />
+            <xsd:maxLength value="3" />
+            <xsd:pattern value="[A-Z]+" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </SchemaType>
+    </SchemaTypes>
+  </TypeDefinitions>
+</ManagementPackFragment>

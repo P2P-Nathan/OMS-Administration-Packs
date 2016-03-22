@@ -1,0 +1,142 @@
+﻿<ManagementPackFragment SchemaVersion="2.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Monitoring>
+    <Overrides>
+      <RulePropertyOverride ID="P2P.OMSAdministration.AutomatedPack.MPUpdateOverride" Context="SystemCenter!Microsoft.SystemCenter.ManagementGroup" Enforced="false" Rule="MSA!Microsoft.SystemCenter.Advisor.MPUpdate" Property="Enabled">
+        <Value>true</Value>
+      </RulePropertyOverride>
+      <RulePropertyOverride ID="P2P.OMSAdministration.AutomatedPack.GetIntelPackOverride" Context="SystemCenter!Microsoft.SystemCenter.ManagementGroup" Enforced="false" Rule="MSAC!Microsoft.SystemCenter.Advisor.Core.GetIntelligencePacksRule" Property="Enabled">
+        <Value>true</Value>
+      </RulePropertyOverride>
+      <MonitorPropertyOverride ID="P2P.OMSAdministration.Overrides.DisableMPVersionCheck.ForDisabledMPBs" Context="P2PAdmin!P2P.OMSAdministration.DisabledMPBs.Group" Enforced="false" Monitor="P2PAdminMonitoring!P2P.OMS.Administration.Monitoring.ManagementPackVersionCheck" Property="Enabled">
+        <Value>true</Value>
+      </MonitorPropertyOverride>
+      <MonitorPropertyOverride ID="P2P.OMS.Administration.Monitoring.ManagementPackNeedsDeleted.ForTargetClass.Enabled" Context="P2PAdmin!P2P.OMSAdministration.Classes.OMSManagementPack" Enforced="false" Monitor="P2PAdminMonitoring!P2P.OMS.Administration.Monitoring.ManagementPackNeedsDeleted" Property="Enabled">
+        <Value>true</Value>
+      </MonitorPropertyOverride>
+      <MonitorPropertyOverride ID="P2P.OMS.Administration.Monitoring.ManagementPackNotFound.ForTargetClass.Enabled" Context="P2PAdmin!P2P.OMSAdministration.Classes.OMSManagementPack" Enforced="false" Monitor="P2PAdminMonitoring!P2P.OMS.Administration.Monitoring.ManagementPackNotFound" Property="Enabled">
+        <Value>true</Value>
+      </MonitorPropertyOverride>
+      <MonitorPropertyOverride ID="P2P.OMS.Administration.Monitoring.ManagementPackNotFound.ForTargetClass.GenerateAlert" Context="P2PAdmin!P2P.OMSAdministration.Classes.OMSManagementPack" Enforced="false" Monitor="P2PAdminMonitoring!P2P.OMS.Administration.Monitoring.ManagementPackNotFound" Property="GenerateAlert">
+        <Value>true</Value>
+      </MonitorPropertyOverride>
+      <MonitorPropertyOverride ID="P2P.OMS.Administration.Monitoring.ManagementPackVersionCheck.ForTargetClass.Enabled" Context="P2PAdmin!P2P.OMSAdministration.Classes.OMSManagementPack" Enforced="false" Monitor="P2PAdminMonitoring!P2P.OMS.Administration.Monitoring.ManagementPackVersionCheck" Property="Enabled">
+        <Value>true</Value>
+      </MonitorPropertyOverride>
+      <MonitorPropertyOverride ID="P2P.OMS.Administration.Monitoring.ManagementPackVersionCheck.ForTargetClass.GenerateAlert" Context="P2PAdmin!P2P.OMSAdministration.Classes.OMSManagementPack" Enforced="false" Monitor="P2PAdminMonitoring!P2P.OMS.Administration.Monitoring.ManagementPackVersionCheck" Property="GenerateAlert">
+        <Value>true</Value>
+      </MonitorPropertyOverride>
+      <MonitorPropertyOverride ID="P2P.OMS.Administration.Monitoring.ManagementPackNeedsDeleted.ForTargetClass.GenerateAlert" Context="P2PAdmin!P2P.OMSAdministration.Classes.OMSManagementPack" Enforced="false" Monitor="P2PAdminMonitoring!P2P.OMS.Administration.Monitoring.ManagementPackNeedsDeleted" Property="GenerateAlert">
+        <Value>true</Value>
+      </MonitorPropertyOverride>
+      <RuleConfigurationOverride ID="P2P.OMS.Administration.Discoveries.GenerateShellMPWithParameters.ForTargetClass.ClassOverride" Context="P2PAdmin!P2P.OMSAdministration.Classes.OMSSolution" Enforced="false" Rule="P2PAdminDiscovery!P2P.OMSAdministration.Discoveries.GenerateShellMP.WithParameters" Parameter="ClassOverrideOverride" Module="WA">
+        <Value>false</Value>
+      </RuleConfigurationOverride>
+      <RulePropertyOverride ID="P2P.OMS.Administration.Discoveries.GenerateShellMPWithParameters.ForTargetClass.Enabled" Context="P2PAdmin!P2P.OMSAdministration.Classes.OMSSolution" Enforced="false" Rule="P2PAdminDiscovery!P2P.OMSAdministration.Discoveries.GenerateShellMP.WithParameters" Property="Enabled">
+        <Value>false</Value>
+      </RulePropertyOverride>
+      <RuleConfigurationOverride ID="P2P.OMS.Administration.Discoveries.GenerateShellMPWithParameters.ForTargetClass.GroupOverride" Context="P2PAdmin!P2P.OMSAdministration.Classes.OMSSolution" Enforced="false" Rule="P2PAdminDiscovery!P2P.OMSAdministration.Discoveries.GenerateShellMP.WithParameters" Parameter="GroupCreationOverride" Module="WA">
+        <Value>false</Value>
+      </RuleConfigurationOverride>
+      <RuleConfigurationOverride ID="P2P.OMS.Administration.Discoveries.GenerateShellMPWithParametersEventTriggered.ForTargetClass.ClassOverride" Context="P2PAdmin!P2P.OMSAdministration.Classes.OMSSolution" Enforced="false" Rule="P2PAdminDiscovery!P2P.OMSAdministration.Discoveries.GenerateShellMP.WithParametersEventTriggered" Parameter="ClassOverrideOverride" Module="WA">
+        <Value>false</Value>
+      </RuleConfigurationOverride>
+      <RulePropertyOverride ID="P2P.OMS.Administration.Discoveries.GenerateShellMPWithParametersEventTriggered.ForTargetClass.Enabled" Context="P2PAdmin!P2P.OMSAdministration.Classes.OMSSolution" Enforced="false" Rule="P2PAdminDiscovery!P2P.OMSAdministration.Discoveries.GenerateShellMP.WithParametersEventTriggered" Property="Enabled">
+        <Value>false</Value>
+      </RulePropertyOverride>
+      <RuleConfigurationOverride ID="P2P.OMS.Administration.Discoveries.GenerateShellMPWithParametersEventTriggered.ForTargetClass.GroupOverride" Context="P2PAdmin!P2P.OMSAdministration.Classes.OMSSolution" Enforced="false" Rule="P2PAdminDiscovery!P2P.OMSAdministration.Discoveries.GenerateShellMP.WithParametersEventTriggered" Parameter="GroupCreationOverride" Module="WA">
+        <Value>false</Value>
+      </RuleConfigurationOverride>
+      <RuleConfigurationOverride ID="P2P.OMS.Administration.Discoveries.GenerateShellMPWithParameters.ForTargetClass.SyncTime" Context="P2PAdmin!P2P.OMSAdministration.Classes.OMSSolution" Enforced="false" Rule="P2PAdminDiscovery!P2P.OMSAdministration.Discoveries.GenerateShellMP.WithParameters" Parameter="SyncTime" Module="Sched">
+        <Value>2:00</Value>
+      </RuleConfigurationOverride>
+      <RulePropertyOverride ID="P2P.OMS.Administration.Monitoring.ScanOMSManagementPacks.ForTargetClass.Enabled" Context="P2PAdmin!P2P.OMSAdministration.Classes.OMSInstallation" Enforced="false" Rule="P2PAdminMonitoring!P2P.OMS.Administration.Monitoring.ScanOMSManagementPacks" Property="Enabled">
+        <Value>true</Value>
+      </RulePropertyOverride>
+      <RulePropertyOverride ID="P2P.OMS.Administration.Monitoring.RulesAlertOnMeChanging.ForTargetClass.Enabled" Context="P2PAdmin!P2P.OMSAdministration.Classes.OMSManagementPack" Enforced="false" Rule="P2PAdminMonitoring!P2P.OMS.Administration.Monitoring.Rules.AlertOnMeChanging" Property="Enabled">
+        <Value>false</Value>
+      </RulePropertyOverride>
+    </Overrides>
+  </Monitoring>
+  <LanguagePacks>
+    <LanguagePack ID="ENU" IsDefault="true">
+      <DisplayStrings>
+        <DisplayString ElementID="P2P.OMSAdministration.AutomatedPack.DoNotModify">
+          <Name>CHRW Custom OMSAdministration AutomatedPack DoNotModify</Name>
+          <Description>DO NOT MODIFY!  --  This packs is automatically modified and changes may be lost.</Description>
+        </DisplayString>
+        <DisplayString ElementID="P2P.OMSAdministration.Overrides.DisableMPVersionCheck.ForDisabledMPBs">
+          <Name>NotUsed</Name>
+          <Description>This override disables version monitoring for MPBs that are disabled.</Description>
+        </DisplayString>
+        <DisplayString ElementID="P2P.OMSAdministration.AutomatedPack.MPUpdateOverride">
+          <Name>NotUsed</Name>
+          <Description>This Override Controls the Download Behavior of OMS MPs</Description>
+        </DisplayString>
+        <DisplayString ElementID="P2P.OMSAdministration.AutomatedPack.GetIntelPackOverride">
+          <Name>NotUsed</Name>
+          <Description>This Override Controls the Download Behavior of OMS MPs</Description>
+        </DisplayString>
+        <DisplayString ElementID="P2P.OMS.Administration.Monitoring.ManagementPackNeedsDeleted.ForTargetClass.Enabled">
+          <Name>NotUsed</Name>
+          <Description>Override Controling the Pack Deletion Monitor</Description>
+        </DisplayString>
+        <DisplayString ElementID="P2P.OMS.Administration.Monitoring.ManagementPackNotFound.ForTargetClass.Enabled">
+          <Name>NotUsed</Name>
+          <Description>Override Controlling Missing Pack Monitoring</Description>
+        </DisplayString>
+        <DisplayString ElementID="P2P.OMS.Administration.Monitoring.ManagementPackNotFound.ForTargetClass.GenerateAlert">
+          <Name>NotUsed</Name>
+          <Description>Override Controlling Missing MP Alerting</Description>
+        </DisplayString>
+        <DisplayString ElementID="P2P.OMS.Administration.Monitoring.ManagementPackVersionCheck.ForTargetClass.Enabled">
+          <Name>NotUsed</Name>
+          <Description>Override Controlling Monitoring of MP Version Status</Description>
+        </DisplayString>
+        <DisplayString ElementID="P2P.OMS.Administration.Monitoring.ManagementPackVersionCheck.ForTargetClass.GenerateAlert">
+          <Name>NotUsed</Name>
+          <Description>Override Controlling Alerting of MP Version MisMatch</Description>
+        </DisplayString>
+        <DisplayString ElementID="P2P.OMS.Administration.Monitoring.ManagementPackNeedsDeleted.ForTargetClass.GenerateAlert">
+          <Name>NotUsed</Name>
+          <Description>Override Controlling Alerting on Missing management packs.</Description>
+        </DisplayString>
+        <DisplayString ElementID="P2P.OMS.Administration.Discoveries.GenerateShellMPWithParameters.ForTargetClass.ClassOverride">
+          <Name>NotUsed</Name>
+          <Description>On Time MP Generation, Control Class Overrides</Description>
+        </DisplayString>
+        <DisplayString ElementID="P2P.OMS.Administration.Discoveries.GenerateShellMPWithParameters.ForTargetClass.Enabled">
+          <Name>NotUsed</Name>
+          <Description>On Time MP Generation, Enable the Workflow</Description>
+        </DisplayString>
+        <DisplayString ElementID="P2P.OMS.Administration.Discoveries.GenerateShellMPWithParameters.ForTargetClass.GroupOverride">
+          <Name>NotUsed</Name>
+          <Description>On Time MP Generation, Control GroupCreations</Description>
+        </DisplayString>
+        <DisplayString ElementID="P2P.OMS.Administration.Discoveries.GenerateShellMPWithParametersEventTriggered.ForTargetClass.ClassOverride">
+          <Name>NotUsed</Name>
+          <Description>On Time MP Generation, Control Class Overrides</Description>
+        </DisplayString>
+        <DisplayString ElementID="P2P.OMS.Administration.Discoveries.GenerateShellMPWithParametersEventTriggered.ForTargetClass.Enabled">
+          <Name>NotUsed</Name>
+          <Description>On Time MP Generation, Enable the Workflow</Description>
+        </DisplayString>
+        <DisplayString ElementID="P2P.OMS.Administration.Discoveries.GenerateShellMPWithParametersEventTriggered.ForTargetClass.GroupOverride">
+          <Name>NotUsed</Name>
+          <Description>On Time MP Generation, Control GroupCreations</Description>
+        </DisplayString>
+        <DisplayString ElementID="P2P.OMS.Administration.Discoveries.GenerateShellMPWithParameters.ForTargetClass.SyncTime">
+          <Name>NotUsed</Name>
+          <Description>On Time MP Generation,  Control the RunTime</Description>
+        </DisplayString>
+        <DisplayString ElementID="P2P.OMS.Administration.Monitoring.ScanOMSManagementPacks.ForTargetClass.Enabled">
+          <Name>NotUsed</Name>
+          <Description>Control Management Pack Scanning</Description>
+        </DisplayString>
+        <DisplayString ElementID="P2P.OMS.Administration.Monitoring.RulesAlertOnMeChanging.ForTargetClass.Enabled">
+          <Name>NotUsed</Name>
+          <Description>Alert on OMS Management Pack Changes</Description>
+        </DisplayString>
+      </DisplayStrings>
+    </LanguagePack>
+  </LanguagePacks>  
+</ManagementPackFragment>

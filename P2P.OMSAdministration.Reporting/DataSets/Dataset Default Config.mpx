@@ -1,0 +1,45 @@
+﻿<ManagementPackFragment SchemaVersion="2.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Presentation>
+    <StringResources>
+    <StringResource ID="CHRW.OMSAdmin.MPReportStatsCollection.Dataset.DefaultConfiguration" />
+    </StringResources>
+  </Presentation>
+  <LanguagePacks>
+    <LanguagePack ID="ENU" IsDefault ="true">
+      <DisplayStrings>
+        <DisplayString ElementID="CHRW.OMSAdmin.MPReportStatsCollection.Dataset.DefaultConfiguration">
+          <Name>CHRW OMSAdmin: Management PAck Reprot data warehouse dataset configuration</Name>
+          <Description>
+
+            &lt;Configuration&gt;
+            &lt;Aggregations&gt;
+            &lt;Raw&gt;
+            &lt;BaseTableName&gt;OMSAdminMPReport_Raw&lt;/BaseTableName&gt;
+            &lt;MaxTableRowCount&gt;100000&lt;/MaxTableRowCount&gt;
+            &lt;MaxDataAgeDays&gt;7&lt;/MaxDataAgeDays&gt;
+            &lt;GroomingIntervalMinutes&gt;180&lt;/GroomingIntervalMinutes&gt;
+            &lt;MaxRowsToGroom&gt;5000&lt;/MaxRowsToGroom&gt;
+            &lt;IndexOptimizationIntervalMinutes&gt;240&lt;/IndexOptimizationIntervalMinutes&gt;
+            &lt;/Raw&gt;
+            &lt;Daily&gt;
+            &lt;BaseTableName&gt;OMSAdminMPReport_Daily&lt;/BaseTableName&gt;
+            &lt;MaxTableRowCount&gt;100000&lt;/MaxTableRowCount&gt;
+            &lt;MaxDataAgeDays&gt;60&lt;/MaxDataAgeDays&gt;
+            &lt;GroomingIntervalMinutes&gt;180&lt;/GroomingIntervalMinutes&gt;
+            &lt;MaxRowsToGroom&gt;5000&lt;/MaxRowsToGroom&gt;
+            &lt;IndexOptimizationIntervalMinutes&gt;240&lt;/IndexOptimizationIntervalMinutes&gt;
+            &lt;AggregationStartDelayMinutes&gt;60&lt;/AggregationStartDelayMinutes&gt;
+            &lt;/Daily&gt;
+            &lt;/Aggregations&gt;
+            &lt;RawInsertTableCount&gt;1&lt;/RawInsertTableCount&gt;
+            &lt;DefaultAggregationIntervalCount&gt;10&lt;/DefaultAggregationIntervalCount&gt;
+            &lt;BlockingMaintenanceDailyStartTime&gt;23:00&lt;/BlockingMaintenanceDailyStartTime&gt;
+            &lt;BlockingMaintenanceDurationMinutes&gt;240&lt;/BlockingMaintenanceDurationMinutes&gt;
+            &lt;/Configuration&gt;
+
+          </Description>
+        </DisplayString>
+      </DisplayStrings>
+    </LanguagePack>
+  </LanguagePacks>
+</ManagementPackFragment>

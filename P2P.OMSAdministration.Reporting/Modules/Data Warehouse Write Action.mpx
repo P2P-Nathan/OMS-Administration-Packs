@@ -1,0 +1,261 @@
+﻿<ManagementPackFragment SchemaVersion="2.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <TypeDefinitions>
+    <ModuleTypes>
+      <WriteActionModuleType ID="CHRW.OMSAdmin.MPReportStats.WriteAction" Accessibility="Internal" Batching="false">
+        <Configuration />
+        <ModuleImplementation Isolation="Any">
+          <Composite>
+            <MemberModules>
+              <WriteAction ID="WA" TypeID="SCDW!Microsoft.SystemCenter.DataWarehouse.BulkInsertBulkDataWriter">
+                <ManagementGroupId>$Target/ManagementGroup/Id$</ManagementGroupId>
+                <DataSetId>$MPElement[Name='CHRW.OMSAdmin.MPReportStatsCollection.Dataset']$</DataSetId>
+                <DataRoutingKey />
+                <BulkInsertBatchSize>5000</BulkInsertBatchSize>
+                <MaxBatchesToProcessBeforeMaintenanceCount>100</MaxBatchesToProcessBeforeMaintenanceCount>
+                <TableName>CHRWOMSAdmin.MPReportStatsStaging</TableName>
+                <MaxExecutionAttemptCount>0</MaxExecutionAttemptCount>
+                <ExecutionAttemptTimeoutIntervalSeconds>0</ExecutionAttemptTimeoutIntervalSeconds>
+                <TableColumns>
+                  <Column>
+                    <Name>DateTime</Name>
+                    <Type>DateTime</Type>
+                    <XPathExpression Target="DataItem">DataItem/Property[@Name='DateTime']</XPathExpression>
+                    <ValueProperty>Value</ValueProperty>
+                    <AdditionalProcessing>
+                      <DateTimeToSqlFormat />
+                    </AdditionalProcessing>
+                  </Column>
+                  <Column>
+                    <Name>MPReport_ItemType</Name>
+                    <Type>String</Type>
+                    <XPathExpression Target="DataItem">DataItem/Property[@Name='ItemType']</XPathExpression>
+                    <ValueProperty>Value</ValueProperty>
+                  </Column>
+                  <Column>
+                    <Name>MPReport_ItemFullName</Name>
+                    <Type>String</Type>
+                    <XPathExpression Target="DataItem">DataItem/Property[@Name='ItemFullName']</XPathExpression>
+                    <ValueProperty>Value</ValueProperty>
+                  </Column>
+                  <Column>
+                    <Name>MPReport_DisplayName</Name>
+                    <Type>String</Type>
+                    <XPathExpression Target="DataItem">DataItem/Property[@Name='DisplayName']</XPathExpression>
+                    <ValueProperty>Value</ValueProperty>
+                  </Column>
+                  <Column>
+                    <Name>MPReport_Description</Name>
+                    <Type>String</Type>
+                    <XPathExpression Target="DataItem">DataItem/Property[@Name='Description']</XPathExpression>
+                    <ValueProperty>Value</ValueProperty>
+                  </Column>
+                  <Column>
+                    <Name>MPReport_Enabled</Name>
+                    <Type>String</Type>
+                    <XPathExpression Target="DataItem">DataItem/Property[@Name='Enabled']</XPathExpression>
+                    <ValueProperty>Value</ValueProperty>
+                  </Column>
+                  <Column>
+                    <Name>MPReport_Configuration</Name>
+                    <Type>String</Type>
+                    <XPathExpression Target="DataItem">DataItem/Property[@Name='Configuration']</XPathExpression>
+                    <ValueProperty>Value</ValueProperty>
+                  </Column>
+                  <Column>
+                    <Name>MPReport_Target</Name>
+                    <Type>String</Type>
+                    <XPathExpression Target="DataItem">DataItem/Property[@Name='Target']</XPathExpression>
+                    <ValueProperty>Value</ValueProperty>
+                  </Column>
+                  <Column>
+                    <Name>MPReport_Category</Name>
+                    <Type>String</Type>
+                    <XPathExpression Target="DataItem">DataItem/Property[@Name='Category']</XPathExpression>
+                    <ValueProperty>Value</ValueProperty>
+                  </Column>
+                  <Column>
+                    <Name>MPReport_WriteActionType</Name>
+                    <Type>String</Type>
+                    <XPathExpression Target="DataItem">DataItem/Property[@Name='WriteActionType']</XPathExpression>
+                    <ValueProperty>Value</ValueProperty>
+                  </Column>
+                  <Column>
+                    <Name>MPReport_WriteActionConfig</Name>
+                    <Type>String</Type>
+                    <XPathExpression Target="DataItem">DataItem/Property[@Name='WriteActionConfig']</XPathExpression>
+                    <ValueProperty>Value</ValueProperty>
+                  </Column>
+                  <Column>
+                    <Name>MPReport_ProbeType</Name>
+                    <Type>String</Type>
+                    <XPathExpression Target="DataItem">DataItem/Property[@Name='ProbeType']</XPathExpression>
+                    <ValueProperty>Value</ValueProperty>
+                  </Column>
+                  <Column>
+                    <Name>MPReport_ProbeConfig</Name>
+                    <Type>String</Type>
+                    <XPathExpression Target="DataItem">DataItem/Property[@Name='ProbeConfig']</XPathExpression>
+                    <ValueProperty>Value</ValueProperty>
+                  </Column>
+                  <Column>
+                    <Name>MPReport_DataSourceType</Name>
+                    <Type>String</Type>
+                    <XPathExpression Target="DataItem">DataItem/Property[@Name='DataSourceType']</XPathExpression>
+                    <ValueProperty>Value</ValueProperty>
+                  </Column>
+                  <Column>
+                    <Name>MPReport_DataSourceConfig</Name>
+                    <Type>String</Type>
+                    <XPathExpression Target="DataItem">DataItem/Property[@Name='DataSourceConfig']</XPathExpression>
+                    <ValueProperty>Value</ValueProperty>
+                  </Column>
+                  <Column>
+                    <Name>MPReport_RuleAlertAction</Name>
+                    <Type>String</Type>
+                    <XPathExpression Target="DataItem">DataItem/Property[@Name='RuleAlertAction']</XPathExpression>
+                    <ValueProperty>Value</ValueProperty>
+                  </Column>
+                  <Column>
+                    <Name>MPReport_MonitorAlertOnState</Name>
+                    <Type>String</Type>
+                    <XPathExpression Target="DataItem">DataItem/Property[@Name='MonitorAlertOnState']</XPathExpression>
+                    <ValueProperty>Value</ValueProperty>
+                  </Column>
+                  <Column>
+                    <Name>MPReport_AlertName</Name>
+                    <Type>String</Type>
+                    <XPathExpression Target="DataItem">DataItem/Property[@Name='AlertName']</XPathExpression>
+                    <ValueProperty>Value</ValueProperty>
+                  </Column>
+                  <Column>
+                    <Name>MPReport_AlertDescription</Name>
+                    <Type>String</Type>
+                    <XPathExpression Target="DataItem">DataItem/Property[@Name='AlertDescription']</XPathExpression>
+                    <ValueProperty>Value</ValueProperty>
+                  </Column>
+                  <Column>
+                    <Name>MPReport_Documentation</Name>
+                    <Type>String</Type>
+                    <XPathExpression Target="DataItem">DataItem/Property[@Name='Documentation']</XPathExpression>
+                    <ValueProperty>Value</ValueProperty>
+                  </Column>
+                  <Column>
+                    <Name>MPReport_MPName</Name>
+                    <Type>String</Type>
+                    <XPathExpression Target="DataItem">DataItem/Property[@Name='MPName']</XPathExpression>
+                    <ValueProperty>Value</ValueProperty>
+                  </Column>
+                  <Column>
+                    <Name>MPReport_MPVersion</Name>
+                    <Type>String</Type>
+                    <XPathExpression Target="DataItem">DataItem/Property[@Name='MPVersion']</XPathExpression>
+                    <ValueProperty>Value</ValueProperty>
+                  </Column>
+                  <Column>
+                    <Name>MPReport_MPBundle</Name>
+                    <Type>String</Type>
+                    <XPathExpression Target="DataItem">DataItem/Property[@Name='MPBundle']</XPathExpression>
+                    <ValueProperty>Value</ValueProperty>
+                  </Column>
+                  <Column>
+                    <Name>MPReport_MPSolution</Name>
+                    <Type>String</Type>
+                    <XPathExpression Target="DataItem">DataItem/Property[@Name='MPSolution']</XPathExpression>
+                    <ValueProperty>Value</ValueProperty>
+                  </Column>
+                  <Column>
+                    <Name>MPReport_Accessibility</Name>
+                    <Type>String</Type>
+                    <XPathExpression Target="DataItem">DataItem/Property[@Name='Accessibility']</XPathExpression>
+                    <ValueProperty>Value</ValueProperty>
+                  </Column>
+                  <Column>
+                    <Name>MPReport_Abstract</Name>
+                    <Type>Boolean</Type>
+                    <XPathExpression Target="DataItem">DataItem/Property[@Name='Abstract']</XPathExpression>
+                    <ValueProperty>Value</ValueProperty>
+                  </Column>
+                  <Column>
+                    <Name>MPReport_Hosted</Name>
+                    <Type>Boolean</Type>
+                    <XPathExpression Target="DataItem">DataItem/Property[@Name='Hosted']</XPathExpression>
+                    <ValueProperty>Value</ValueProperty>
+                  </Column>
+                  <Column>
+                    <Name>MPReport_Singleton</Name>
+                    <Type>Boolean</Type>
+                    <XPathExpression Target="DataItem">DataItem/Property[@Name='Singleton']</XPathExpression>
+                    <ValueProperty>Value</ValueProperty>
+                  </Column>
+                  <Column>
+                    <Name>MPReport_Extension</Name>
+                    <Type>Boolean</Type>
+                    <XPathExpression Target="DataItem">DataItem/Property[@Name='Extension']</XPathExpression>
+                    <ValueProperty>Value</ValueProperty>
+                  </Column>
+                  <Column>
+                    <Name>MPReport_Remotable</Name>
+                    <Type>Boolean</Type>
+                    <XPathExpression Target="DataItem">DataItem/Property[@Name='Remotable']</XPathExpression>
+                    <ValueProperty>Value</ValueProperty>
+                  </Column>
+                  <Column>
+                    <Name>MPReport_Base</Name>
+                    <Type>String</Type>
+                    <XPathExpression Target="DataItem">DataItem/Property[@Name='Base']</XPathExpression>
+                    <ValueProperty>Value</ValueProperty>
+                  </Column>
+                  <Column>
+                    <Name>MPReport_RunAs</Name>
+                    <Type>String</Type>
+                    <XPathExpression Target="DataItem">DataItem/Property[@Name='RunAs']</XPathExpression>
+                    <ValueProperty>Value</ValueProperty>
+                  </Column>
+                  <Column>
+                    <Name>MPReport_ReportCollectedDT</Name>
+                    <Type>DateTime</Type>
+                    <XPathExpression Target="DataItem">DataItem/Property[@Name='ReportCollectedDT']</XPathExpression>
+                    <ValueProperty>Value</ValueProperty>
+                    <AdditionalProcessing>
+                      <DateTimeToSqlFormat />
+                    </AdditionalProcessing>
+                  </Column>
+                  <Column>
+                    <Name>ManagedEntityGuid</Name>
+                    <Type>String</Type>
+                    <XPathExpression Target="DataItem">DataItem/Property[@Name='ManagedEntityGuid']</XPathExpression>
+                    <ValueProperty>Value</ValueProperty>
+                  </Column>
+                  <Column>
+                    <Name>RawItem</Name>
+                    <Type>String</Type>
+                    <XPathExpression Target="DataItem">DataItem</XPathExpression>
+                    <ValueProperty>OuterXml</ValueProperty>
+                  </Column>
+                </TableColumns>
+                <SqlAuthentication>
+                  <Login>$RunAs[Name='SCDW!Microsoft.SystemCenter.DataWarehouse.SqlAuthenticationActionAccount']/UserName$</Login>
+                  <Password>$RunAs[Name='SCDW!Microsoft.SystemCenter.DataWarehouse.SqlAuthenticationActionAccount']/Password$</Password>
+                </SqlAuthentication>
+              </WriteAction>
+            </MemberModules>
+            <Composition>
+              <Node ID="WA" />
+            </Composition>
+          </Composite>
+        </ModuleImplementation>
+        <InputType>System!System.PropertyBagData</InputType>
+      </WriteActionModuleType>
+    </ModuleTypes>
+  </TypeDefinitions>
+  <LanguagePacks>
+    <LanguagePack ID="ENU" IsDefault="true">
+      <DisplayStrings>
+        <DisplayString ElementID="CHRW.OMSAdmin.MPReportStats.WriteAction">
+          <Name>CHRW OMSAdmin: MP Analysis write action</Name>
+          <Description>This write action attempts to write to a special dataset in the DW</Description>
+        </DisplayString>
+      </DisplayStrings>
+    </LanguagePack>
+  </LanguagePacks>
+</ManagementPackFragment>

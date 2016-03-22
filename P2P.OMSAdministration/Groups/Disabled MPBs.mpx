@@ -1,0 +1,94 @@
+﻿<ManagementPackFragment SchemaVersion="2.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <TypeDefinitions>
+    <EntityTypes>
+      <ClassTypes>
+        <ClassType ID="P2P.OMSAdministration.DisabledMPBs.Group" Accessibility="Public" Abstract="false" Base="MSIL!Microsoft.SystemCenter.InstanceGroup" Hosted="false" Singleton="true" Extension="false" />
+        <ClassType ID="P2P.OMSAdministration.DisabledMP.Group" Accessibility="Public" Abstract="false" Base="MSIL!Microsoft.SystemCenter.InstanceGroup" Hosted="false" Singleton="true" Extension="false" />
+      </ClassTypes>
+    </EntityTypes>
+  </TypeDefinitions>
+  <Monitoring>
+    <Discoveries>
+      <Discovery ID="P2P.OMSAdministration.DisabledMPBs.Group.DiscoveryRule" Enabled="true" Target="P2P.OMSAdministration.DisabledMPBs.Group" ConfirmDelivery="false" Remotable="true" Priority="Normal">
+        <Category>Discovery</Category>
+        <DiscoveryTypes>
+          <DiscoveryRelationship TypeID="MSIL!Microsoft.SystemCenter.InstanceGroupContainsEntities" />
+        </DiscoveryTypes>
+        <DataSource ID="GroupPopulationDataSource" TypeID="SC!Microsoft.SystemCenter.GroupPopulator">
+          <RuleId>$MPElement$</RuleId>
+          <GroupInstanceId>$MPElement[Name="P2P.OMSAdministration.DisabledMPBs.Group"]$</GroupInstanceId>
+          <MembershipRules>
+            <MembershipRule>
+              <MonitoringClass>$MPElement[Name="P2P.OMSAdministration.Classes.OMSManagementPackBundle"]$</MonitoringClass>
+              <RelationshipClass>$MPElement[Name="MSIL!Microsoft.SystemCenter.InstanceGroupContainsEntities"]$</RelationshipClass>
+              <Expression>
+                <SimpleExpression>
+                  <ValueExpression>
+                    <Property>$MPElement[Name="P2P.OMSAdministration.Classes.OMSManagementPackBundle"]/IsDisabled$</Property>
+                  </ValueExpression>
+                  <Operator>Equal</Operator>
+                  <ValueExpression>
+                    <Value>True</Value>
+                  </ValueExpression>
+                </SimpleExpression>
+              </Expression>
+            </MembershipRule>
+          </MembershipRules>
+        </DataSource>
+      </Discovery>
+        <Discovery ID="P2P.OMSAdministration.DisabledMP.Group.DiscoveryRule" Enabled="true" Target="P2P.OMSAdministration.DisabledMP.Group" ConfirmDelivery="false" Remotable="true" Priority="Normal">
+          <Category>Discovery</Category>
+          <DiscoveryTypes>
+            <DiscoveryRelationship TypeID="MSIL!Microsoft.SystemCenter.InstanceGroupContainsEntities" />
+          </DiscoveryTypes>
+          <DataSource ID="GroupPopulationDataSource" TypeID="SC!Microsoft.SystemCenter.GroupPopulator">
+            <RuleId>$MPElement$</RuleId>
+            <GroupInstanceId>$MPElement[Name="P2P.OMSAdministration.DisabledMP.Group"]$</GroupInstanceId>
+            <MembershipRules>
+              <MembershipRule>
+                <MonitoringClass>$MPElement[Name="P2P.OMSAdministration.Classes.OMSManagementPack"]$</MonitoringClass>
+                <RelationshipClass>$MPElement[Name="MSIL!Microsoft.SystemCenter.InstanceGroupContainsEntities"]$</RelationshipClass>
+                <Expression>
+                  <SimpleExpression>
+                    <ValueExpression>
+                      <HostProperty>
+                        <MonitoringClass>$MPElement[Name="P2P.OMSAdministration.Classes.OMSManagementPackBundle"]$</MonitoringClass>
+                        <Property>$MPElement[Name="P2P.OMSAdministration.Classes.OMSManagementPackBundle"]/IsDisabled$</Property>
+                      </HostProperty>
+                    </ValueExpression>
+                    <Operator>Equal</Operator>
+                    <ValueExpression>
+                      <Value>true</Value>
+                    </ValueExpression>
+                  </SimpleExpression>
+                </Expression>
+              </MembershipRule>
+            </MembershipRules>
+          </DataSource>
+        </Discovery>
+    </Discoveries>
+  </Monitoring>
+  <LanguagePacks>
+    <LanguagePack ID="ENU" IsDefault="true">
+      <DisplayStrings>
+        <DisplayString ElementID="P2P.OMSAdministration.DisabledMPBs.Group">
+          <Name>CHRW - OMS Disabled MP Bundles</Name>
+          <Description>Solutions which have an Disabled MPB in them</Description>
+        </DisplayString>
+        <DisplayString ElementID="P2P.OMSAdministration.DisabledMPBs.Group.DiscoveryRule">
+          <Name>Populate CHRW - OMS Disabled MP Bundles</Name>
+          <Description>This discovery rule populates the group 'CHRW - OMS Disabled MP Bundles'</Description>
+        </DisplayString>
+        <DisplayString ElementID="P2P.OMSAdministration.DisabledMP.Group">
+          <Name>CHRW - OMS Disabled MPs</Name>
+          <Description>all Disabled MPs</Description>
+        </DisplayString>
+        <DisplayString ElementID="P2P.OMSAdministration.DisabledMP.Group.DiscoveryRule">
+          <Name>Populate CHRW - OMS Disabled MPs</Name>
+          <Description>This discovery rule populates the group 'CHRW - OMS Disabled MPs'</Description>
+        </DisplayString>
+      </DisplayStrings>
+    </LanguagePack>
+  </LanguagePacks>
+
+</ManagementPackFragment>

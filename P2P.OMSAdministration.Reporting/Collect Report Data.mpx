@@ -1,0 +1,28 @@
+﻿<ManagementPackFragment SchemaVersion="2.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Monitoring>
+    <Rules>
+      <Rule ID="CHRW.OMSAdmin.MPReportStatsSubscription.Rule" Enabled="false" Target="SCDW!Microsoft.SystemCenter.DataWarehouseConnectorServer" ConfirmDelivery="true" Remotable="true" Priority="Normal" DiscardLevel="100">
+        <Category>Custom</Category>
+        <DataSources>
+          <DataSource ID="Subscribe" TypeID="CHRW.OMSAdmin.GenerateMPReport.Datasource">
+            <TimeoutSeconds>900</TimeoutSeconds>
+            <MPName>ThisCoolMP</MPName>
+          </DataSource>
+        </DataSources>
+        <WriteActions>
+          <WriteAction ID="WA" TypeID="CHRW.OMSAdmin.MPReportStats.WriteAction" />
+        </WriteActions>
+      </Rule>
+    </Rules>
+  </Monitoring>
+  <LanguagePacks>
+    <LanguagePack ID="ENU" IsDefault="true">
+      <DisplayStrings>
+      <DisplayString ElementID="CHRW.OMSAdmin.MPReportStatsSubscription.Rule">
+        <Name>CHRW OMSAdmin: MPReport statistics subscription</Name>
+        <Description>This rule saves MPReport statistics information to the SCOM data warehouse. To enable information collection please enable “CHRW OMSAdmin: MPReport statistics collection” rule.</Description>
+      </DisplayString>
+      </DisplayStrings>
+    </LanguagePack>
+  </LanguagePacks>
+</ManagementPackFragment>

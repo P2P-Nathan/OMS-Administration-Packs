@@ -1,0 +1,6 @@
+﻿<ManagementPackFragment SchemaVersion="2.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Resources>
+    <DeployableAssembly ID="P2P.OMSAdministration.AdvisorCommon" QualifiedName="Microsoft.SystemCenter.Advisor.Common, Version=7.0.5000.7, Culture=neutral, PublicKeyToken=31bf3856ad364e35" FileName="Microsoft.SystemCenter.Advisor.Common.dll" Accessibility="Public" HasNullStream="false" />
+    <DeployableAssembly ID="P2P.OMSAdministration.AdvisorCore" QualifiedName="Microsoft.SystemCenter.Advisor.Core.Module, Version=1.2.1269.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" FileName="Microsoft.SystemCenter.Advisor.Core.Module.dll" Accessibility="Public" HasNullStream="false" />
+  </Resources>
+</ManagementPackFragment>

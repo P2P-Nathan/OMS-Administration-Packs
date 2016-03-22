@@ -1,0 +1,117 @@
+﻿<ManagementPackFragment SchemaVersion="2.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Templates>
+    <Template ID="P2P.OMSAdministration.RuleTemplates.GenericCSVLogCollection" Purpose="RuleCreation">
+      <Configuration>
+        <IncludeSchemaTypes>
+          <SchemaType>System!System.ExpressionEvaluatorSchema</SchemaType>
+        </IncludeSchemaTypes>
+        <xsd:element name="ID" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />
+        <xsd:element name="Name" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />
+        <xsd:element name="Enabled" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />
+        <xsd:element name="Description" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />
+        <xsd:element name="Target" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />
+        <xsd:element name="Category" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />
+        <xsd:element name="LocaleId" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />
+        <xsd:element name="LogFileDirectory" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />
+        <xsd:element name="LogFilePattern" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />
+        <xsd:element name="LogIsUTF8" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />
+        <xsd:element name="Separator" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />
+        <xsd:element name="Expression" type="ExpressionType" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />
+      </Configuration>
+      <References>
+        <Reference ID="System" />
+        <Reference ID="AppLog" />
+        <Reference ID="SC" />
+        <Reference ID="SCDW" />
+        <Reference ID="IPTypes" />
+      </References>
+      <Implementation>
+        <Monitoring>
+          <Rules>
+            <Rule ID="$TemplateConfig/ID$" Target="$TemplateConfig/Target$" Enabled="$TemplateConfig/Enabled$">
+              <Category>$TemplateConfig/Category$</Category>
+              <DataSources>
+                <DataSource ID="LogDS" TypeID="$Reference/AppLog$System.ApplicationLog.GenericCSVLog.FilteredEventProvider">
+                  <LogFileDirectory>$TemplateConfig/LogFileDirectory$</LogFileDirectory>
+                  <LogFilePattern>$TemplateConfig/LogFilePattern$</LogFilePattern>
+                  <LogIsUTF8>$TemplateConfig/LogIsUTF8$</LogIsUTF8>
+                  <Separator>$TemplateConfig/Separator$</Separator>
+                  <Expression>$TemplateConfig/Expression$</Expression>
+                </DataSource>
+              </DataSources>
+              <WriteActions>
+                <WriteAction ID="HttpWA" TypeID="$Reference/IPTypes$Microsoft.SystemCenter.CollectCloudGenericEvent" />
+
+              </WriteActions>
+            </Rule>
+          </Rules>
+        </Monitoring>
+        <LanguagePacks>
+          <LanguagePack ID="$TemplateConfig/LocaleId$" IsDefault="true">
+            <DisplayStrings>
+              <DisplayString ElementID="$TemplateConfig/ID$">
+                <Name>$TemplateConfig/Name$</Name>
+                <Description>$TemplateConfig/Description$</Description>
+              </DisplayString>
+            </DisplayStrings>
+          </LanguagePack>
+        </LanguagePacks>
+      </Implementation>
+    </Template>
+    <Template ID="P2P.OMSAdministration.RuleTemplates.GenericLogCollection" Purpose="RuleCreation">
+      <Configuration>
+        <IncludeSchemaTypes>
+          <SchemaType>System!System.ExpressionEvaluatorSchema</SchemaType>
+        </IncludeSchemaTypes>
+        <xsd:element name="ID" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />
+        <xsd:element name="Name" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />
+        <xsd:element name="Enabled" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />
+        <xsd:element name="Description" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />
+        <xsd:element name="Target" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />
+        <xsd:element name="Category" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />
+        <xsd:element name="LocaleId" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />
+        <xsd:element name="LogFileDirectory" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />
+        <xsd:element name="LogFilePattern" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />
+        <xsd:element name="LogIsUTF8" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />
+        <xsd:element name="Expression" type="ExpressionType" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />
+      </Configuration>
+      <References>
+        <Reference ID="System" />
+        <Reference ID="AppLog" />
+        <Reference ID="SC" />
+        <Reference ID="SCDW" />
+        <Reference ID="IPTypes" />
+      </References>
+      <Implementation>
+        <Monitoring>
+          <Rules>
+            <Rule ID="$TemplateConfig/ID$" Target="$TemplateConfig/Target$" Enabled="$TemplateConfig/Enabled$">
+              <Category>$TemplateConfig/Category$</Category>
+              <DataSources>
+                <DataSource ID="LogDS" TypeID="$Reference/AppLog$System.ApplicationLog.GenericLog.FilteredEventProvider">
+                  <LogFileDirectory>$TemplateConfig/LogFileDirectory$</LogFileDirectory>
+                  <LogFilePattern>$TemplateConfig/LogFilePattern$</LogFilePattern>
+                  <LogIsUTF8>$TemplateConfig/LogIsUTF8$</LogIsUTF8>
+                  <Expression>$TemplateConfig/Expression$</Expression>
+                </DataSource>
+              </DataSources>
+              <WriteActions>
+                <WriteAction ID="HttpWA" TypeID="$Reference/IPTypes$Microsoft.SystemCenter.CollectCloudGenericEvent" />
+              </WriteActions>
+            </Rule>
+          </Rules>
+        </Monitoring>
+        <LanguagePacks>
+          <LanguagePack ID="$TemplateConfig/LocaleId$" IsDefault="true">
+            <DisplayStrings>
+              <DisplayString ElementID="$TemplateConfig/ID$">
+                <Name>$TemplateConfig/Name$</Name>
+                <Description>$TemplateConfig/Description$</Description>
+              </DisplayString>
+            </DisplayStrings>
+          </LanguagePack>
+        </LanguagePacks>
+      </Implementation>
+    </Template>
+  </Templates>
+</ManagementPackFragment>

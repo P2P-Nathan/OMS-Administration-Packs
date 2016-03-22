@@ -1,0 +1,15 @@
+﻿<ManagementPackFragment SchemaVersion="2.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Categories>
+    <Category ID="Category.P2P.OMSAdministration"
+              Target="Res.CHRWVisualizationLibrary"
+              Value="VizLibrary!Microsoft.SystemCenter.Visualization.WindowsAssembly" />
+  </Categories>
+
+  <Resources>
+    <Assembly ID="Res.CHRWVisualizationLibrary"
+              Accessibility="Public"
+              QualifiedName="P2P.OMSAdministration.Visualizations, Version=1.0.0.0, Culture=neutral, PublicKeyToken=4f5cc0b37933bfad"
+              FileName="P2P.OMSAdministration.Visualizations.dll"
+              HasNullStream="false"/>
+  </Resources>
+</ManagementPackFragment>

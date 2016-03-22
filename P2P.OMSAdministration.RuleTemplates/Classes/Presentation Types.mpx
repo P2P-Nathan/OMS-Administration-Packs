@@ -1,0 +1,576 @@
+﻿<ManagementPackFragment SchemaVersion="2.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <PresentationTypes>
+    <UIPages>
+      <UIPage ID="P2P.OMSAdministration.RuleTemplates.RuleGeneralPage" Accessibility="Public">
+        <Implementation>
+          <Assembly>MSRuleTemplate!Res.Microsoft.SystemCenter.RuleTemplates.RuleGeneralPage</Assembly>
+          <Type>Microsoft.EnterpriseManagement.Internal.UI.Authoring.Pages.RuleGeneralPage</Type>
+        </Implementation>
+      </UIPage>
+    </UIPages>
+    <UIPageSets>
+      <UIPageSet ID="P2P.OMSAdministration.RuleTemplates.GenericCSVLogCollection.PageSet" TypeDefinitionID="P2P.OMSAdministration.RuleTemplates.GenericCSVLogCollection">
+        <UIPageReferences>
+          <UIPageReference ID="P2P.OMSAdministration.RuleTemplates.GenericCSVLogCollection.PageSet.PageReference1" PageID="P2P.OMSAdministration.RuleTemplates.RuleGeneralPage" Usage="CreationOnly">
+            <InputTransform>
+              <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+                <xsl:output method="xml" indent="yes" omit-xml-declaration="yes" />
+                <xsl:template match="/">
+                  <xsl:element name="Category">
+                    <xsl:copy>EventCollection</xsl:copy>
+                  </xsl:element>
+                </xsl:template>
+              </xsl:stylesheet>
+            </InputTransform>
+          </UIPageReference>
+          <UIPageReference ID="P2P.OMSAdministration.RuleTemplates.GenericCSVLogCollection.PageSet.PageReference2" PageID="AppLog!System.ApplicationLogDataSourcePage" Usage="CreationOnly">
+            <InputParameters>
+              <ShowLogFilePattern>true</ShowLogFilePattern>
+              <ShowLogFileType>false</ShowLogFileType>
+              <ShowLogFileUTF8>true</ShowLogFileUTF8>
+              <ShowLogFileSeparator>true</ShowLogFileSeparator>
+            </InputParameters>
+          </UIPageReference>
+          <UIPageReference ID="P2P.OMSAdministration.RuleTemplates.GenericCSVLogCollection.PageSet.PageReference3" PageID="System!System.ExpressionBuilderPage" Usage="CreationOnly">
+            <InputParameters>
+              <DataType>System.ApplicationLog.GenericLogEntryData</DataType>
+            </InputParameters>
+            <InputTransform>
+              <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+                <xsl:output method="xml" indent="yes" omit-xml-declaration="yes" />
+                <xsl:template match="/">
+                  <xsl:copy-of select="/Expression" />
+                </xsl:template>
+              </xsl:stylesheet>
+            </InputTransform>
+          </UIPageReference>
+        </UIPageReferences>
+        <OutputTransform>
+          <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+            <xsl:output method="xml" indent="yes" omit-xml-declaration="yes" />
+            <xsl:template match="/">
+              <xsl:element name="Configuration">
+                <xsl:copy-of select="/ID" />
+                <xsl:copy-of select="/Name" />
+                <xsl:copy-of select="/Enabled" />
+                <xsl:copy-of select="/Description" />
+                <xsl:copy-of select="/Target" />
+                <xsl:copy-of select="/Category" />
+                <xsl:copy-of select="/LocaleId" />
+                <xsl:element name="LogFileDirectory">
+                  <xsl:value-of select="/LogFileDirectory[1]" />
+                </xsl:element>
+                <xsl:element name="LogFilePattern">
+                  <xsl:value-of select="/LogFilePattern[1]" />
+                </xsl:element>
+                <xsl:element name="LogIsUTF8">
+                  <xsl:value-of select="/LogIsUTF8[1]" />
+                </xsl:element>
+                <xsl:element name="Separator">
+                  <xsl:value-of select="/Separator[1]" />
+                </xsl:element>
+                <xsl:element name="Expression">
+                  <xsl:copy-of select="/Expression[1]/*" />
+                </xsl:element>
+              </xsl:element>
+            </xsl:template>
+          </xsl:stylesheet>
+        </OutputTransform>
+      </UIPageSet>
+      <UIPageSet ID="P2P.OMSAdministration.RuleTemplates.GenericLogCollection.PageSet" TypeDefinitionID="P2P.OMSAdministration.RuleTemplates.GenericLogCollection">
+        <UIPageReferences>
+          <UIPageReference ID="P2P.OMSAdministration.RuleTemplates.GenericLogCollection.PageSet.PageReference1" PageID="P2P.OMSAdministration.RuleTemplates.RuleGeneralPage" Usage="CreationOnly">
+            <InputTransform>
+              <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+                <xsl:output method="xml" indent="yes" omit-xml-declaration="yes" />
+                <xsl:template match="/">
+                  <xsl:element name="Category">
+                    <xsl:copy>EventCollection</xsl:copy>
+                  </xsl:element>
+                </xsl:template>
+              </xsl:stylesheet>
+            </InputTransform>
+          </UIPageReference>
+          <UIPageReference ID="P2P.OMSAdministration.RuleTemplates.GenericLogCollection.PageSet.PageReference2" PageID="AppLog!System.ApplicationLogDataSourcePage" Usage="CreationOnly">
+            <InputParameters>
+              <ShowLogFilePattern>true</ShowLogFilePattern>
+              <ShowLogFileType>false</ShowLogFileType>
+              <ShowLogFileUTF8>true</ShowLogFileUTF8>
+              <ShowLogFileSeparator>false</ShowLogFileSeparator>
+            </InputParameters>
+          </UIPageReference>
+          <UIPageReference ID="P2P.OMSAdministration.RuleTemplates.GenericLogCollection.PageSet.PageReference3" PageID="System!System.ExpressionBuilderPage" Usage="CreationOnly">
+            <InputParameters>
+              <DataType>System.ApplicationLog.GenericLogEntryData</DataType>
+            </InputParameters>
+            <InputTransform>
+              <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+                <xsl:output method="xml" indent="yes" omit-xml-declaration="yes" />
+                <xsl:template match="/">
+                  <xsl:copy-of select="/Expression" />
+                </xsl:template>
+              </xsl:stylesheet>
+            </InputTransform>
+          </UIPageReference>
+        </UIPageReferences>
+        <OutputTransform>
+          <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+            <xsl:output method="xml" indent="yes" omit-xml-declaration="yes" />
+            <xsl:template match="/">
+              <xsl:element name="Configuration">
+                <xsl:copy-of select="/ID" />
+                <xsl:copy-of select="/Name" />
+                <xsl:copy-of select="/Enabled" />
+                <xsl:copy-of select="/Description" />
+                <xsl:copy-of select="/Target" />
+                <xsl:copy-of select="/Category" />
+                <xsl:copy-of select="/LocaleId" />
+                <xsl:element name="LogFileDirectory">
+                  <xsl:value-of select="/LogFileDirectory[1]" />
+                </xsl:element>
+                <xsl:element name="LogFilePattern">
+                  <xsl:value-of select="/LogFilePattern[1]" />
+                </xsl:element>
+                <xsl:element name="LogIsUTF8">
+                  <xsl:value-of select="/LogIsUTF8[1]" />
+                </xsl:element>
+                <xsl:element name="Expression">
+                  <xsl:copy-of select="/Expression[1]/*" />
+                </xsl:element>
+              </xsl:element>
+            </xsl:template>
+          </xsl:stylesheet>
+        </OutputTransform>
+      </UIPageSet>
+      <UIPageSet ID="P2P.OMSAdministration.RuleTemplates.ScriptEventCollection.PageSet" TypeDefinitionID="P2P.OMSAdministration.RuleTemplates.ScriptEventCollection">
+        <UIPageReferences>
+          <UIPageReference ID="P2P.OMSAdministration.RuleTemplates.ScriptEventCollection.PageSet.PageReference1" PageID="P2P.OMSAdministration.RuleTemplates.RuleGeneralPage" Usage="CreationOnly">
+            <InputTransform>
+              <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+                <xsl:output method="xml" indent="yes" omit-xml-declaration="yes" />
+                <xsl:template match="/">
+                  <xsl:element name="Category">
+                    <xsl:copy>EventCollection</xsl:copy>
+                  </xsl:element>
+                </xsl:template>
+              </xsl:stylesheet>
+            </InputTransform>
+          </UIPageReference>
+          <UIPageReference ID="P2P.OMSAdministration.RuleTemplates.ScriptEventCollection.PageSet.PageReference2" PageID="System!System.SimpleSchedulerPage" Usage="CreationOnly">
+            <InputTransform>
+              <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+                <xsl:output method="xml" indent="yes" omit-xml-declaration="yes" />
+                <xsl:template match="/">
+                  <xsl:element name="SimpleReccuringSchedule">
+                    <xsl:element name="Interval">
+                      <xsl:attribute name="Unit">Minutes</xsl:attribute>15
+                    </xsl:element>
+                  </xsl:element>
+                </xsl:template>
+              </xsl:stylesheet>
+            </InputTransform>
+          </UIPageReference>
+          <UIPageReference ID="P2P.OMSAdministration.RuleTemplates.ScriptEventCollection.PageSet.PageReference3" PageID="Windows!Microsoft.Windows.ScriptPage" Usage="CreationOnly">
+            <InputParameters>
+              <ScriptName>MyEventCollectionScript.vbs</ScriptName>
+              <ScriptBody>
+                ' Enter a script that outputs the required data to generate the event using a property bag
+                ' Example VBScript that returns three properties:
+                '
+                ' Dim oAPI, oBag
+                ' Set oAPI = CreateObject("MOM.ScriptAPI")
+                ' Set oBag = oAPI.CreatePropertyBag()
+                ' Call oBag.AddValue("EventID",10)
+                ' Call oBag.AddValue("EventParam1","SomeText")
+                ' Call oBag.AddValue("EventParam2","SomeText")
+                ' Call oAPI.Return(oBag)
+              </ScriptBody>
+            </InputParameters>
+            <InputTransform>
+              <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+                <xsl:output method="xml" indent="yes" omit-xml-declaration="yes" />
+                <xsl:template match="/">
+                  <xsl:copy-of select="/ScriptName" />
+                  <xsl:copy-of select="/Arguments" />
+                  <xsl:copy-of select="/ScriptBody" />
+                  <xsl:copy-of select="/TimeOutSeconds" />
+                </xsl:template>
+              </xsl:stylesheet>
+            </InputTransform>
+          </UIPageReference>
+          <UIPageReference ID="P2P.OMSAdministration.RuleTemplates.ScriptEventCollection.PageSet.PageReference4" PageID="Windows!Microsoft.Windows.EventMapperPage" Usage="CreationOnly">
+            <InputParameters>
+              <EventNumber>$Data/Property[@Name='EventID']$</EventNumber>
+              <PublisherName>CustomScript</PublisherName>
+              <Channel>CustomScript</Channel>
+              <EventCategory>0</EventCategory>
+            </InputParameters>
+            <Title ID="P2P.OMSAdministration.RuleTemplates.ScriptEventCollection.PageSet.PageReference4.Title" />
+            <TabName ID="P2P.OMSAdministration.RuleTemplates.ScriptEventCollection.PageSet.PageReference4.TabName" />
+          </UIPageReference>
+        </UIPageReferences>
+        <OutputTransform>
+          <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+            <xsl:output method="xml" indent="yes" omit-xml-declaration="yes" />
+            <xsl:template match="/">
+              <xsl:element name="Configuration">
+                <xsl:copy-of select="/ID" />
+                <xsl:copy-of select="/Name" />
+                <xsl:copy-of select="/Enabled" />
+                <xsl:copy-of select="/Description[1]" />
+                <xsl:copy-of select="/Target" />
+                <xsl:copy-of select="/Category" />
+                <xsl:copy-of select="/LocaleId" />
+                <xsl:element name="IntervalSeconds">
+                  <xsl:variable name="RawInterval" select="/SimpleReccuringSchedule/Interval" />
+                  <xsl:variable name="Units" select="/SimpleReccuringSchedule/Interval/@Unit" />
+                  <xsl:choose>
+                    <xsl:when test="not(boolean($Units)) or $Units='Seconds'">
+                      <xsl:value-of select="$RawInterval" />
+                    </xsl:when>
+                    <xsl:when test="$Units='Minutes'">
+                      <xsl:value-of select="$RawInterval*60" />
+                    </xsl:when>
+                    <xsl:when test="$Units='Hours'">
+                      <xsl:value-of select="$RawInterval*3600" />
+                    </xsl:when>
+                    <xsl:when test="$Units='Days'">
+                      <xsl:value-of select="$RawInterval*86400" />
+                    </xsl:when>
+                  </xsl:choose>
+                </xsl:element>
+                <xsl:element name="SyncTime">
+                  <xsl:value-of select="/SimpleReccuringSchedule/SyncTime" />
+                </xsl:element>
+                <xsl:element name="ScriptName">
+                  <xsl:value-of select="/ScriptName[1]" />
+                </xsl:element>
+                <xsl:element name="Arguments">
+                  <xsl:value-of select="/Arguments[1]" />
+                </xsl:element>
+                <xsl:element name="ScriptBody">
+                  <xsl:value-of select="/ScriptBody[1]" />
+                </xsl:element>
+                <xsl:element name="TimeoutSeconds">
+                  <xsl:value-of select="/TimeoutSeconds[1]" />
+                </xsl:element>
+                <xsl:copy-of select="/EventOriginId" />
+                <xsl:copy-of select="/PublisherId" />
+                <xsl:copy-of select="/PublisherName" />
+                <xsl:copy-of select="/Channel" />
+                <xsl:copy-of select="/LoggingComputer" />
+                <xsl:copy-of select="/EventNumber" />
+                <xsl:copy-of select="/EventCategory" />
+                <xsl:copy-of select="/EventLevel" />
+                <xsl:copy-of select="/UserName" />
+                <xsl:copy-of select="/Description[2]" />
+                <xsl:copy-of select="/Params" />
+              </xsl:element>
+            </xsl:template>
+          </xsl:stylesheet>
+        </OutputTransform>
+      </UIPageSet>
+      <UIPageSet ID="P2P.OMSAdministration.RuleTemplates.ScriptPerfCollection.PageSet" TypeDefinitionID="P2P.OMSAdministration.RuleTemplates.ScriptPerfCollection">
+        <UIPageReferences>
+          <UIPageReference ID="P2P.OMSAdministration.RuleTemplates.ScriptPerfCollection.PageSet.PageReference1" PageID="P2P.OMSAdministration.RuleTemplates.RuleGeneralPage" Usage="CreationOnly">
+            <InputTransform>
+              <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+                <xsl:output method="xml" indent="yes" omit-xml-declaration="yes" />
+                <xsl:template match="/">
+                  <xsl:element name="Category">
+                    <xsl:copy>PerformanceCollection</xsl:copy>
+                  </xsl:element>
+                </xsl:template>
+              </xsl:stylesheet>
+            </InputTransform>
+          </UIPageReference>
+          <UIPageReference ID="P2P.OMSAdministration.RuleTemplates.ScriptPerfCollection.PageSet.PageReference2" PageID="System!System.SimpleSchedulerPage" Usage="CreationOnly">
+            <InputTransform>
+              <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+                <xsl:output method="xml" indent="yes" omit-xml-declaration="yes" />
+                <xsl:template match="/">
+                  <xsl:element name="SimpleReccuringSchedule">
+                    <xsl:element name="Interval">
+                      <xsl:attribute name="Unit">Minutes</xsl:attribute>15
+                    </xsl:element>
+                  </xsl:element>
+                </xsl:template>
+              </xsl:stylesheet>
+            </InputTransform>
+          </UIPageReference>
+          <UIPageReference ID="P2P.OMSAdministration.RuleTemplates.ScriptPerfCollection.PageSet.PageReference3" PageID="Windows!Microsoft.Windows.ScriptPage" Usage="CreationOnly">
+            <InputParameters>
+              <ScriptName>MyPerfCollectionScript.vbs</ScriptName>
+              <ScriptBody>
+                ' Enter a script that outputs a property bag with a performance value in it
+                ' Example VBScript that returns a static value named "PerfValue":
+                '
+                ' Dim oAPI, oBag
+                ' Set oAPI = CreateObject("MOM.ScriptAPI")
+                ' Set oBag = oAPI.CreatePropertyBag()
+                ' Call oBag.AddValue("PerfValue",10)
+                ' Call oAPI.Return(oBag)
+              </ScriptBody>
+            </InputParameters>
+            <InputTransform>
+              <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+                <xsl:output method="xml" indent="yes" omit-xml-declaration="yes" />
+                <xsl:template match="/">
+                  <xsl:copy-of select="/ScriptName" />
+                  <xsl:copy-of select="/Arguments" />
+                  <xsl:copy-of select="/ScriptBody" />
+                  <xsl:copy-of select="/TimeOutSeconds" />
+                </xsl:template>
+              </xsl:stylesheet>
+            </InputTransform>
+          </UIPageReference>
+          <UIPageReference ID="P2P.OMSAdministration.RuleTemplates.ScriptPerfCollection.PageSet.PageReference4" PageID="Windows!Microsoft.Windows.PerformanceMapperPage" Usage="CreationOnly">
+            <InputParameters>
+              <ObjectName>MyObject</ObjectName>
+              <CounterName>MyCounter</CounterName>
+              <InstanceName>MyInstance</InstanceName>
+              <Value>$Data/Property[@Name='PerfValue']$</Value>
+            </InputParameters>
+            <InputTransform>
+              <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+                <xsl:output method="xml" indent="yes" omit-xml-declaration="yes" />
+                <xsl:template match="/">
+                  <xsl:copy-of select="/ObjectName" />
+                  <xsl:copy-of select="/CounterName" />
+                  <xsl:copy-of select="/InstanceName" />
+                  <xsl:copy-of select="/Value" />
+                </xsl:template>
+              </xsl:stylesheet>
+            </InputTransform>
+          </UIPageReference>
+        </UIPageReferences>
+        <OutputTransform>
+          <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+            <xsl:output method="xml" indent="yes" omit-xml-declaration="yes" />
+            <xsl:template match="/">
+              <xsl:element name="Configuration">
+                <xsl:copy-of select="/ID" />
+                <xsl:copy-of select="/Name" />
+                <xsl:copy-of select="/Enabled" />
+                <xsl:copy-of select="/Description" />
+                <xsl:copy-of select="/Target" />
+                <xsl:copy-of select="/Category" />
+                <xsl:copy-of select="/LocaleId" />
+                <xsl:element name="IntervalSeconds">
+                  <xsl:variable name="RawInterval" select="/SimpleReccuringSchedule/Interval" />
+                  <xsl:variable name="Units" select="/SimpleReccuringSchedule/Interval/@Unit" />
+                  <xsl:choose>
+                    <xsl:when test="not(boolean($Units)) or $Units='Seconds'">
+                      <xsl:value-of select="$RawInterval" />
+                    </xsl:when>
+                    <xsl:when test="$Units='Minutes'">
+                      <xsl:value-of select="$RawInterval*60" />
+                    </xsl:when>
+                    <xsl:when test="$Units='Hours'">
+                      <xsl:value-of select="$RawInterval*3600" />
+                    </xsl:when>
+                    <xsl:when test="$Units='Days'">
+                      <xsl:value-of select="$RawInterval*86400" />
+                    </xsl:when>
+                  </xsl:choose>
+                </xsl:element>
+                <xsl:element name="SyncTime">
+                  <xsl:value-of select="/SimpleReccuringSchedule/SyncTime" />
+                </xsl:element>
+                <xsl:element name="ScriptName">
+                  <xsl:value-of select="/ScriptName[1]" />
+                </xsl:element>
+                <xsl:element name="Arguments">
+                  <xsl:value-of select="/Arguments[1]" />
+                </xsl:element>
+                <xsl:element name="ScriptBody">
+                  <xsl:value-of select="/ScriptBody[1]" />
+                </xsl:element>
+                <xsl:element name="TimeoutSeconds">
+                  <xsl:value-of select="/TimeoutSeconds[1]" />
+                </xsl:element>
+                <xsl:copy-of select="/ObjectName" />
+                <xsl:copy-of select="/CounterName" />
+                <xsl:copy-of select="/InstanceName" />
+                <xsl:copy-of select="/Value" />
+              </xsl:element>
+            </xsl:template>
+          </xsl:stylesheet>
+        </OutputTransform>
+      </UIPageSet>
+      <UIPageSet ID="P2P.OMSAdministration.RuleTemplates.SyslogCollection.PageSet" TypeDefinitionID="P2P.OMSAdministration.RuleTemplates.SyslogCollection">
+        <UIPageReferences>
+          <UIPageReference ID="P2P.OMSAdministration.RuleTemplates.SyslogCollection.PageSet.PageReference1" PageID="P2P.OMSAdministration.RuleTemplates.RuleGeneralPage" Usage="CreationOnly">
+            <InputTransform>
+              <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+                <xsl:output method="xml" indent="yes" omit-xml-declaration="yes" />
+                <xsl:template match="/">
+                  <xsl:element name="Category">
+                    <xsl:copy>EventCollection</xsl:copy>
+                  </xsl:element>
+                </xsl:template>
+              </xsl:stylesheet>
+            </InputTransform>
+          </UIPageReference>
+          <UIPageReference ID="P2P.OMSAdministration.RuleTemplates.SyslogCollection.PageSet.PageReference2" PageID="System!System.ExpressionBuilderPage" Usage="CreationOnly">
+            <InputParameters>
+              <DataType>System.ApplicationLog.SysLogData</DataType>
+            </InputParameters>
+          </UIPageReference>
+        </UIPageReferences>
+        <OutputTransform>
+          <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+            <xsl:output method="xml" indent="yes" omit-xml-declaration="yes" />
+            <xsl:template match="/">
+              <xsl:element name="Configuration">
+                <xsl:copy-of select="/*" />
+              </xsl:element>
+            </xsl:template>
+          </xsl:stylesheet>
+        </OutputTransform>
+      </UIPageSet>
+      <UIPageSet ID="P2P.OMSAdministration.RuleTemplates.WindowsEventCollection.PageSet" TypeDefinitionID="P2P.OMSAdministration.RuleTemplates.WindowsEventCollection">
+        <UIPageReferences>
+          <UIPageReference ID="P2P.OMSAdministration.RuleTemplates.WindowsEventCollection.PageSet.PageReference1" PageID="P2P.OMSAdministration.RuleTemplates.RuleGeneralPage" Usage="CreationOnly">
+            <InputTransform>
+              <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+                <xsl:output method="xml" indent="yes" omit-xml-declaration="yes" />
+                <xsl:template match="/">
+                  <xsl:element name="Category">
+                    <xsl:copy>EventCollection</xsl:copy>
+                  </xsl:element>
+                </xsl:template>
+              </xsl:stylesheet>
+            </InputTransform>
+          </UIPageReference>
+          <UIPageReference ID="P2P.OMSAdministration.RuleTemplates.WindowsEventCollection.PageSet.PageReference2" PageID="Windows!Microsoft.Windows.EventLogNamePage" Usage="CreationOnly">
+            <InputTransform>
+              <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+                <xsl:output method="xml" indent="yes" omit-xml-declaration="yes" />
+                <xsl:template match="/">
+                  <xsl:copy-of select="/ComputerName" />
+                  <xsl:copy-of select="/LogName" />
+                </xsl:template>
+              </xsl:stylesheet>
+            </InputTransform>
+          </UIPageReference>
+          <UIPageReference ID="P2P.OMSAdministration.RuleTemplates.WindowsEventCollection.PageSet.PageReference3" PageID="System!System.ExpressionBuilderPage" Usage="CreationOnly">
+            <InputParameters>
+              <DataType>System.Event.Data</DataType>
+            </InputParameters>
+            <InputTransform>
+              <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+                <xsl:output method="xml" indent="yes" omit-xml-declaration="yes" />
+                <xsl:template match="/">
+                  <xsl:copy-of select="/Expression" />
+                </xsl:template>
+              </xsl:stylesheet>
+            </InputTransform>
+          </UIPageReference>
+        </UIPageReferences>
+        <OutputTransform>
+          <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+            <xsl:output method="xml" indent="yes" omit-xml-declaration="yes" />
+            <xsl:template match="/Configuration/Category">
+              <xsl:copy>EventCollection</xsl:copy>
+            </xsl:template>
+            <xsl:template match="/">
+              <xsl:element name="Configuration">
+                <xsl:copy-of select="/*" />
+              </xsl:element>
+            </xsl:template>
+          </xsl:stylesheet>
+        </OutputTransform>
+      </UIPageSet>
+      <UIPageSet ID="P2P.OMSAdministration.RuleTemplates.WindowsPerformanceCollection.PageSet" TypeDefinitionID="P2P.OMSAdministration.RuleTemplates.WindowsPerformanceCollection">
+        <UIPageReferences>
+          <UIPageReference ID="P2P.OMSAdministration.RuleTemplates.WindowsPerformanceCollection.PageSet.PageReference1" PageID="P2P.OMSAdministration.RuleTemplates.RuleGeneralPage" Usage="CreationOnly">
+            <InputTransform>
+              <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+                <xsl:output method="xml" indent="yes" omit-xml-declaration="yes" />
+                <xsl:template match="/">
+                  <xsl:element name="Category">
+                    <xsl:copy>PerformanceCollection</xsl:copy>
+                  </xsl:element>
+                </xsl:template>
+              </xsl:stylesheet>
+            </InputTransform>
+          </UIPageReference>
+          <UIPageReference ID="P2P.OMSAdministration.RuleTemplates.WindowsPerformanceCollection.PageSet.PageReference2" PageID="Performance!System.Performance.CounterPage" Usage="CreationOnly" />
+          <UIPageReference ID="P2P.OMSAdministration.RuleTemplates.WindowsPerformanceCollection.PageSet.PageReference3" PageID="Performance!System.Performance.OptimizedCollectionPage" Usage="CreationOnly" />
+        </UIPageReferences>
+        <OutputTransform>
+          <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+            <xsl:output method="xml" indent="yes" omit-xml-declaration="yes" />
+            <xsl:template match="/Configuration/Category">
+              <xsl:copy>PerformanceCollection</xsl:copy>
+            </xsl:template>
+            <xsl:template match="/">
+              <xsl:element name="Configuration">
+                <xsl:copy-of select="/*" />
+              </xsl:element>
+            </xsl:template>
+          </xsl:stylesheet>
+        </OutputTransform>
+      </UIPageSet>
+      <UIPageSet ID="P2P.OMSAdministration.RuleTemplates.WMIEventCollection.PageSet" TypeDefinitionID="P2P.OMSAdministration.RuleTemplates.WMIEventCollection">
+        <UIPageReferences>
+          <UIPageReference ID="P2P.OMSAdministration.RuleTemplates.WMIEventCollection.PageSet.PageReference1" PageID="P2P.OMSAdministration.RuleTemplates.RuleGeneralPage" Usage="CreationOnly">
+            <InputTransform>
+              <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+                <xsl:output method="xml" indent="yes" omit-xml-declaration="yes" />
+                <xsl:template match="/">
+                  <xsl:element name="Category">
+                    <xsl:copy>EventCollection</xsl:copy>
+                  </xsl:element>
+                </xsl:template>
+              </xsl:stylesheet>
+            </InputTransform>
+          </UIPageReference>
+          <UIPageReference ID="P2P.OMSAdministration.RuleTemplates.WMIEventCollection.PageSet.PageReference2" PageID="Windows!Microsoft.Windows.WmiEventProviderPage" Usage="CreationOnly" />
+        </UIPageReferences>
+        <OutputTransform>
+          <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+            <xsl:output method="xml" indent="yes" omit-xml-declaration="yes" />
+            <xsl:template match="/">
+              <xsl:element name="Configuration">
+                <xsl:copy-of select="/*" />
+              </xsl:element>
+            </xsl:template>
+          </xsl:stylesheet>
+        </OutputTransform>
+      </UIPageSet>
+      <UIPageSet ID="P2P.OMSAdministration.RuleTemplates.WMIPerfCollection.PageSet" TypeDefinitionID="P2P.OMSAdministration.RuleTemplates.WMIPerfCollection">
+        <UIPageReferences>
+          <UIPageReference ID="P2P.OMSAdministration.RuleTemplates.WMIPerfCollection.PageSet.PageReference1" PageID="P2P.OMSAdministration.RuleTemplates.RuleGeneralPage" Usage="CreationOnly">
+            <InputTransform>
+              <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+                <xsl:output method="xml" indent="yes" omit-xml-declaration="yes" />
+                <xsl:template match="/">
+                  <xsl:element name="Category">
+                    <xsl:copy>PerformanceCollection</xsl:copy>
+                  </xsl:element>
+                </xsl:template>
+              </xsl:stylesheet>
+            </InputTransform>
+          </UIPageReference>
+          <UIPageReference ID="P2P.OMSAdministration.RuleTemplates.WMIPerfCollection.PageSet.PageReference2" PageID="Windows!Microsoft.Windows.WmiProviderPage" Usage="CreationOnly" />
+          <UIPageReference ID="P2P.OMSAdministration.RuleTemplates.WMIPerfCollection.PageSet.PageReference3" PageID="Windows!Microsoft.Windows.PerformanceMapperPage" Usage="CreationOnly" />
+        </UIPageReferences>
+        <OutputTransform>
+          <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+            <xsl:output method="xml" indent="yes" omit-xml-declaration="yes" />
+            <xsl:template match="/Configuration/Category">
+              <xsl:copy>PerformanceCollection</xsl:copy>
+            </xsl:template>
+            <xsl:template match="/">
+              <xsl:element name="Configuration">
+                <xsl:copy-of select="/*" />
+              </xsl:element>
+            </xsl:template>
+          </xsl:stylesheet>
+        </OutputTransform>
+      </UIPageSet>
+    </UIPageSets>
+  </PresentationTypes>
+</ManagementPackFragment>
