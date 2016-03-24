@@ -50,13 +50,13 @@
   </ItemGroup>
   <ItemGroup>
     <ManagementPackReference Include="Microsoft.SystemCenter.Advisor">
-      <HintPath>C:\Users\fore0\Source\Repos\OMS Administration Packs\Pack Dependances\Microsoft.SystemCenter.Advisor.mpb</HintPath>
+      <HintPath>..\Pack Dependances\Microsoft.SystemCenter.Advisor.mpb</HintPath>
       <Alias>MSA</Alias>
       <MinVersion>7.1.10226.0</MinVersion>
       <PackageToBundle>False</PackageToBundle>
     </ManagementPackReference>
     <ManagementPackReference Include="Microsoft.SystemCenter.Advisor.Core">
-      <HintPath>C:\Users\fore0\Source\Repos\OMS Administration Packs\Pack Dependances\Microsoft.SystemCenter.Advisor.Core.mpb</HintPath>
+      <HintPath>..\Pack Dependances\Microsoft.SystemCenter.Advisor.Core.mpb</HintPath>
       <Alias>MSAC</Alias>
       <MinVersion>1.2.1269.0</MinVersion>
       <PackageToBundle>False</PackageToBundle>
@@ -68,7 +68,7 @@
       <PackageToBundle>False</PackageToBundle>
     </ManagementPackReference>
     <ManagementPackReference Include="Microsoft.SystemCenter.InstanceGroup.Library">
-      <HintPath>C:\Users\fore0\Source\Repos\OMS Administration Packs\Pack Dependances\Microsoft.SystemCenter.InstanceGroup.Library.mp</HintPath>
+      <HintPath>..\Pack Dependances\Microsoft.SystemCenter.InstanceGroup.Library.mp</HintPath>
       <Alias>MSIL</Alias>
       <MinVersion>7.5.8501.0</MinVersion>
       <PackageToBundle>False</PackageToBundle>
@@ -80,7 +80,7 @@
       <PackageToBundle>False</PackageToBundle>
     </ManagementPackReference>
     <ManagementPackReference Include="Microsoft.SystemCenter.Visualization.Component.Library">
-      <HintPath>C:\Users\fore0\Source\Repos\OMS Administration Packs\Pack Dependances\Microsoft.SystemCenter.Visualization.Component.Library.mpb</HintPath>
+      <HintPath>..\Pack Dependances\Microsoft.SystemCenter.Visualization.Component.Library.mpb</HintPath>
       <Alias>SystemCenter2</Alias>
       <MinVersion>7.1.10226.1177</MinVersion>
       <PackageToBundle>False</PackageToBundle>
@@ -98,7 +98,7 @@
       <PackageToBundle>False</PackageToBundle>
     </ManagementPackReference>
     <ManagementPackReference Include="Microsoft.SystemCenter.Visualization.ServiceLevelComponents">
-      <HintPath>C:\Users\fore0\Source\Repos\OMS Administration Packs\Pack Dependances\Microsoft.SystemCenter.Visualization.ServiceLevelComponents.mpb</HintPath>
+      <HintPath>..\Pack Dependances\Microsoft.SystemCenter.Visualization.ServiceLevelComponents.mpb</HintPath>
       <Alias>ComponentRequiredReference3</Alias>
       <MinVersion>7.1.10226.0</MinVersion>
       <PackageToBundle>False</PackageToBundle>

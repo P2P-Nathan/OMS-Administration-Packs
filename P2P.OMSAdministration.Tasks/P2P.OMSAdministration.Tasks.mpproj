@@ -36,7 +36,7 @@
   </PropertyGroup>
   <ItemGroup>
     <ManagementPackReference Include="Microsoft.SystemCenter.InstanceGroup.Library">
-      <HintPath>C:\Users\fore0\Source\Repos\OMS Administration Packs\Pack Dependances\Microsoft.SystemCenter.InstanceGroup.Library.mp</HintPath>
+      <HintPath>..\Pack Dependances\Microsoft.SystemCenter.InstanceGroup.Library.mp</HintPath>
       <Alias>MSIL</Alias>
       <MinVersion>7.5.8501.0</MinVersion>
     </ManagementPackReference>

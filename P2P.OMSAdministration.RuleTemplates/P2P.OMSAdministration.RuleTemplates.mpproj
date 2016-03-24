@@ -68,25 +68,25 @@
   </ItemGroup>
   <ItemGroup>
     <ManagementPackReference Include="Microsoft.IntelligencePacks.InstanceSubscription">
-      <HintPath>C:\Users\fore0\Source\Repos\OMS Administration Packs\Pack Dependances\Microsoft.IntelligencePack.Core_635930487030113045.mpb</HintPath>
+      <HintPath>..\Pack Dependances\Microsoft.IntelligencePack.Core_635930487030113045.mpb</HintPath>
       <Alias>MII</Alias>
       <MinVersion>7.0.10476.0</MinVersion>
       <PackageToBundle>False</PackageToBundle>
     </ManagementPackReference>
     <ManagementPackReference Include="Microsoft.IntelligencePacks.Monitoring">
-      <HintPath>C:\Users\fore0\Source\Repos\OMS Administration Packs\Pack Dependances\Microsoft.IntelligencePack.Core_635930487030113045.mpb</HintPath>
+      <HintPath>..\Pack Dependances\Microsoft.IntelligencePack.Core_635930487030113045.mpb</HintPath>
       <Alias>MIM</Alias>
       <MinVersion>7.0.10476.0</MinVersion>
       <PackageToBundle>False</PackageToBundle>
     </ManagementPackReference>
     <ManagementPackReference Include="Microsoft.IntelligencePacks.Types">
-      <HintPath>C:\Users\fore0\Source\Repos\OMS Administration Packs\Pack Dependances\Microsoft.IntelligencePack.Core_635930487030113045.mpb</HintPath>
+      <HintPath>..\Pack Dependances\Microsoft.IntelligencePack.Core_635930487030113045.mpb</HintPath>
       <Alias>IPTypes</Alias>
       <MinVersion>7.0.10476.0</MinVersion>
       <PackageToBundle>False</PackageToBundle>
     </ManagementPackReference>
     <ManagementPackReference Include="Microsoft.SystemCenter.Advisor.Core">
-      <HintPath>C:\Users\fore0\Source\Repos\OMS Administration Packs\Pack Dependances\Microsoft.SystemCenter.Advisor.Core.mpb</HintPath>
+      <HintPath>..\Pack Dependances\Microsoft.SystemCenter.Advisor.Core.mpb</HintPath>
       <Alias>MSAC</Alias>
       <MinVersion>1.2.1269.0</MinVersion>
       <PackageToBundle>False</PackageToBundle>
@@ -104,7 +104,7 @@
       <PackageToBundle>False</PackageToBundle>
     </ManagementPackReference>
     <ManagementPackReference Include="Microsoft.SystemCenter.RuleTemplates">
-      <HintPath>C:\Users\fore0\Source\Repos\OMS Administration Packs\Pack Dependances\Microsoft.SystemCenter.RuleTemplates.mp</HintPath>
+      <HintPath>..\Pack Dependances\Microsoft.SystemCenter.RuleTemplates.mp</HintPath>
       <Alias>MSRuleTemplate</Alias>
       <MinVersion>7.1.10226.0</MinVersion>
       <PackageToBundle>False</PackageToBundle>

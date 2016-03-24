@@ -40,7 +40,7 @@
       <PackageToBundle>False</PackageToBundle>
     </ManagementPackReference>
     <ManagementPackReference Include="Microsoft.SystemCenter.Visualization.ServiceLevelComponents">
-      <HintPath>C:\Users\fore0\Source\Repos\OMS Administration Packs\Pack Dependances\Microsoft.SystemCenter.Visualization.ServiceLevelComponents.mpb</HintPath>
+      <HintPath>..\Pack Dependances\Microsoft.SystemCenter.Visualization.ServiceLevelComponents.mpb</HintPath>
       <Alias>MSVS</Alias>
       <MinVersion>7.1.10226.0</MinVersion>
       <PackageToBundle>False</PackageToBundle>

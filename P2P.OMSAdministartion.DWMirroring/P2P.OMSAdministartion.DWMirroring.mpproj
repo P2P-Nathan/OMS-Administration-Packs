@@ -50,19 +50,19 @@
   </ItemGroup>
   <ItemGroup>
     <ManagementPackReference Include="Microsoft.IntelligencePacks.Performance">
-      <HintPath>C:\Users\fore0\Source\Repos\OMS Administration Packs\Pack Dependances\tmpEFB4Microsoft.IntelligencePacks.Performance.mpb</HintPath>
+      <HintPath>..\Pack Dependances\tmpEFB4Microsoft.IntelligencePacks.Performance.mpb</HintPath>
       <Alias>IPPerfCollection</Alias>
       <MinVersion>1.2.1416.0</MinVersion>
       <PackageToBundle>False</PackageToBundle>
     </ManagementPackReference>
     <ManagementPackReference Include="Microsoft.IntelligencePacks.Types">
-      <HintPath>C:\Users\fore0\Source\Repos\OMS Administration Packs\Pack Dependances\Microsoft.IntelligencePack.Core_635930487030113045.mpb</HintPath>
+      <HintPath>..\Pack Dependances\Microsoft.IntelligencePack.Core_635930487030113045.mpb</HintPath>
       <Alias>IPTypes</Alias>
       <MinVersion>7.0.10476.0</MinVersion>
       <PackageToBundle>False</PackageToBundle>
     </ManagementPackReference>
     <ManagementPackReference Include="Microsoft.SystemCenter.Advisor.Internal">
-      <HintPath>C:\Users\fore0\Source\Repos\OMS Administration Packs\Pack Dependances\Microsoft.SystemCenter.Advisor.Internal.mpb</HintPath>
+      <HintPath>..\Pack Dependances\Microsoft.SystemCenter.Advisor.Internal.mpb</HintPath>
       <Alias>SystemCenter1</Alias>
       <MinVersion>7.1.10226.0</MinVersion>
       <PackageToBundle>False</PackageToBundle>

@@ -22,7 +22,7 @@
     <Company>Practice 2 Perfect</Company>
     <Copyright>Practice2Perfect 2016</Copyright>
     <DelaySigning>False</DelaySigning>
-    <AssemblyOriginatorKeyFile>C:\Users\fore0\Google Drive\TripleEIT Code\Practice 2 Perfect Blog\P2PKey.snk</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>..\P2P_Collaborators.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
     <DebugSymbols>false</DebugSymbols>
@@ -31,7 +31,7 @@
     <Company>Practice 2 Perfect</Company>
     <Copyright>Practice 2 Perfect 2016</Copyright>
     <DelaySign>false</DelaySign>
-    <AssemblyOriginatorKeyFile>C:\Users\fore0\Google Drive\TripleEIT Code\Practice 2 Perfect Blog\P2PKey.snk</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>..\P2P_Collaborators.snk</AssemblyOriginatorKeyFile>
     <GenerateSealed>False</GenerateSealed>
   </PropertyGroup>
   <ItemGroup>
@@ -41,30 +41,30 @@
   </ItemGroup>
   <ItemGroup>
     <ManagementPackReference Include="Microsoft.IntelligencePacks.InstanceSubscription">
-      <HintPath>C:\Users\fore0\Source\Repos\OMS Administration Packs\Pack Dependances\Microsoft.IntelligencePack.Core_635930487030113045.mpb</HintPath>
+      <HintPath>..\Pack Dependances\Microsoft.IntelligencePack.Core_635930487030113045.mpb</HintPath>
       <Alias>MII</Alias>
       <MinVersion>7.0.10476.0</MinVersion>
       <PackageToBundle>False</PackageToBundle>
     </ManagementPackReference>
     <ManagementPackReference Include="Microsoft.IntelligencePacks.Monitoring">
-      <HintPath>C:\Users\fore0\Source\Repos\OMS Administration Packs\Pack Dependances\Microsoft.IntelligencePack.Core_635930487030113045.mpb</HintPath>
+      <HintPath>..\Pack Dependances\Microsoft.IntelligencePack.Core_635930487030113045.mpb</HintPath>
       <Alias>MIM</Alias>
       <MinVersion>7.0.10476.0</MinVersion>
       <PackageToBundle>False</PackageToBundle>
     </ManagementPackReference>
     <ManagementPackReference Include="Microsoft.IntelligencePacks.Types">
-      <HintPath>C:\Users\fore0\Source\Repos\OMS Administration Packs\Pack Dependances\Microsoft.IntelligencePack.Core_635930487030113045.mpb</HintPath>
+      <HintPath>..\Pack Dependances\Microsoft.IntelligencePack.Core_635930487030113045.mpb</HintPath>
       <Alias>IPTypes</Alias>
       <MinVersion>7.0.10476.0</MinVersion>
       <PackageToBundle>False</PackageToBundle>
     </ManagementPackReference>
     <ManagementPackReference Include="Microsoft.SystemCenter.Advisor">
-      <HintPath>C:\Users\fore0\Source\Repos\OMS Administration Packs\Pack Dependances\Microsoft.SystemCenter.Advisor.mpb</HintPath>
+      <HintPath>..\Pack Dependances\Microsoft.SystemCenter.Advisor.mpb</HintPath>
       <Alias>MSA</Alias>
       <MinVersion>7.1.10226.0</MinVersion>
     </ManagementPackReference>
     <ManagementPackReference Include="Microsoft.SystemCenter.Advisor.Core">
-      <HintPath>C:\Users\fore0\Source\Repos\OMS Administration Packs\Pack Dependances\Microsoft.SystemCenter.Advisor.Core.mpb</HintPath>
+      <HintPath>..\Pack Dependances\Microsoft.SystemCenter.Advisor.Core.mpb</HintPath>
       <Alias>MSAC</Alias>
       <MinVersion>1.2.1269.0</MinVersion>
     </ManagementPackReference>
