@@ -95,7 +95,7 @@
       <HintPath>C:\Program Files (x86)\System Center Visual Studio Authoring Extensions\References\OM2012R2\Microsoft.SystemCenter.Visualization.Library.mp</HintPath>
       <Alias>VizLibrary</Alias>
       <MinVersion>7.1.10226.0</MinVersion>
-      <PackageToBundle>False</PackageToBundle>
+      <PackageToBundle>True</PackageToBundle>
     </ManagementPackReference>
     <ManagementPackReference Include="Microsoft.SystemCenter.Visualization.ServiceLevelComponents">
       <HintPath>..\Pack Dependances\Microsoft.SystemCenter.Visualization.ServiceLevelComponents.mpb</HintPath>

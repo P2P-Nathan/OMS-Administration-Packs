@@ -1,3 +1,40 @@
 ﻿<ManagementPackFragment SchemaVersion="2.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  
+  <Monitoring>
+    <Overrides>
+      <RulePropertyOverride ID="P2P.OMSAdministration.DWMirroring.PerformanceCollect.Override.EnabledForOMSServers" Context="SystemCenter1!Microsoft.SystemCenter.Advisor.Library.ServerOptInOutGroup" Enforced="false" Rule="P2P.OMSAdministration.DWMirroring.PerformanceCollect" Property="Enabled">
+        <Value>true</Value>
+      </RulePropertyOverride>
+      <RulePropertyOverride ID="P2P.OMSAdministration.DWMirroring.EventCollect.Override.EnabledForOMSServers" Context="SystemCenter1!Microsoft.SystemCenter.Advisor.Library.ServerOptInOutGroup" Enforced="false" Rule="P2P.OMSAdministration.DWMirroring.EventCollect" Property="Enabled">
+        <Value>true</Value>
+      </RulePropertyOverride>
+      <RulePropertyOverride ID="P2P.OMSAdministration.DWMirroring.Overrides.DisableStandardCollectPerf" Context="SystemCenter1!Microsoft.SystemCenter.Advisor.Library.ServerOptInOutGroup" Enforced="false" Rule="DWLib!Microsoft.SystemCenter.DataWarehouse.CollectPerformanceData" Property="Enabled">
+        <Value>false</Value>
+      </RulePropertyOverride>
+      <RulePropertyOverride ID="P2P.OMSAdministration.DWMirroring.Overrides.DisableStandardCollectEvent" Context="SystemCenter1!Microsoft.SystemCenter.Advisor.Library.ServerOptInOutGroup" Enforced="false" Rule="DWLib!Microsoft.SystemCenter.DataWarehouse.CollectEventData" Property="Enabled">
+        <Value>false</Value>
+      </RulePropertyOverride>
+    </Overrides>
+  </Monitoring>
+  <LanguagePacks>
+    <LanguagePack ID="ENU" IsDefault="true">
+      <DisplayStrings>
+        <DisplayString ElementID="P2P.OMSAdministration.DWMirroring.Overrides.DisableStandardCollectEvent">
+          <Name>Disable Standard DW Event Collection</Name>
+          <Description>Disables the Standard DW Collection to allow for DW and OMS Collection.</Description>
+        </DisplayString>
+        <DisplayString ElementID="P2P.OMSAdministration.DWMirroring.Overrides.DisableStandardCollectPerf">
+          <Name>Disable Standard DW Performance Collection</Name>
+          <Description>Disables the Standard DW Collection to allow for DW and OMS Collection.</Description>
+        </DisplayString>
+        <DisplayString ElementID="P2P.OMSAdministration.DWMirroring.EventCollect.Override.EnabledForOMSServers">
+          <Name>Enable OMS Data Warehouse Mirroring Event</Name>
+          <Description>Enables the OMS Mirror Rule that collects the Data Warehouse Stream</Description>
+        </DisplayString>
+        <DisplayString ElementID="P2P.OMSAdministration.DWMirroring.PerformanceCollect.Override.EnabledForOMSServers">
+          <Name>Enable OMS Data Warehouse Mirroring Performance</Name>
+          <Description>Enables the OMS Mirror Rule that collects the Data Warehouse Stream</Description>
+        </DisplayString>
+      </DisplayStrings>
+    </LanguagePack>
+  </LanguagePacks>
 </ManagementPackFragment>

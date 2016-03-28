@@ -2,7 +2,7 @@
 <ManagementPackFragment SchemaVersion="2.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
   <Monitoring>
     <Rules>
-      <Rule ID="P2P.OMSAdministartion.DWMirroring.PerformanceCollect" Enabled="false" Target="SystemCenter!Microsoft.SystemCenter.HealthService" ConfirmDelivery="true" Remotable="true" Priority="Normal" DiscardLevel="90">
+      <Rule ID="P2P.OMSAdministration.DWMirroring.PerformanceCollect" Enabled="false" Target="SystemCenter!Microsoft.SystemCenter.HealthService" ConfirmDelivery="true" Remotable="true" Priority="Normal" DiscardLevel="90">
         <Category>System</Category>
         <DataSources>
           <DataSource ID="PerformanceDS" TypeID="DWLib!Microsoft.SystemCenter.DataWarehouse.PublishedPerformanceDataProviderCustomChannel">
@@ -25,7 +25,7 @@
           </WriteAction>
         </WriteActions>
       </Rule>
-      <Rule ID="P2P.OMSAdministartion.DWMirroring.EventCollect" Enabled="false" Target="SystemCenter!Microsoft.SystemCenter.HealthService" ConfirmDelivery="true" Remotable="true" Priority="Normal" DiscardLevel="60">
+      <Rule ID="P2P.OMSAdministration.DWMirroring.EventCollect" Enabled="false" Target="SystemCenter!Microsoft.SystemCenter.HealthService" ConfirmDelivery="true" Remotable="true" Priority="Normal" DiscardLevel="60">
         <Category>System</Category>
         <DataSources>
           <DataSource ID="DS" TypeID="DWLib!Microsoft.SystemCenter.DataWarehouse.PublishedEventDataProviderCustomChannel">
