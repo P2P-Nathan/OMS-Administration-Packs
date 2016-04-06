@@ -1,6 +1,8 @@
 # OMS-Administartion-Packs
 Packs to allow easier control of OMS features and usage.
 
+e-mail Nathan@Practice2Perfect.com if you would like to be a contributor to the Pack(s)
+
 Please add features and correct bugs as you find a Community need for them
 
 Notes on the Current Pack:
