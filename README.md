@@ -8,7 +8,6 @@ e-mail Nathan@Practice2Perfect.com if you would like to be a contributor to the 
 Please add features and correct bugs as you find a Community need for them
 
 Notes on the Current Pack:
- - The Pack has been refactored to removed company specific information from the first version.
  - The Pack Functionality is there and the Process works but a few wrinkles could be ironed out
     * UI could have a slightly more clear process / Goal
     * Documentation is Needed
