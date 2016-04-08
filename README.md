@@ -1,5 +1,6 @@
 # OMS-Administartion-Packs
 Packs to allow easier control of OMS features and usage.
+
 Details at: http://practice2perfect.com/2016/04/oms-administration-management-packs/
 
 e-mail Nathan@Practice2Perfect.com if you would like to be a contributor to the Pack(s)
