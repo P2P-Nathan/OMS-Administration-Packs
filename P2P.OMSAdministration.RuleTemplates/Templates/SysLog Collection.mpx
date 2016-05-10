@@ -21,7 +21,6 @@
         <Reference ID="AppLog" />
         <Reference ID="SC" />
         <Reference ID="SCDW" />
-
         <Reference ID="IPTypes" />
       </References>
       <Implementation>

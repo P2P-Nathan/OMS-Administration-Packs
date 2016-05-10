@@ -1,6 +1,5 @@
 ﻿<ManagementPackFragment SchemaVersion="2.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Templates>
-
     <Template ID="P2P.OMSAdministration.RuleTemplates.WMIEventCollection" Purpose="RuleCreation">
       <Configuration>
         <xsd:element name="ID" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />
@@ -18,7 +17,6 @@
         <Reference ID="Windows" />
         <Reference ID="SC" />
         <Reference ID="SCDW" />
-
         <Reference ID="IPTypes" />
       </References>
       <Implementation>
@@ -35,7 +33,6 @@
               </DataSources>
               <WriteActions>
                 <WriteAction ID="HttpWA" TypeID="$Reference/IPTypes$Microsoft.SystemCenter.CollectCloudGenericEvent" />
-
               </WriteActions>
             </Rule>
           </Rules>
@@ -74,7 +71,6 @@
         <Reference ID="Windows" />
         <Reference ID="SC" />
         <Reference ID="SCDW" />
-
         <Reference ID="IPTypes" />
       </References>
       <Implementation>

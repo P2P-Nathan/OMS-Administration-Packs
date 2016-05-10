@@ -35,7 +35,6 @@
         <Reference ID="Windows" />
         <Reference ID="SC" />
         <Reference ID="SCDW" />
-
         <Reference ID="IPTypes" />
       </References>
       <Implementation>

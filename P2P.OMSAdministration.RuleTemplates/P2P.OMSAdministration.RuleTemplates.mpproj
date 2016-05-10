@@ -79,6 +79,12 @@
       <MinVersion>7.0.10476.0</MinVersion>
       <PackageToBundle>False</PackageToBundle>
     </ManagementPackReference>
+    <ManagementPackReference Include="Microsoft.IntelligencePacks.Performance">
+      <HintPath>C:\Users\Nathan\Source\Repos\OMS-Administartion-Packs\Pack Dependances\tmpEFB4Microsoft.IntelligencePacks.Performance.mpb</HintPath>
+      <Alias>IPPerfCollection</Alias>
+      <MinVersion>1.2.1416.0</MinVersion>
+      <PackageToBundle>False</PackageToBundle>
+    </ManagementPackReference>
     <ManagementPackReference Include="Microsoft.IntelligencePacks.Types">
       <HintPath>..\Pack Dependances\Microsoft.IntelligencePack.Core_635930487030113045.mpb</HintPath>
       <Alias>IPTypes</Alias>
@@ -144,6 +150,14 @@
     <Folder Include="Classes" />
     <Folder Include="Presentation and Language" />
     <Folder Include="Templates" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\P2P.OMSAdministration.RuleTemplates.Library\P2P.OMSAdministration.RuleTemplates.Library.mpproj">
+      <Name>P2P.OMSAdministration.RuleTemplates.Library</Name>
+      <Project>{2e3f2dce-a4ee-4784-a520-e25b3bc0a559}</Project>
+      <Private>True</Private>
+      <Alias>TemplateLibrary</Alias>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\VSAC\Microsoft.SystemCenter.OperationsManager.targets" />
 </Project>

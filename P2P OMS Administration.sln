@@ -27,6 +27,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		Signing the Assembly.txt = Signing the Assembly.txt
 	EndProjectSection
 EndProject
+Project("{D4B43EB3-688B-4EEE-86BD-088F0B28ABB3}") = "P2P.OMSAdministration.RuleTemplates.Library", "P2P.OMSAdministration.RuleTemplates.Library\P2P.OMSAdministration.RuleTemplates.Library.mpproj", "{2E3F2DCE-A4EE-4784-A520-E25B3BC0A559}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -127,6 +129,16 @@ Global
 		{CFFB1670-A681-4B0E-BC30-199C7252370F}.Release|Mixed Platforms.Build.0 = Release|x86
 		{CFFB1670-A681-4B0E-BC30-199C7252370F}.Release|x86.ActiveCfg = Release|x86
 		{CFFB1670-A681-4B0E-BC30-199C7252370F}.Release|x86.Build.0 = Release|x86
+		{2E3F2DCE-A4EE-4784-A520-E25B3BC0A559}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{2E3F2DCE-A4EE-4784-A520-E25B3BC0A559}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{2E3F2DCE-A4EE-4784-A520-E25B3BC0A559}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{2E3F2DCE-A4EE-4784-A520-E25B3BC0A559}.Debug|x86.ActiveCfg = Debug|x86
+		{2E3F2DCE-A4EE-4784-A520-E25B3BC0A559}.Debug|x86.Build.0 = Debug|x86
+		{2E3F2DCE-A4EE-4784-A520-E25B3BC0A559}.Release|Any CPU.ActiveCfg = Release|x86
+		{2E3F2DCE-A4EE-4784-A520-E25B3BC0A559}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{2E3F2DCE-A4EE-4784-A520-E25B3BC0A559}.Release|Mixed Platforms.Build.0 = Release|x86
+		{2E3F2DCE-A4EE-4784-A520-E25B3BC0A559}.Release|x86.ActiveCfg = Release|x86
+		{2E3F2DCE-A4EE-4784-A520-E25B3BC0A559}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
