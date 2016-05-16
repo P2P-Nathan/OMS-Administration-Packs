@@ -1,0 +1,93 @@
+﻿<ManagementPackFragment SchemaVersion="2.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <TypeDefinitions>
+    <ModuleTypes>
+      <ConditionDetectionModuleType ID="P2P.OMSAdministration.Template.Modules.LinkedPerfToOMSPerf.PlaceHolder" Comment="Maps a PerformanceData to a LinkedPerformanceData" Accessibility="Internal" Batching="false" Stateful="false" PassThrough="false">
+        <Configuration>
+          <xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ManagedEntityId" type="xsd:string"/>
+          <xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="RuleId" type="xsd:string"/>
+          <xsd:element name="ComputerName" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />
+        </Configuration>
+        <ModuleImplementation Isolation="Any">
+          <Composite>
+            <MemberModules>
+              <ConditionDetection ID="MapToPerf" TypeID="Performance!System.Performance.DataGenericMapper">
+                <ObjectName>\\$Config/ComputerName$\$Data/ObjectName$</ObjectName>
+                <CounterName>$Data/CounterName$</CounterName>
+                <InstanceName>$Data/InstanceName$</InstanceName>
+                <Value>$Data/Value$</Value>
+              </ConditionDetection>
+              <ConditionDetection ID="MapToLinkedPerf" TypeID="TemplateLibrary!P2P.OMSAdministration.Template.Modules.LinkedDataMapper">
+                <ManagedEntityId>$Config/ManagedEntityId$</ManagedEntityId>
+                <RuleId>$MPElement$</RuleId>
+              </ConditionDetection>
+            </MemberModules>
+            <Composition>
+              <Node ID="MapToLinkedPerf">
+                <Node ID="MapToPerf"/>
+              </Node>
+            </Composition>
+          </Composite>
+        </ModuleImplementation>
+        <OutputType>SC!Microsoft.SystemCenter.Performance.LinkedData</OutputType>
+        <InputTypes>
+          <InputType>Performance!System.Performance.Data</InputType>
+        </InputTypes>
+      </ConditionDetectionModuleType>
+      <WriteActionModuleType ID="P2P.OMSAdministration.Template.Modules.WritePerfToOMS.PlaceHolder" Accessibility="Internal" Batching="false">
+        <Configuration>
+          <xsd:element name="ComputerName" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />
+        </Configuration>
+        <ModuleImplementation Isolation="Any">
+          <Composite>
+            <MemberModules>
+              <ConditionDetection ID="MapToOMSPerf" TypeID="TemplateLibrary!P2P.OMSAdministration.Template.Modules.LinkedPerfToOMSPerf">
+                <ManagedEntityId>$Target/Id$</ManagedEntityId>
+                <RuleId>$MPElement$</RuleId>
+                <ComputerName>$Config/ComputerName$</ComputerName>
+              </ConditionDetection>
+              <WriteAction ID="Write" TypeID="System!System.PublishData">
+                <ManagementGroupId>$Target/ManagementGroup/Id$</ManagementGroupId>
+                <ChannelId>26DD9EC5-92E7-4B90-9B5B-562E71E17C6C</ChannelId>
+              </WriteAction>
+            </MemberModules>
+            <Composition>
+              <Node ID="Write">
+                <Node ID="MapToOMSPerf"/>
+              </Node>
+            </Composition>
+          </Composite>
+        </ModuleImplementation>
+        <InputType>SC!Microsoft.SystemCenter.Performance.LinkedData</InputType>
+      </WriteActionModuleType>
+      <WriteActionModuleType ID="P2P.OMSAdministration.Template.Modules.WritePerfAggToOMS.PlaceHolder" Accessibility="Internal" Batching="false">
+        <Configuration>
+          <xsd:element name="ComputerName" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />
+        </Configuration>
+        <ModuleImplementation Isolation="Any">
+          <Composite>
+            <MemberModules>
+              <ConditionDetection ID="MapToPerf" TypeID="Performance!System.Performance.DataGenericMapper">
+                <ObjectName>\\$Config/ComputerName$\$Data/ObjectName$</ObjectName>
+                <CounterName>$Data/CounterName$</CounterName>
+                <InstanceName>$Data/InstanceName$</InstanceName>
+                <Value>$Data/Value$</Value>
+              </ConditionDetection>
+              <ConditionDetection ID="Aggregator" TypeID="IPPerfCollection!Microsoft.IntelligencePacks.Performance.PerformanceAggregator">
+                <AggregationIntervalInMinutes>30</AggregationIntervalInMinutes>
+              </ConditionDetection>
+              <WriteAction ID="WriteToCloud" TypeID="IPTypes!Microsoft.SystemCenter.CollectCloudPerformanceDataAggregated_PerfIP" />
+            </MemberModules>
+            <Composition>
+              <Node ID="WriteToCloud">
+                <Node ID="Aggregator">
+                  <Node ID="MapToPerf"/>
+                </Node>
+              </Node>
+            </Composition>
+          </Composite>
+        </ModuleImplementation>
+        <InputType>SC!Microsoft.SystemCenter.Performance.LinkedData</InputType>
+      </WriteActionModuleType>
+    </ModuleTypes>
+  </TypeDefinitions>
+</ManagementPackFragment>

@@ -41,6 +41,9 @@
     <Compile Include="Classes\Schema Types.mpx">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Modules\PerfToOMS.mpx">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Presentation and Language\Display Strings.mpx">
       <SubType>Code</SubType>
     </Compile>
@@ -148,6 +151,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Classes" />
+    <Folder Include="Modules" />
     <Folder Include="Presentation and Language" />
     <Folder Include="Templates" />
   </ItemGroup>

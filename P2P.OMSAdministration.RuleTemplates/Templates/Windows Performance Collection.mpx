@@ -32,6 +32,7 @@
         <Reference ID="SCDW" />
         <Reference ID="Performance" />
         <Reference ID="IPTypes" />
+        <Reference ID="TemplateLibrary" />
       </References>
       <Implementation>
         <Monitoring>
@@ -52,7 +53,30 @@
                 </DataSource>
               </DataSources>
               <WriteActions>
-                <WriteAction ID="HttpWACloud" TypeID="$Reference/IPTypes$Microsoft.SystemCenter.CollectCloudPerformanceData_PerfIP" />
+                <WriteAction ID="HttpWACloud" TypeID="$Reference/TemplateLibrary$P2P.OMSAdministration.Template.Modules.WritePerfToOMS" >
+                  <ComputerName>$TemplateConfig/ComputerName$</ComputerName>
+                </WriteAction>
+              </WriteActions>
+            </Rule>
+            <Rule ID="$TemplateConfig/ID$.Agg" Target="$TemplateConfig/Target$" Enabled="$TemplateConfig/Enabled$">
+              <Category>$TemplateConfig/Category$</Category>
+              <DataSources>
+                <DataSource ID="DS" TypeID="$Reference/Performance$System.Performance.OptimizedDataProvider">
+                  <ComputerName>$TemplateConfig/ComputerName$</ComputerName>
+                  <CounterName>$TemplateConfig/CounterName$</CounterName>
+                  <ObjectName>$TemplateConfig/ObjectName$</ObjectName>
+                  <InstanceName>$TemplateConfig/InstanceName$</InstanceName>
+                  <AllInstances>$TemplateConfig/AllInstances$</AllInstances>
+                  <Frequency>$TemplateConfig/Frequency$</Frequency>
+                  <Tolerance>$TemplateConfig/Tolerance$</Tolerance>
+                  <ToleranceType>$TemplateConfig/ToleranceType$</ToleranceType>
+                  <MaximumSampleSeparation>$TemplateConfig/MaximumSampleSeparation$</MaximumSampleSeparation>
+                </DataSource>
+              </DataSources>
+              <WriteActions>
+                <WriteAction ID="HttpWACloudAgg" TypeID="$Reference/TemplateLibrary$P2P.OMSAdministration.Template.Modules.WritePerfAggToOMS">
+                  <ComputerName>$TemplateConfig/ComputerName$</ComputerName>
+                </WriteAction>
               </WriteActions>
             </Rule>
           </Rules>
@@ -62,6 +86,10 @@
             <DisplayStrings>
               <DisplayString ElementID="$TemplateConfig/ID$">
                 <Name>$TemplateConfig/Name$</Name>
+                <Description>$TemplateConfig/Description$</Description>
+              </DisplayString>
+              <DisplayString ElementID="$TemplateConfig/ID$.Agg">
+                <Name>$TemplateConfig/Name$ - Aggregates</Name>
                 <Description>$TemplateConfig/Description$</Description>
               </DisplayString>
             </DisplayStrings>

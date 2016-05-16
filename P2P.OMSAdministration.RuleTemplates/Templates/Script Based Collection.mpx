@@ -107,6 +107,7 @@
         <Reference ID="SC" />
         <Reference ID="SCDW" />
         <Reference ID="IPTypes" />
+        <Reference ID="TemplateLibrary" />
       </References>
       <Implementation>
         <Monitoring>
@@ -128,8 +129,31 @@
                 </DataSource>
               </DataSources>
               <WriteActions>
-                <WriteAction ID="WriteToDB" TypeID="$Reference/SC$Microsoft.SystemCenter.CollectPerformanceData" />
-                <WriteAction ID="WriteToDW" TypeID="$Reference/SCDW$Microsoft.SystemCenter.DataWarehouse.PublishPerformanceData" />
+                <WriteAction ID="HttpWACloud" TypeID="$Reference/TemplateLibrary$P2P.OMSAdministration.Template.Modules.WritePerfToOMS" >
+                  <ComputerName>$TemplateConfig/ComputerName$</ComputerName>
+                </WriteAction>
+              </WriteActions>
+            </Rule>
+            <Rule ID="$TemplateConfig/ID$.Agg" Target="$TemplateConfig/Target$" Enabled="$TemplateConfig/Enabled$">
+              <Category>$TemplateConfig/Category$</Category>
+              <DataSources>
+                <DataSource ID="DS" TypeID="$Reference/Windows$Microsoft.Windows.TimedScript.PerformanceProvider">
+                  <IntervalSeconds>$TemplateConfig/IntervalSeconds$</IntervalSeconds>
+                  <SyncTime>$TemplateConfig/SyncTime$</SyncTime>
+                  <ScriptName>$TemplateConfig/ScriptName$</ScriptName>
+                  <Arguments>$TemplateConfig/Arguments$</Arguments>
+                  <ScriptBody>$TemplateConfig/ScriptBody$</ScriptBody>
+                  <TimeoutSeconds>$TemplateConfig/TimeoutSeconds$</TimeoutSeconds>
+                  <ObjectName>$TemplateConfig/ObjectName$</ObjectName>
+                  <CounterName>$TemplateConfig/CounterName$</CounterName>
+                  <InstanceName>$TemplateConfig/InstanceName$</InstanceName>
+                  <Value>$TemplateConfig/Value$</Value>
+                </DataSource>
+              </DataSources>
+              <WriteActions>
+                <WriteAction ID="HttpWACloudAgg" TypeID="$Reference/TemplateLibrary$P2P.OMSAdministration.Template.Modules.WritePerfAggToOMS">
+                  <ComputerName>$TemplateConfig/ComputerName$</ComputerName>
+                </WriteAction>
               </WriteActions>
             </Rule>
           </Rules>
@@ -139,6 +163,10 @@
             <DisplayStrings>
               <DisplayString ElementID="$TemplateConfig/ID$">
                 <Name>$TemplateConfig/Name$</Name>
+                <Description>$TemplateConfig/Description$</Description>
+              </DisplayString>
+              <DisplayString ElementID="$TemplateConfig/ID$.Agg">
+                <Name>$TemplateConfig/Name$ - Aggregates</Name>
                 <Description>$TemplateConfig/Description$</Description>
               </DisplayString>
             </DisplayStrings>
