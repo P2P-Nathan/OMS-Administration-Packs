@@ -1,0 +1,53 @@
+﻿<ManagementPackFragment SchemaVersion="2.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <TypeDefinitions>
+    <ModuleTypes>
+      <DataSourceModuleType ID="P2P.OMSAdmin.PublishedPerformanceDataProviderCustomChannel" Accessibility="Public" Batching="false">
+        <Configuration>
+          <xsd:element name="ChannelId" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />
+        </Configuration>
+        <ModuleImplementation Isolation="Any">
+          <Composite>
+            <MemberModules>
+              <DataSource ID="DS1" TypeID="P2P.OMSAdmin.PublishedPerformanceDataProviderInternal">
+                <ManagementGroupId>$Target/ManagementGroup/Id$</ManagementGroupId>
+                <ChannelId>$Config/ChannelId$</ChannelId>
+                <DropItems>false</DropItems>
+                <QueueDataOnStall>false</QueueDataOnStall>
+                <QueueDataStallInterval>PT2M</QueueDataStallInterval>
+                <StalledDataQueueSizeMB>100</StalledDataQueueSizeMB>
+                <StalledDataQueueMaximumAge>P14D</StalledDataQueueMaximumAge>
+              </DataSource>
+            </MemberModules>
+            <Composition>
+              <Node ID="DS1" />
+            </Composition>
+          </Composite>
+        </ModuleImplementation>
+        <OutputType>SystemCenter!Microsoft.SystemCenter.Performance.LinkedData</OutputType>
+      </DataSourceModuleType>
+      <DataSourceModuleType ID="P2P.OMSAdmin.PublishedPerformanceDataProviderInternal" Accessibility="Internal" Batching="false">
+        <Configuration>
+          <xsd:element name="ManagementGroupId" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />
+          <xsd:element name="ChannelId" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />
+          <xsd:element name="DropItems" type="xsd:boolean" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />
+          <xsd:element name="QueueDataOnStall" type="xsd:boolean" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />
+          <xsd:element name="QueueDataStallInterval" type="xsd:duration" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />
+          <xsd:element name="StalledDataQueueSizeMB" type="xsd:integer" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />
+          <xsd:element name="StalledDataQueueMaximumAge" type="xsd:duration" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />
+        </Configuration>
+        <OverrideableParameters>
+          <OverrideableParameter ID="DropItems" Selector="$Config/DropItems$" ParameterType="bool" />
+          <OverrideableParameter ID="QueueDataOnStall" Selector="$Config/QueueDataOnStall$" ParameterType="bool" />
+          <OverrideableParameter ID="QueueDataStallInterval" Selector="$Config/QueueDataStallInterval$" ParameterType="string" />
+          <OverrideableParameter ID="StalledDataQueueSizeMB" Selector="$Config/StalledDataQueueSizeMB$" ParameterType="int" />
+        </OverrideableParameters>
+        <ModuleImplementation Isolation="Any">
+          <Native>
+            <ClassID>8DB8C3B0-3AB0-494a-A09B-5F3643CC27A7</ClassID>
+          </Native>
+        </ModuleImplementation>
+        <OutputType>SystemCenter!Microsoft.SystemCenter.Performance.LinkedData</OutputType>
+      </DataSourceModuleType>
+    </ModuleTypes>
+  </TypeDefinitions>
+</ManagementPackFragment>

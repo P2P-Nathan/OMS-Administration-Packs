@@ -35,6 +35,9 @@
     <GenerateSealed>True</GenerateSealed>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="DataSourceModules.mpx">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Overrides.mpx">
       <SubType>Code</SubType>
     </Compile>

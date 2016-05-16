@@ -5,8 +5,14 @@
       <Rule ID="P2P.OMSAdministration.DWMirroring.PerformanceCollect" Enabled="false" Target="SystemCenter!Microsoft.SystemCenter.HealthService" ConfirmDelivery="true" Remotable="true" Priority="Normal" DiscardLevel="90">
         <Category>System</Category>
         <DataSources>
-          <DataSource ID="PerformanceDS" TypeID="DWLib!Microsoft.SystemCenter.DataWarehouse.PublishedPerformanceDataProviderCustomChannel">
+          <DataSource ID="PerformanceDS" TypeID="P2P.OMSAdmin.PublishedPerformanceDataProviderInternal">
+            <ManagementGroupId>$Target/ManagementGroup/Id$</ManagementGroupId>
             <ChannelId>63AFB62D-3376-4102-B6EE-9E88EA49AC46</ChannelId>
+            <DropItems>false</DropItems>
+            <QueueDataOnStall>true</QueueDataOnStall>
+            <QueueDataStallInterval>PT2M</QueueDataStallInterval>
+            <StalledDataQueueSizeMB>100</StalledDataQueueSizeMB>
+            <StalledDataQueueMaximumAge>P14D</StalledDataQueueMaximumAge>
           </DataSource>
         </DataSources>
         <WriteActions>
