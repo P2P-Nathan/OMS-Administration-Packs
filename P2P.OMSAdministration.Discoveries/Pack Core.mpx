@@ -3,7 +3,7 @@
     <LanguagePack ID="ENU" IsDefault="true">
       <DisplayStrings>
         <DisplayString ElementID="P2P.OMSAdministration.Discoveries">
-          <Name>CHRW Custom OMSAdministration Discoveries</Name>
+          <Name>P2P OMSAdministration Discoveries</Name>
           <Description>Discoveries for the OMSAdministration Library</Description>
         </DisplayString>
       </DisplayStrings>

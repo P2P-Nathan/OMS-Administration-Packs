@@ -448,10 +448,10 @@
     <LanguagePack ID="ENU" IsDefault="true">
       <DisplayStrings>
         <DisplayString ElementID="P2P.OMSAdministration.Visualizations">
-          <Name>CHRW Custom OMS Administration Visualizations</Name>
+          <Name>P2P OMS Administration Visualizations</Name>
         </DisplayString>
         <DisplayString ElementID="Folder_1e6cf07a93bd4ebd8b4227446129e5cb">
-          <Name>CHRW OMS Administration</Name>
+          <Name>P2P  OMS Administration</Name>
         </DisplayString>
         <DisplayString ElementID="UIGenerated_d2b7caf72e774ea48d4c92eb3108bc52_OMSOverview">
           <Name>OMS Overview</Name>

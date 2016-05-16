@@ -72,20 +72,20 @@
     <LanguagePack ID="ENU" IsDefault="true">
       <DisplayStrings>
         <DisplayString ElementID="P2P.OMSAdministration.EnabledMPBs.Group">
-          <Name>CHRW - OMS Enabled MP Bundles</Name>
+          <Name>P2P  - OMS Enabled MP Bundles</Name>
           <Description>Solutions which have an Enabled MPB in them</Description>
         </DisplayString>
         <DisplayString ElementID="P2P.OMSAdministration.EnabledMPBs.Group.DiscoveryRule">
-          <Name>Populate CHRW - OMS Enabled MP Bundles</Name>
-          <Description>This discovery rule populates the group 'CHRW - OMS Enabled MP Bundles'</Description>
+          <Name>Populate P2P  - OMS Enabled MP Bundles</Name>
+          <Description>This discovery rule populates the group 'P2P  - OMS Enabled MP Bundles'</Description>
         </DisplayString>
         <DisplayString ElementID="P2P.OMSAdministration.EnabledMP.Group">
-          <Name>CHRW - OMS Enabled MPs</Name>
+          <Name>P2P  - OMS Enabled MPs</Name>
           <Description>all Enabled MPs</Description>
         </DisplayString>
         <DisplayString ElementID="P2P.OMSAdministration.EnabledMP.Group.DiscoveryRule">
-          <Name>Populate CHRW - OMS Enabled MPs</Name>
-          <Description>This discovery rule populates the group 'CHRW - OMS Enabled MPs'</Description>
+          <Name>Populate P2P  - OMS Enabled MPs</Name>
+          <Description>This discovery rule populates the group 'P2P  - OMS Enabled MPs'</Description>
         </DisplayString>
       </DisplayStrings>
     </LanguagePack>

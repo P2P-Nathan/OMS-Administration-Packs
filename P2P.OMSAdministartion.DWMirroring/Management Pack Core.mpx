@@ -3,8 +3,8 @@
     <LanguagePack ID="ENU" IsDefault="true">
       <DisplayStrings>
         <DisplayString ElementID="P2P.OMSAdministration.DWMirroring">
-          <Name>CHRW Custom OMSAdministration DWMirroring</Name>
-          <Description>CHRW Custom OMSAdministration DWMirroring</Description>
+          <Name>P2P OMSAdministration DWMirroring</Name>
+          <Description>P2P OMSAdministration DWMirroring</Description>
         </DisplayString>
       </DisplayStrings>
     </LanguagePack>

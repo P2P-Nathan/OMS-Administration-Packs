@@ -3,8 +3,8 @@
     <LanguagePack ID="ENU" IsDefault="true">
       <DisplayStrings>
         <DisplayString ElementID="P2P.OMSAdministration">
-          <Name>CHRW Custom OMS Administration Library</Name>
-          <Description>CHRW Custom OMS Administration Settings and Controls over the Default installation</Description>
+          <Name>P2P OMS Administration Library</Name>
+          <Description>P2P OMS Administration Settings and Controls over the Default installation</Description>
         </DisplayString>
       </DisplayStrings>
     </LanguagePack>

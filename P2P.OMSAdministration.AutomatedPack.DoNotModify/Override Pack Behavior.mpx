@@ -61,7 +61,7 @@
     <LanguagePack ID="ENU" IsDefault="true">
       <DisplayStrings>
         <DisplayString ElementID="P2P.OMSAdministration.AutomatedPack.DoNotModify">
-          <Name>CHRW Custom OMSAdministration AutomatedPack DoNotModify</Name>
+          <Name>P2P OMSAdministration AutomatedPack DoNotModify</Name>
           <Description>DO NOT MODIFY!  --  This packs is automatically modified and changes may be lost.</Description>
         </DisplayString>
         <DisplayString ElementID="P2P.OMSAdministration.Overrides.DisableMPVersionCheck.ForDisabledMPBs">

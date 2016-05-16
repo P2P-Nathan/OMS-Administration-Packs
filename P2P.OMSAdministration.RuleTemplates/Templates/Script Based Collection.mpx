@@ -130,7 +130,7 @@
               </DataSources>
               <WriteActions>
                 <WriteAction ID="HttpWACloud" TypeID="$Reference/TemplateLibrary$P2P.OMSAdministration.Template.Modules.WritePerfToOMS" >
-                  <ComputerName>$TemplateConfig/ComputerName$</ComputerName>
+                  <ComputerName>$Target/Property[Type="System!System.Entity"]/DisplayName$</ComputerName>
                 </WriteAction>
               </WriteActions>
             </Rule>
@@ -152,7 +152,7 @@
               </DataSources>
               <WriteActions>
                 <WriteAction ID="HttpWACloudAgg" TypeID="$Reference/TemplateLibrary$P2P.OMSAdministration.Template.Modules.WritePerfAggToOMS">
-                  <ComputerName>$TemplateConfig/ComputerName$</ComputerName>
+                  <ComputerName>$Target/Property[Type="System!System.Entity"]/DisplayName$</ComputerName>
                 </WriteAction>
               </WriteActions>
             </Rule>

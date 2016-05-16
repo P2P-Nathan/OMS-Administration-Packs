@@ -3,7 +3,7 @@
     <LanguagePack ID="ENU" IsDefault="true">
       <DisplayStrings>
         <DisplayString ElementID="P2P.OMSAdministration.Tasks">
-          <Name>CHRW Custom OMSAdministration Tasks</Name>
+          <Name>P2P OMSAdministration Tasks</Name>
           <Description>Tasks assist in management of the OMS Packs</Description>
         </DisplayString>
       </DisplayStrings>

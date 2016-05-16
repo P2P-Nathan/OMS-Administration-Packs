@@ -3,8 +3,8 @@
     <LanguagePack ID="ENU" IsDefault="true">
       <DisplayStrings>
         <DisplayString ElementID="P2P.OMS.Administration.Monitoring">
-          <Name>CHRW Custom OMS Administartion Monitoring</Name>
-          <Description>CHRW Custom OMS Administartion Monitoring</Description>
+          <Name>P2P OMS Administartion Monitoring</Name>
+          <Description>P2P OMS Administartion Monitoring</Description>
         </DisplayString>
       </DisplayStrings>
     </LanguagePack>

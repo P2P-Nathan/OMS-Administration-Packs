@@ -1,7 +1,7 @@
 ﻿<ManagementPackFragment SchemaVersion="2.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <TypeDefinitions>
     <ModuleTypes>
-      <ConditionDetectionModuleType ID="P2P.OMSAdministration.Template.Modules.LinkedPerfToOMSPerf" Comment="Maps a PerformanceData to a LinkedPerformanceData" Accessibility="Internal" Batching="false" Stateful="false" PassThrough="false">
+      <ConditionDetectionModuleType ID="P2P.OMSAdministration.Template.Modules.LinkedPerfToOMSPerf" Comment="Maps a PerformanceData to a LinkedPerformanceData" Accessibility="Public" Batching="false" Stateful="false" PassThrough="false">
         <Configuration>
           <xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ManagedEntityId" type="xsd:string"/>
           <xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="RuleId" type="xsd:string"/>
@@ -28,12 +28,12 @@
             </Composition>
           </Composite>
         </ModuleImplementation>
-        <OutputType>SC!Microsoft.SystemCenter.Performance.LinkedData</OutputType>
+        <OutputType>Performance!System.Performance.Data</OutputType>
         <InputTypes>
           <InputType>Performance!System.Performance.Data</InputType>
         </InputTypes>
       </ConditionDetectionModuleType>
-      <ConditionDetectionModuleType ID="P2P.OMSAdministration.Template.Modules.LinkedDataMapper" Comment="Maps a PerformanceData to a LinkedPerformanceData" Accessibility="Internal" Batching="false" Stateful="false" PassThrough="false">
+      <ConditionDetectionModuleType ID="P2P.OMSAdministration.Template.Modules.LinkedDataMapper" Comment="Maps a PerformanceData to a LinkedPerformanceData" Accessibility="Public" Batching="false" Stateful="false" PassThrough="false">
         <Configuration>
           <xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ManagedEntityId" type="xsd:string"/>
           <xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="RuleId" type="xsd:string"/>
@@ -48,7 +48,7 @@
           <InputType>Performance!System.Performance.Data</InputType>
         </InputTypes>
       </ConditionDetectionModuleType>
-      <WriteActionModuleType ID="P2P.OMSAdministration.Template.Modules.WritePerfToOMS" Accessibility="Internal" Batching="false">
+      <WriteActionModuleType ID="P2P.OMSAdministration.Template.Modules.WritePerfToOMS" Accessibility="Public" Batching="false">
         <Configuration>
           <xsd:element name="ComputerName" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />
         </Configuration>
@@ -72,9 +72,9 @@
             </Composition>
           </Composite>
         </ModuleImplementation>
-        <InputType>SC!Microsoft.SystemCenter.Performance.LinkedData</InputType>
+        <InputType>Performance!System.Performance.Data</InputType>
       </WriteActionModuleType>
-      <WriteActionModuleType ID="P2P.OMSAdministration.Template.Modules.WritePerfAggToOMS" Accessibility="Internal" Batching="false">
+      <WriteActionModuleType ID="P2P.OMSAdministration.Template.Modules.WritePerfAggToOMS" Accessibility="Public" Batching="false">
         <Configuration>
           <xsd:element name="ComputerName" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />
         </Configuration>
@@ -101,7 +101,7 @@
             </Composition>
           </Composite>
         </ModuleImplementation>
-        <InputType>SC!Microsoft.SystemCenter.Performance.LinkedData</InputType>
+        <InputType>Performance!System.Performance.Data</InputType>
       </WriteActionModuleType>
     </ModuleTypes>
   </TypeDefinitions>
