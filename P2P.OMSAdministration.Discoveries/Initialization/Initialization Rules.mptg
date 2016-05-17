@@ -8,7 +8,7 @@
         <Category>Operations</Category>
         <ConfirmDelivery>false</ConfirmDelivery>
         <Target>P2PAdmin!P2P.OMSAdministration.Classes.OMSSolution</Target>
-        <Enabled>true</Enabled>
+        <Enabled>false</Enabled>
         <Remotable>true</Remotable>
         <Priority>Normal</Priority>
         <DiscardLevel>100</DiscardLevel>
@@ -69,7 +69,7 @@
         <Category>Operations</Category>
         <ConfirmDelivery>false</ConfirmDelivery>
         <Target>P2PAdmin!P2P.OMSAdministration.Classes.OMSSolution</Target>
-        <Enabled>true</Enabled>
+        <Enabled>false</Enabled>
         <Remotable>true</Remotable>
         <Priority>Normal</Priority>
         <DiscardLevel>100</DiscardLevel>
