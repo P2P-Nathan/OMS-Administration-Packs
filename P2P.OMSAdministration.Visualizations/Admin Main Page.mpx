@@ -4,7 +4,7 @@
       <ViewType ID="P2P.OMSAdministration.Visualizations.AdminMainPageType" Accessibility="Public">
         <Configuration />
         <ViewImplementation>
-          <Assembly>Res.CHRWVisualizationLibrary</Assembly>
+          <Assembly>Res.P2PVisualizationLibrary</Assembly>
           <Type>P2P.OMSAdministration.Visualizations.OMSAdminPage</Type>
         </ViewImplementation>
       </ViewType>

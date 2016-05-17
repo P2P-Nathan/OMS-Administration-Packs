@@ -1,6 +1,6 @@
 ﻿<ManagementPackFragment SchemaVersion="2.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><Monitoring>
     <Discoveries>
-      <Discovery ID="P2P.OMSAdministration.Discoveries.DiscoverBundles" Enabled="false" Target="P2PAdmin!P2P.OMSAdministration.Classes.OMSInstallation" ConfirmDelivery="false" Remotable="true" Priority="Normal">
+      <Discovery ID="P2P.OMSAdministration.Discoveries.DiscoverBundles" Enabled="true" Target="P2PAdmin!P2P.OMSAdministration.Classes.OMSInstallation" ConfirmDelivery="false" Remotable="true" Priority="Normal">
         <Category>Discovery</Category>
         <DiscoveryTypes>
           <DiscoveryClass TypeID="P2PAdmin!P2P.OMSAdministration.Classes.OMSManagementPackBundle" />

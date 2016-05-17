@@ -1,14 +1,14 @@
 <TemplateGroup>
   <Instances>
     <Instance ID="Instancefb16f11e26d54272b47f74226a6108eb" Type="Microsoft.SystemCenter.Authoring.CodeGeneration.Monitoring.CustomRule" Version="1.0.0.0">
-      <CustomRuleConfig xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <CustomRuleConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
         <Id>GenerateShellMP.WithParametersEventTriggered</Id>
         <DisplayName>Event Triggered Generate Override</DisplayName>
         <Description>Event Triggered Generate Override MPs, Nothing Else Should reference the Sealed packs from MS</Description>
         <Category>Operations</Category>
         <ConfirmDelivery>false</ConfirmDelivery>
         <Target>P2PAdmin!P2P.OMSAdministration.Classes.OMSSolution</Target>
-        <Enabled>false</Enabled>
+        <Enabled>true</Enabled>
         <Remotable>true</Remotable>
         <Priority>Normal</Priority>
         <DiscardLevel>100</DiscardLevel>
@@ -32,7 +32,7 @@
       </CustomRuleConfig>
     </Instance>
     <Instance ID="Instance7353644ddda34391aa400cd27cbfbf06" Type="Microsoft.SystemCenter.Authoring.CodeGeneration.Monitoring.CustomRule" Version="1.0.0.0">
-      <CustomRuleConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <CustomRuleConfig xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
         <Id>GenerateAdminLog</Id>
         <DisplayName>Generate Admin Log</DisplayName>
         <Description>Generates the OMS Admin Extensions Log</Description>
@@ -62,14 +62,14 @@
       </CustomRuleConfig>
     </Instance>
     <Instance ID="Instance5cf98fa3cd4d40f5a17991b3be50b6fa" Type="Microsoft.SystemCenter.Authoring.CodeGeneration.Monitoring.CustomRule" Version="1.0.0.0">
-      <CustomRuleConfig xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <CustomRuleConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
         <Id>GenerateShellMP.WithParameters</Id>
         <DisplayName>Generate Override MPs With Parameters</DisplayName>
         <Description>Generate Override MPs, Nothing Else Should reference the Sealed packs from MS</Description>
         <Category>Operations</Category>
         <ConfirmDelivery>false</ConfirmDelivery>
         <Target>P2PAdmin!P2P.OMSAdministration.Classes.OMSSolution</Target>
-        <Enabled>false</Enabled>
+        <Enabled>true</Enabled>
         <Remotable>true</Remotable>
         <Priority>Normal</Priority>
         <DiscardLevel>100</DiscardLevel>

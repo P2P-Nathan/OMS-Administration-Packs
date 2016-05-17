@@ -64,7 +64,6 @@
               </DataSources>
               <WriteActions>
                 <WriteAction ID="HttpWA" TypeID="$Reference/IPTypes$Microsoft.SystemCenter.CollectCloudGenericEvent" />
-
               </WriteActions>
             </Rule>
           </Rules>

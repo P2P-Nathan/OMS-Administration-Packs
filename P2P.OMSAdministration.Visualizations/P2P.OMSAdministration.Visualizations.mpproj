@@ -6,7 +6,7 @@
     <RootNamespace>P2P.OMSAdministration.Visualizations</RootNamespace>
     <Name>P2P.OMSAdministration.Visualizations</Name>
     <ManagementPackName>P2P.OMSAdministration.Visualizations</ManagementPackName>
-    <Version>1.3.2.0</Version>
+    <Version>1.3.3.0</Version>
     <MpFrameworkVersion>v7.0.2</MpFrameworkVersion>
     <MpFrameworkProfile>OM</MpFrameworkProfile>
     <ProductVersion>1.1.0.0</ProductVersion>
@@ -95,7 +95,7 @@
       <HintPath>C:\Program Files (x86)\System Center Visual Studio Authoring Extensions\References\OM2012R2\Microsoft.SystemCenter.Visualization.Library.mp</HintPath>
       <Alias>VizLibrary</Alias>
       <MinVersion>7.1.10226.0</MinVersion>
-      <PackageToBundle>True</PackageToBundle>
+      <PackageToBundle>False</PackageToBundle>
     </ManagementPackReference>
     <ManagementPackReference Include="Microsoft.SystemCenter.Visualization.ServiceLevelComponents">
       <HintPath>..\Pack Dependances\Microsoft.SystemCenter.Visualization.ServiceLevelComponents.mpb</HintPath>
@@ -111,17 +111,17 @@
     </ManagementPackReference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\P2P.OMSAdministration\P2P.OMSAdministration.mpproj">
-      <Name>P2P.OMSAdministration</Name>
-      <Project>{99ac06be-614a-4537-ac9c-2361c75e9951}</Project>
-      <Private>True</Private>
-      <Alias>P2PAdmin</Alias>
-    </ProjectReference>
     <ProjectReference Include="..\OMS Administration Custom Visualizations\OMS Administration Custom Visualizations.vbproj">
       <Name>OMS Administration Custom Visualizations</Name>
       <Project>{33c78fc7-96e8-438e-b660-d03171c9cf85}</Project>
       <Private>True</Private>
       <PackageToBundle>True</PackageToBundle>
+    </ProjectReference>
+    <ProjectReference Include="..\P2P.OMSAdministration\P2P.OMSAdministration.mpproj">
+      <Name>P2P.OMSAdministration</Name>
+      <Project>{99ac06be-614a-4537-ac9c-2361c75e9951}</Project>
+      <Private>True</Private>
+      <Alias>P2PAdmin</Alias>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
